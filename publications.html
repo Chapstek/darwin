@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Darwin Chapuswike</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #e9ecef;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            max-width: 720px; /* Cap at 720px for this resolution */
+            margin: auto;
+            padding: 15px;
+        }
+        header {
+            background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
+            color: white;
+            padding: 25px 10px;
+            text-align: center;
+            border-bottom: 5px solid #dc3545;
+        }
+        header h1 {
+            font-size: 1.8em;
+            word-wrap: break-word;
+        }
+        nav {
+            background: #004182;
+            padding: 8px 0;
+            text-align: center;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        nav a {
+            color: white;
+            margin: 0 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            font-size: 0.85em;
+        }
+        nav a:hover {
+            color: #dc3545;
+        }
+        .blog-post {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .blog-post.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .blog-post h2 {
+            color: #0A66C2;
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            border-left: 4px solid #dc3545;
+            padding-left: 8px;
+            word-wrap: break-word;
+        }
+        .blog-post .date {
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+        }
+        .blog-post p {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #004182;
+            color: white;
+            font-size: 0.8em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+            color: #0A66C2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #dc3545;
+        }
+        @media (max-width: 720px) {
+            .container {
+                padding: 10px;
+            }
+            header {
+                padding: 20px 8px;
+            }
+            header h1 {
+                font-size: 1.6em;
+            }
+            nav {
+                padding: 6px 0;
+            }
+            nav a {
+                margin: 0 6px;
+                font-size: 0.8em;
+            }
+            .blog-post {
+                padding: 12px;
+                margin: 8px 0;
+            }
+            .blog-post h2 {
+                font-size: 1.3em;
+            }
+            .blog-post .date {
+                font-size: 0.8em;
+            }
+            .blog-post p {
+                font-size: 0.9em;
+            }
+            footer {
+                padding: 8px;
+                font-size: 0.75em;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.4em;
+            }
+            nav a {
+                font-size: 0.75em;
+                margin: 0 5px;
+            }
+            .blog-post h2 {
+                font-size: 1.2em;
+            }
+            .blog-post .date {
+                font-size: 0.75em;
+            }
+            .blog-post p {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Publications</h1>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#summary">Summary</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#gallery">Gallery</a>
+        <a href="index.html#education">Education</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#certifications">Certifications</a>
+    </nav>
+
+    <div class="container">
+        <!-- Blog Post 1 -->
+        <div class="blog-post">
+            <h2>The Future of IT Infrastructure in Zambia</h2>
+            <p class="date">March 15, 2025</p>
+            <p>As Zambia continues to grow as a hub for technology in Southern Africa, the demand for robust IT infrastructure is at an all-time high. In this post, I explore the challenges and opportunities for improving network reliability and security in the region, drawing from my experience at NetOne Zambia and Zambia Airports Corporation Limited.</p>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="blog-post">
+            <h2>Why I Love Traveling: A Journey Beyond Tech</h2>
+            <p class="date">February 20, 2025</p>
+            <p>While my career is rooted in technology, I find immense joy in traveling and exploring new cultures. From the bustling streets of Singapore to the serene landscapes of Zambia, traveling has taught me resilience and adaptability—skills that I bring back to my work in IT.</p>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="blog-post">
+            <h2>Tips for Aspiring IT Professionals</h2>
+            <p class="date">January 10, 2025</p>
+            <p>Starting a career in IT can be daunting, but with the right mindset and skills, you can thrive. In this post, I share my journey from an intern at Algebra Global to an L2 Support Engineer, along with practical tips for troubleshooting, networking, and career growth.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Darwin Chapuswike. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fade-in effect for blog posts on scroll
+        const posts = document.querySelectorAll('.blog-post');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        posts.forEach(post => {
+            observer.observe(post);
+        });
+    </script>
+</body>
+</html>
