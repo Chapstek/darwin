@@ -22,7 +22,7 @@
         }
         .container {
             width: 100%;
-            max-width: 720px; /* Cap at 720px for this resolution */
+            max-width: 720px;
             margin: auto;
             padding: 15px;
         }
@@ -60,8 +60,12 @@
             background: #004182;
             padding: 8px 0;
             text-align: center;
-            overflow-x: auto;
-            white-space: nowrap;
+            position: relative;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         nav a {
             color: white;
@@ -73,6 +77,15 @@
         }
         nav a:hover {
             color: #dc3545;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px 15px;
         }
         section {
             background: white;
@@ -96,47 +109,35 @@
             padding-left: 8px;
             word-wrap: break-word;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin: 6px 0;
+        p {
             font-size: 0.95em;
             word-wrap: break-word;
         }
-        .job, .education {
-            margin-bottom: 15px;
+        /* Pong Game Styles */
+        #pong-section {
+            text-align: center;
         }
-        .job h3, .education h3 {
-            color: #004182;
-            font-size: 1.2em;
-            word-wrap: break-word;
+        #pong-canvas {
+            border: 2px solid #004182;
+            border-radius: 8px;
+            background: #f8f9fa;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            touch-action: none; /* Prevent default touch behaviors like scrolling */
         }
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: 1fr; /* Single column for 720px */
-            gap: 10px;
+        #pong-instructions {
+            font-size: 0.9em;
+            color: #555;
             margin-top: 10px;
         }
-        .photo-gallery img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            max-height: 250px;
-        }
-        .photo-gallery img:hover {
-            transform: scale(1.05);
-        }
-        .photo-gallery p {
-            font-size: 0.85em;
-            color: #555;
-            margin-top: 8px;
-            text-align: center;
-            word-wrap: break-word;
+        #score-display {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0A66C2;
+            margin-bottom: 10px;
         }
         .whatsapp-btn {
             position: fixed;
@@ -151,7 +152,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             transition: background 0.3s ease, transform 0.3s ease;
             font-size: 0.8em;
-            z-index: 1000; /* Ensure it stays on top */
+            z-index: 1000;
         }
         .whatsapp-btn:hover {
             background: #1ebe56;
@@ -192,12 +193,28 @@
             header p {
                 font-size: 0.95em;
             }
-            nav {
-                padding: 6px 0;
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #004182;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+            .nav-links.active {
+                display: flex;
             }
             nav a {
-                margin: 0 6px;
-                font-size: 0.8em;
+                margin: 10px 0;
+                font-size: 1em;
+                display: block;
+                padding: 5px 0;
             }
             section {
                 padding: 12px;
@@ -206,20 +223,18 @@
             h2 {
                 font-size: 1.3em;
             }
-            .job h3, .education h3 {
-                font-size: 1.1em;
-            }
-            ul li {
+            p {
                 font-size: 0.9em;
             }
-            .photo-gallery {
-                gap: 8px;
+            #pong-canvas {
+                width: 100%;
+                height: 300px;
             }
-            .photo-gallery img {
-                max-height: 220px;
+            #pong-instructions {
+                font-size: 0.85em;
             }
-            .photo-gallery p {
-                font-size: 0.8em;
+            #score-display {
+                font-size: 1.1em;
             }
             .whatsapp-btn {
                 padding: 6px 10px;
@@ -240,20 +255,22 @@
                 font-size: 0.9em;
             }
             nav a {
-                font-size: 0.75em;
-                margin: 0 5px;
+                font-size: 0.9em;
             }
             h2 {
                 font-size: 1.2em;
             }
-            .job h3, .education h3 {
-                font-size: 1em;
-            }
-            ul li {
+            p {
                 font-size: 0.85em;
             }
-            .photo-gallery img {
-                max-height: 200px;
+            #pong-canvas {
+                height: 250px;
+            }
+            #pong-instructions {
+                font-size: 0.8em;
+            }
+            #score-display {
+                font-size: 1em;
             }
         }
     </style>
@@ -269,131 +286,34 @@
     </header>
 
     <nav>
-        <a href="#contact">Contact</a>
-        <a href="#summary">Summary</a>
-        <a href="#experience">Experience</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="publications.html">Publications</a>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="summary.html">Summary</a>
+            <a href="experience.html">Experience</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="publications.html">Publications</a>
+        </div>
     </nav>
 
     <div class="container">
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <ul>
-                <li><strong>Phone:</strong> 0966130153 (Mobile)</li>
-                <li><strong>Email:</strong> <a href="mailto:dchapuswike10@gmail.com">dchapuswike10@gmail.com</a></li>
-                <li><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/darwinchapuswike-92033916a" target="_blank">linkedin.com/in/darwinchapuswike-92033916a</a></li>
-                <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@bull14dozer" target="_blank">youtube.com/@bull14dozer</a></li>
-            </ul>
+        <section id="welcome-section">
+            <h2>Welcome</h2>
+            <p>Hello! I'm Darwin Chapuswike, an experienced ICT Professional with over 6 years of experience in hardware, software, networking, and troubleshooting. Explore my portfolio to learn more about my work, skills, and interests.</p>
         </section>
 
-        <!-- Summary Section -->
-        <section id="summary">
-            <h2>Summary</h2>
-            <p>An experienced ICT Professional with 6+ years of experience in hardware, software, networking, and troubleshooting, with an increased focus on security, networking, and software troubleshooting.</p>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="job">
-                <h3>L2 Support Engineer - NetOne Zambia</h3>
-                <p>September 2024 - Present (7 months) | Lusaka, Zambia</p>
-                <ul>
-                    <li>Provide Level 2 technical support for IT infrastructure including servers, networks, storage, and security systems.</li>
-                    <li>Troubleshoot and resolve escalated technical issues efficiently, minimizing system downtime.</li>
-                    <li>Collaborate with Level 1 support teams, offering guidance and knowledge transfer.</li>
-                    <li>Implement and maintain IT infrastructure solutions in alignment with project requirements.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Sales Representative - Router-switch.com</h3>
-                <p>June 2024 - Present (10 months) | Zambia</p>
-                <ul>
-                    <li>Represent and sell the company's products and services (routers, switches, servers, firewalls, access points) in Zambia.</li>
-                    <li>Support the Regional Manager with customer-related issues within the sales territory.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Service Partner - TRT</h3>
-                <p>July 2022 - Present (2 years 9 months) | Singapore</p>
-                <ul>
-                    <li>Provide cost-effective solutions for IBM, HP, Dell, Cisco EMC, Netapp & more servers, storage & networking brands.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Information Communication Technology Officer - Zambia Airports Corporation Limited</h3>
-                <p>July 2022 - July 2024 (2 years 1 month) | Kenneth Kaunda International Airport</p>
-                <ul>
-                    <li>Diagnose and resolve faults related to CCTV systems and manage the Flight Information Display System (FIDS).</li>
-                    <li>Monitor and maintain the airport campus network across 10 edge rooms.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Photo Gallery Section -->
-        <section id="gallery">
-            <h2>Gallery</h2>
-            <div class="photo-gallery">
-                <div>
-                    <img src="darwin_and_mr_lee.png" alt="Two colleagues in a data center">
-                    <p>Collaborating with a colleague in a data center, preparing to perform maintenance on server equipment.</p>
-                </div>
-                <div>
-                    <img src="darwin_configurations.png" alt="Working on a laptop in a server room">
-                    <p>Configuring network settings on a laptop in a server room to ensure optimal connectivity.</p>
-                </div>
-                <div>
-                    <img src="darwin_at_kkia.png" alt="Standing in front of an elephant statue at an airport">
-                    <p>Posing in front of an elephant statue at Kenneth Kaunda International Airport, where I managed critical IT systems.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education">
-            <h2>Education</h2>
-            <div class="education">
-                <h3>Bachelor's Degree, Computer Science</h3>
-                <p>National Institute of Public Administration | 2018 - 2021</p>
-            </div>
-            <div class="education">
-                <h3>O Level / Grade 12 Certificate</h3>
-                <p>Mpelembe Secondary School | 2014 - November 2015</p>
-            </div>
-            <div class="education">
-                <h3>International General Certificate of Secondary Education (IGCSE)</h3>
-                <p>Private Candidate | June 2015</p>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>Top Skills</h2>
-            <ul>
-                <li>Mobile Application Development</li>
-                <li>Location Based Services</li>
-                <li>Algorithm Development</li>
-            </ul>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Creating Your IT Strategy</li>
-                <li>Program Management for IT Professionals</li>
-                <li>Succeeding as a First-Time Tech Manager (2019)</li>
-                <li>Linux Troubleshooting at the Command Line</li>
-            </ul>
+        <section id="pong-section">
+            <h2>Play Pong!</h2>
+            <div id="score-display">Player: 0 | AI: 0</div>
+            <canvas id="pong-canvas"></canvas>
+            <p id="pong-instructions">On desktop, use the Up and Down arrow keys to move your paddle (left side). On mobile, touch and drag on the left side of the canvas to move your paddle. First to 5 points wins!</p>
         </section>
     </div>
 
-    <!-- WhatsApp Contact Button -->
     <a href="https://wa.me/0966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
 
     <footer>
@@ -414,6 +334,239 @@
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Pong Game Logic
+        const canvas = document.getElementById('pong-canvas');
+        const ctx = canvas.getContext('2d');
+        const scoreDisplay = document.getElementById('score-display');
+
+        // Set canvas size
+        canvas.width = 600;
+        canvas.height = 400;
+
+        // Game objects
+        const paddleWidth = 10;
+        const paddleHeight = 60;
+        const ballSize = 10;
+
+        let playerPaddle = {
+            x: 10,
+            y: canvas.height / 2 - paddleHeight / 2,
+            width: paddleWidth,
+            height: paddleHeight,
+            speed: 5,
+            score: 0
+        };
+
+        let aiPaddle = {
+            x: canvas.width - paddleWidth - 10,
+            y: canvas.height / 2 - paddleHeight / 2,
+            width: paddleWidth,
+            height: paddleHeight,
+            speed: 3,
+            score: 0
+        };
+
+        let ball = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            size: ballSize,
+            speedX: 4,
+            speedY: 4
+        };
+
+        // Game state
+        let keys = { ArrowUp: false, ArrowDown: false };
+        let gameRunning = true;
+        let touchActive = false;
+        let touchY = 0;
+
+        // Event listeners for keyboard input (desktop)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') keys.ArrowUp = true;
+            if (e.key === 'ArrowDown') keys.ArrowDown = true;
+        });
+
+        document.addEventListener('keyup', (e) => {
+            if (e.key === 'ArrowUp') keys.ArrowUp = false;
+            if (e.key === 'ArrowDown') keys.ArrowDown = false;
+        });
+
+        // Event listeners for touch input (mobile)
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const rect = canvas.getBoundingClientRect();
+            const touchX = touch.clientX - rect.left;
+            touchY = touch.clientY - rect.top;
+
+            // Only allow touch on the left half of the canvas (player's side)
+            if (touchX < canvas.width / 2) {
+                touchActive = true;
+            }
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            if (touchActive) {
+                const touch = e.touches[0];
+                const rect = canvas.getBoundingClientRect();
+                touchY = touch.clientY - rect.top;
+
+                // Update player paddle position based on touch
+                playerPaddle.y = touchY - playerPaddle.height / 2;
+                if (playerPaddle.y < 0) playerPaddle.y = 0;
+                if (playerPaddle.y > canvas.height - playerPaddle.height) {
+                    playerPaddle.y = canvas.height - playerPaddle.height;
+                }
+            }
+        });
+
+        canvas.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            touchActive = false;
+        });
+
+        // Update game state
+        function update() {
+            if (!gameRunning) return;
+
+            // Player paddle movement (keyboard)
+            if (!touchActive) { // Only use keyboard if touch is not active
+                if (keys.ArrowUp && playerPaddle.y > 0) {
+                    playerPaddle.y -= playerPaddle.speed;
+                }
+                if (keys.ArrowDown && playerPaddle.y < canvas.height - playerPaddle.height) {
+                    playerPaddle.y += playerPaddle.speed;
+                }
+            }
+
+            // AI paddle movement (basic AI)
+            if (aiPaddle.y + aiPaddle.height / 2 < ball.y && aiPaddle.y < canvas.height - aiPaddle.height) {
+                aiPaddle.y += aiPaddle.speed;
+            }
+            if (aiPaddle.y + aiPaddle.height / 2 > ball.y && aiPaddle.y > 0) {
+                aiPaddle.y -= aiPaddle.speed;
+            }
+
+            // Ball movement
+            ball.x += ball.speedX;
+            ball.y += ball.speedY;
+
+            // Ball collision with top and bottom
+            if (ball.y <= 0 || ball.y >= canvas.height - ball.size) {
+                ball.speedY = -ball.speedY;
+            }
+
+            // Ball collision with paddles
+            if (
+                (ball.x <= playerPaddle.x + playerPaddle.width &&
+                ball.y + ball.size >= playerPaddle.y &&
+                ball.y <= playerPaddle.y + playerPaddle.height) ||
+                (ball.x + ball.size >= aiPaddle.x &&
+                ball.y + ball.size >= aiPaddle.y &&
+                ball.y <= aiPaddle.y + aiPaddle.height)
+            ) {
+                ball.speedX = -ball.speedX;
+            }
+
+            // Ball out of bounds (scoring)
+            if (ball.x <= 0) {
+                aiPaddle.score++;
+                resetBall();
+            }
+            if (ball.x >= canvas.width - ball.size) {
+                playerPaddle.score++;
+                resetBall();
+            }
+
+            // Update score display
+            scoreDisplay.textContent = `Player: ${playerPaddle.score} | AI: ${aiPaddle.score}`;
+
+            // Check for game over
+            if (playerPaddle.score >= 5 || aiPaddle.score >= 5) {
+                gameRunning = false;
+                scoreDisplay.textContent = playerPaddle.score >= 5 ? 'You Win! Refresh to play again.' : 'AI Wins! Refresh to play again.';
+            }
+        }
+
+        // Reset ball position
+        function resetBall() {
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+            ball.speedX = -ball.speedX;
+            ball.speedY = Math.random() * 8 - 4; // Random vertical speed
+        }
+
+        // Draw game elements
+        function draw() {
+            // Clear canvas
+            ctx.fillStyle = '#f8f9fa';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw paddles
+            ctx.fillStyle = '#004182';
+            ctx.fillRect(playerPaddle.x, playerPaddle.y, playerPaddle.width, playerPaddle.height);
+            ctx.fillRect(aiPaddle.x, aiPaddle.y, aiPaddle.width, aiPaddle.height);
+
+            // Draw ball
+            ctx.fillStyle = '#dc3545';
+            ctx.fillRect(ball.x, ball.y, ball.size, ball.size);
+
+            // Draw center line
+            ctx.setLineDash([5, 15]);
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, 0);
+            ctx.lineTo(canvas.width / 2, canvas.height);
+            ctx.strokeStyle = '#666';
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+
+        // Game loop
+        function gameLoop() {
+            update();
+            draw();
+            if (gameRunning) {
+                requestAnimationFrame(gameLoop);
+            }
+        }
+
+        // Start the game
+        gameLoop();
+
+        // Adjust canvas size for mobile
+        function resizeCanvas() {
+            if (window.innerWidth <= 720) {
+                canvas.width = window.innerWidth - 40; // Adjust for padding
+                canvas.height = 300;
+
+                // Adjust game objects for new canvas size
+                playerPaddle.x = 10;
+                aiPaddle.x = canvas.width - paddleWidth - 10;
+                ball.x = canvas.width / 2;
+                ball.y = canvas.height / 2;
+            } else {
+                canvas.width = 600;
+                canvas.height = 400;
+
+                // Reset positions for desktop size
+                playerPaddle.x = 10;
+                aiPaddle.x = canvas.width - paddleWidth - 10;
+                ball.x = canvas.width / 2;
+                ball.y = canvas.height / 2;
+            }
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
     </script>
 </body>
 </html>

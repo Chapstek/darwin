@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications - Darwin Chapuswike</title>
+    <title>Skills - Darwin Chapuswike</title>
     <style>
         * {
             margin: 0;
@@ -87,7 +87,7 @@
             cursor: pointer;
             padding: 8px 15px;
         }
-        .blog-post {
+        section {
             background: white;
             padding: 15px;
             margin: 10px 0;
@@ -97,26 +97,24 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        .blog-post.visible {
+        section.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .blog-post h2 {
+        h2 {
             color: #0A66C2;
             font-size: 1.4em;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             border-left: 4px solid #dc3545;
             padding-left: 8px;
             word-wrap: break-word;
         }
-        .blog-post .date {
-            color: #666;
-            font-size: 0.85em;
-            margin-bottom: 10px;
-            word-wrap: break-word;
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
-        .blog-post p {
-            margin-bottom: 10px;
+        ul li {
+            margin: 6px 0;
             font-size: 0.95em;
             word-wrap: break-word;
         }
@@ -197,17 +195,14 @@
                 display: block;
                 padding: 5px 0;
             }
-            .blog-post {
+            section {
                 padding: 12px;
                 margin: 8px 0;
             }
-            .blog-post h2 {
+            h2 {
                 font-size: 1.3em;
             }
-            .blog-post .date {
-                font-size: 0.8em;
-            }
-            .blog-post p {
+            ul li {
                 font-size: 0.9em;
             }
             .whatsapp-btn {
@@ -231,13 +226,10 @@
             nav a {
                 font-size: 0.9em;
             }
-            .blog-post h2 {
+            h2 {
                 font-size: 1.2em;
             }
-            .blog-post .date {
-                font-size: 0.75em;
-            }
-            .blog-post p {
+            ul li {
                 font-size: 0.85em;
             }
         }
@@ -269,23 +261,14 @@
     </nav>
 
     <div class="container">
-        <div class="blog-post">
-            <h2>The Future of IT Infrastructure in Zambia</h2>
-            <p class="date">March 15, 2025</p>
-            <p>As Zambia continues to grow as a hub for technology in Southern Africa, the demand for robust IT infrastructure is at an all-time high. In this post, I explore the challenges and opportunities for improving network reliability and security in the region, drawing from my experience at NetOne Zambia and Zambia Airports Corporation Limited.</p>
-        </div>
-
-        <div class="blog-post">
-            <h2>Why I Love Traveling: A Journey Beyond Tech</h2>
-            <p class="date">February 20, 2025</p>
-            <p>While my career is rooted in technology, I find immense joy in traveling and exploring new cultures. From the bustling streets of Singapore to the serene landscapes of Zambia, traveling has taught me resilience and adaptability—skills that I bring back to my work in IT.</p>
-        </div>
-
-        <div class="blog-post">
-            <h2>Tips for Aspiring IT Professionals</h2>
-            <p class="date">January 10, 2025</p>
-            <p>Starting a career in IT can be daunting, but with the right mindset and skills, you can thrive. In this post, I share my journey from an intern at Algebra Global to an L2 Support Engineer, along with practical tips for troubleshooting, networking, and career growth.</p>
-        </div>
+        <section>
+            <h2>Top Skills</h2>
+            <ul>
+                <li>Mobile Application Development</li>
+                <li>Location Based Services</li>
+                <li>Algorithm Development</li>
+            </ul>
+        </section>
     </div>
 
     <a href="https://wa.me/0966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
@@ -295,8 +278,8 @@
     </footer>
 
     <script>
-        // Fade-in effect for blog posts on scroll
-        const posts = document.querySelectorAll('.blog-post');
+        // Fade-in effect for sections on scroll
+        const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -305,8 +288,8 @@
             });
         }, { threshold: 0.1 });
 
-        posts.forEach(post => {
-            observer.observe(post);
+        sections.forEach(section => {
+            observer.observe(section);
         });
 
         // Hamburger menu toggle
