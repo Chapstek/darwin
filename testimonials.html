@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="electric-tower.png" type="image/png">
-    <title>Contact - Darwin Chapuswike</title>
+	<link rel="icon" href="light-bulb.png" type="image/png">
+    <title>Testimonials - Darwin Chapuswike</title>
     <style>
         * {
             margin: 0;
@@ -110,14 +110,51 @@
             padding-left: 8px;
             word-wrap: break-word;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .testimonial {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 3px solid #0A66C2;
+            background: #f8f9fa;
+            border-radius: 5px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
         }
-        ul li {
-            margin: 6px 0;
+        .testimonial img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .testimonial-content {
+            flex: 1;
+        }
+        .testimonial-name {
+            font-weight: bold;
+            font-size: 1em;
+            color: #333;
+        }
+        .testimonial-title {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .testimonial-date {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .testimonial-relationship {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+        .testimonial-text {
             font-size: 0.95em;
             word-wrap: break-word;
+            font-style: italic;
+            color: #444;
         }
         .whatsapp-btn {
             position: fixed;
@@ -203,7 +240,28 @@
             h2 {
                 font-size: 1.3em;
             }
-            ul li {
+            .testimonial {
+                padding: 10px;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .testimonial img {
+                width: 40px;
+                height: 40px;
+            }
+            .testimonial-name {
+                font-size: 0.95em;
+            }
+            .testimonial-title {
+                font-size: 0.85em;
+            }
+            .testimonial-date {
+                font-size: 0.8em;
+            }
+            .testimonial-relationship {
+                font-size: 0.8em;
+            }
+            .testimonial-text {
                 font-size: 0.9em;
             }
             .whatsapp-btn {
@@ -230,7 +288,19 @@
             h2 {
                 font-size: 1.2em;
             }
-            ul li {
+            .testimonial-name {
+                font-size: 0.9em;
+            }
+            .testimonial-title {
+                font-size: 0.8em;
+            }
+            .testimonial-date {
+                font-size: 0.75em;
+            }
+            .testimonial-relationship {
+                font-size: 0.75em;
+            }
+            .testimonial-text {
                 font-size: 0.85em;
             }
         }
@@ -258,19 +328,44 @@
             <a href="skills.html">Skills</a>
             <a href="certifications.html">Certifications</a>
             <a href="publications.html">Publications</a>
-			<a href="achievements.html">Achievements</a>
-			<a href="testimonials.html">Testimonials</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="testimonials.html">Testimonials</a>
         </div>
     </nav>
 
     <div class="container">
         <section>
-            <h2>Contact</h2>
-            <ul>
-                <li><strong>Phone:</strong> +260966130153 (Mobile)</li>
-                <li><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/darwinchapuswike-92033916a" target="_blank">linkedin.com/in/darwinchapuswike-92033916a</a></li>
-                <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@bull14dozer" target="_blank">youtube.com/@bull14dozer</a></li>
-            </ul>
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <img src="edric_pemhiwa.jpeg" alt="Edric Pemhiwa">
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Edric Pemhiwa</div>
+                    <div class="testimonial-title">Operations | Team Building</div>
+                    <div class="testimonial-date">April 5, 2023</div>
+                    <div class="testimonial-relationship">Edric was senior to Darwin but didn't manage Darwin directly</div>
+                    <div class="testimonial-text">"Excellent team player and pays attention to detail."</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="placeholder.jpeg" alt="Kufekisa Nawa">
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Kufekisa Nawa</div>
+                    <div class="testimonial-title">IT Systems and Support Coordinator at Barrick Gold Corporation</div>
+                    <div class="testimonial-date">April 4, 2023</div>
+                    <div class="testimonial-relationship">Kufekisa was Darwin’s mentor</div>
+                    <div class="testimonial-text">"Darwin has the drive to be one of the best in the Tech world. His determination and hunger to learn makes him distinct and a great team member to have in an IT team."</div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <img src="placeholder1.jpeg" alt="Morgan Mutila">
+                <div class="testimonial-content">
+                    <div class="testimonial-name">Morgan Mutila</div>
+                    <div class="testimonial-title">Software Developer | IT Technician | Tech Enthusiast | Bachelor of Computer Science</div>
+                    <div class="testimonial-date">Date not specified</div>
+                    <div class="testimonial-relationship">First-degree connection</div>
+                    <div class="testimonial-text">"Darwin is very passionate about programming. I have worked with him on school projects and he has shown great competence in programming."</div>
+                </div>
+            </div>
         </section>
     </div>
 
