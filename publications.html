@@ -7,249 +7,107 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-W7RTBTJLRV');
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="brown.png" type="image/png">
-    <title>Publications - Darwin Chapuswike</title>
+    <link rel="icon" href="brown.png" type="image/png">
+    <title>Publications - Page 1 - Darwin Chapuswike</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Harnessing the Power of Cybersecurity & Data Analytics at NetOne Zambia">
+    <meta property="og:description" content="In today’s digital landscape, cybersecurity and data analytics are at the heart of every resilient IT infrastructure.">
+    <meta property="og:url" content="https://darwinchapuswike.com/publications.html#post-4">
+    <meta property="og:image" content="https://darwinchapuswike.com/darwin_soc.png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Darwin Chapuswike">
+	
+	<meta property="og:title" content="The Future of IT Infrastructure in Zambia">
+    <meta property="og:description" content="As Zambia continues to grow as a hub for technology in Southern Africa, the demand for robust IT infrastructure is at an all-time high.">
+    <meta property="og:url" content="https://darwinchapuswike.com/publications.html#post-1">
+    <meta property="og:video" content="https://darwinchapuswike.com/router-switch.mp4">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Darwin Chapuswike">
+	
+	<meta property="og:title" content="Why I Love Traveling: A Journey Beyond Tech">
+    <meta property="og:description" content="While my career is rooted in technology, I find immense joy in traveling and exploring new cultures.">
+    <meta property="og:url" content="https://darwinchapuswike.com/publications.html#post-2">
+    <meta property="og:video" content="https://darwinchapuswike.com/router-switch.mp4">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Darwin Chapuswike">
+	
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tips for Aspiring Young IT Professionals">
+    <meta name="twitter:description" content="Starting a career in IT can be daunting, but with the right mindset and skills, you can thrive.">
+	<meta name="twitter:url" content="https://darwinchapuswike.com/publications.html#post-3">
+    <meta name="twitter:image" content="https://darwinchapuswike.com/young_boy_darwin.png">
+    <meta name="twitter:site" content="@DarwinChapuswi5"> <!-- Replace with your Twitter handle if applicable -->
+    <!-- Additional SEO Meta Tags -->
+    <meta name="description" content="Explore Darwin Chapuswike's blog posts on tech, collaboration, and personal growth.">
+    <link rel="canonical" href="https://darwinchapuswike.com/publications-page2.html">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            background-color: #e9ecef;
-            color: #333;
-            overflow-x: hidden;
-        }
-        .container {
-            width: 100%;
-            max-width: 720px;
-            margin: auto;
-            padding: 15px;
-        }
-        header {
-            background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
-            color: white;
-            padding: 30px 10px;
-            text-align: center;
-            border-bottom: 5px solid #dc3545;
-            position: relative;
-        }
-        header img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 4px solid white;
-            margin-bottom: 10px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        header img:hover {
-            transform: scale(1.1);
-        }
-        header h1 {
-            font-size: 1.8em;
-            margin-bottom: 5px;
-            word-wrap: break-word;
-        }
-        header p {
-            font-size: 1em;
-            opacity: 0.9;
-            word-wrap: break-word;
-        }
-        nav {
-            background: #004182;
-            padding: 8px 0;
-            text-align: center;
-            position: relative;
-        }
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            margin: 0 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-            font-size: 0.85em;
-        }
-        nav a:hover {
-            color: #dc3545;
-        }
-        .hamburger {
-            display: none;
-            font-size: 1.5em;
-            color: white;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px 15px;
-        }
-        .blog-post {
-            background: white;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .blog-post.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .blog-post h2 {
-            color: #0A66C2;
-            font-size: 1.4em;
-            margin-bottom: 8px;
-            border-left: 4px solid #dc3545;
-            padding-left: 8px;
-            word-wrap: break-word;
-        }
-        .blog-post .date {
-            color: #666;
-            font-size: 0.85em;
-            margin-bottom: 10px;
-            word-wrap: break-word;
-        }
-        .blog-post p {
-            margin-bottom: 10px;
-            font-size: 0.95em;
-            word-wrap: break-word;
-        }
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            background: #25D366;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease, transform 0.3s ease;
-            font-size: 0.8em;
-            z-index: 1000;
-        }
-        .whatsapp-btn:hover {
-            background: #1ebe56;
-            transform: scale(1.1);
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #004182;
-            color: white;
-            font-size: 0.8em;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        a {
-            color: #0A66C2;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #dc3545;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #e9ecef; color: #333; overflow-x: hidden; }
+        .container { width: 100%; max-width: 720px; margin: auto; padding: 15px; }
+        header { background: linear-gradient(135deg, #0A66C2 0%, #004182 100%); color: white; padding: 30px 10px; text-align: center; border-bottom: 5px solid #dc3545; position: relative; }
+        header img { width: 100px; height: 100px; border-radius: 50%; border: 4px solid white; margin-bottom: 10px; object-fit: cover; transition: transform 0.3s ease; }
+        header img:hover { transform: scale(1.1); }
+        header h1 { font-size: 1.8em; margin-bottom: 5px; word-wrap: break-word; }
+        header p { font-size: 1em; opacity: 0.9; word-wrap: break-word; }
+        nav { background: #004182; padding: 8px 0; text-align: center; position: relative; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: bold; transition: color 0.3s ease; font-size: 0.85em; }
+        nav a:hover { color: #dc3545; }
+        .hamburger { display: none; font-size: 1.5em; color: white; background: none; border: none; cursor: pointer; padding: 8px 15px; }
+        .blog-post { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .blog-post.visible { opacity: 1; transform: translateY(0); }
+        .blog-post h2 { color: #0A66C2; font-size: 1.4em; margin-bottom: 8px; border-left: 4px solid #dc3545; padding-left: 8px; word-wrap: break-word; }
+        .blog-post .date { color: #666; font-size: 0.85em; margin-bottom: 10px; word-wrap: break-word; }
+        .blog-post p { margin-bottom: 10px; font-size: 0.95em; word-wrap: break-word; }
+        .blog-post img, .blog-post iframe { max-width: 100%; height: auto; border-radius: 5px; margin: 10px 0; }
+        .share-buttons { margin-top: 10px; display: flex; gap: 10px; }
+        .share-buttons a { font-size: 1.2em; color: #333; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease; padding: 5px; }
+        .share-buttons a:hover { transform: scale(1.2); }
+        .share-buttons .fa-facebook-f:hover { color: #3b5998; }
+        .share-buttons .fa-twitter:hover { color: #1da1f2; }
+        .share-buttons .fa-linkedin-in:hover { color: #0077b5; }
+        .share-buttons .fa-whatsapp:hover { color: #25d366; }
+        .whatsapp-btn { position: fixed; bottom: 10px; right: 10px; background: #25D366; color: white; padding: 8px 12px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); transition: background 0.3s ease, transform 0.3s ease; font-size: 0.8em; z-index: 1000; }
+        .whatsapp-btn:hover { background: #1ebe56; transform: scale(1.1); }
+        footer { text-align: center; padding: 10px; background: #004182; color: white; font-size: 0.8em; position: relative; bottom: 0; width: 100%; }
+        .pagination { text-align: center; margin: 20px 0; }
+        .pagination a { color: #0A66C2; text-decoration: none; font-size: 1em; padding: 5px 10px; }
+        .pagination a:hover { color: #dc3545; }
+        .pagination span { font-size: 1em; margin: 0 10px; }
+        a { color: #0A66C2; text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: #dc3545; }
         @media (max-width: 720px) {
-            .container {
-                padding: 10px;
-            }
-            header {
-                padding: 25px 8px;
-            }
-            header img {
-                width: 90px;
-                height: 90px;
-            }
-            header h1 {
-                font-size: 1.6em;
-            }
-            header p {
-                font-size: 0.95em;
-            }
-            .hamburger {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: #004182;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 10px 0;
-                z-index: 1000;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            nav a {
-                margin: 10px 0;
-                font-size: 1em;
-                display: block;
-                padding: 5px 0;
-            }
-            .blog-post {
-                padding: 12px;
-                margin: 8px 0;
-            }
-            .blog-post h2 {
-                font-size: 1.3em;
-            }
-            .blog-post .date {
-                font-size: 0.8em;
-            }
-            .blog-post p {
-                font-size: 0.9em;
-            }
-            .whatsapp-btn {
-                padding: 6px 10px;
-                font-size: 0.75em;
-                bottom: 8px;
-                right: 8px;
-            }
-            footer {
-                padding: 8px;
-                font-size: 0.75em;
-            }
+            .container { padding: 10px; }
+            header { padding: 25px 8px; }
+            header img { width: 90px; height: 90px; }
+            header h1 { font-size: 1.6em; }
+            header p { font-size: 0.95em; }
+            .hamburger { display: block; }
+            .nav-links { display: none; flex-direction: column; background: #004182; position: absolute; top: 100%; left: 0; width: 100%; padding: 10px 0; z-index: 1000; }
+            .nav-links.active { display: flex; }
+            nav a { margin: 10px 0; font-size: 1em; display: block; padding: 5px 0; }
+            .blog-post { padding: 12px; margin: 8px 0; }
+            .blog-post h2 { font-size: 1.3em; }
+            .blog-post .date { font-size: 0.8em; }
+            .blog-post p { font-size: 0.9em; }
+            .whatsapp-btn { padding: 6px 10px; font-size: 0.75em; bottom: 8px; right: 8px; }
+            footer { padding: 8px; font-size: 0.75em; }
         }
         @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.4em;
-            }
-            header p {
-                font-size: 0.9em;
-            }
-            nav a {
-                font-size: 0.9em;
-            }
-            .blog-post h2 {
-                font-size: 1.2em;
-            }
-            .blog-post .date {
-                font-size: 0.75em;
-            }
-            .blog-post p {
-                font-size: 0.85em;
-            }
+            header h1 { font-size: 1.4em; }
+            header p { font-size: 0.9em; }
+            nav a { font-size: 0.9em; }
+            .blog-post h2 { font-size: 1.2em; }
+            .blog-post .date { font-size: 0.75em; }
+            .blog-post p { font-size: 0.85em; }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -275,29 +133,76 @@
             <a href="skills.html">Skills</a>
             <a href="certifications.html">Certifications</a>
             <a href="publications.html">Publications</a>
-			<a href="achievements.html">Achievements</a>
-			<a href="testimonials.html">Testimonials</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="testimonials.html">Testimonials</a>
         </div>
     </nav>
 
     <div class="container">
-        <div class="blog-post">
+        <div class="blog-post" id="post-4">
+            <h2>Harnessing the Power of Cybersecurity & Data Analytics at NetOne Zambia</h2>
+            <p class="date">March 29, 2025</p>
+            <p>In today’s digital landscape, cybersecurity and data analytics are at the heart of every resilient IT infrastructure. At NetOne Zambia, we are committed to leveraging real-time monitoring, threat intelligence, and proactive defense strategies to protect businesses from evolving cyber threats. As an L2 Support Engineer, I’ve seen firsthand how these tools transform vulnerabilities into strengths, ensuring that our clients’ networks remain secure and operational.</p>
+            <p>Standing in front of this security operations dashboard, I’m reminded of the critical role we play in safeguarding networks and ensuring business continuity. Cybersecurity isn’t just about responding to incidents—it’s about staying ahead, analyzing data, and mitigating risks before they escalate. For example, by integrating data analytics, we can detect unusual patterns—like a sudden spike in login attempts—long before they turn into breaches. At NetOne, we’ve implemented tools like SIEM (Security Information and Event Management) systems to provide real-time insights, allowing us to act swiftly and decisively.</p>
+            <p>But it’s not just about technology; it’s about collaboration. The cyber landscape is too complex for any one team to tackle alone. I’m excited to collaborate with fellow professionals and organizations across Zambia and beyond to build stronger, more secure systems. Whether it’s sharing threat intelligence or co-developing innovative solutions, partnerships are key. Imagine a future where Zambian businesses lead the region in cybersecurity resilience—that’s the vision driving me. Let’s connect and innovate together!</p>
+            <center><img src="darwin_soc.png" alt="Cybersecurity dashboard at NetOne Zambia"></center>
+            <div class="share-buttons">
+                <a href="#" onclick="shareOnFacebook('post-4'); return false;" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="shareOnTwitter('post-4'); return false;" title="Share on X"><i class="fab fa-twitter"></i></a>
+                <a href="#" onclick="shareOnLinkedIn('post-4'); return false;" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" onclick="shareOnWhatsApp('post-4'); return false;" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="blog-post" id="post-1">
             <h2>The Future of IT Infrastructure in Zambia</h2>
             <p class="date">March 15, 2025</p>
-            <p>As Zambia continues to grow as a hub for technology in Southern Africa, the demand for robust IT infrastructure is at an all-time high. In this post, I explore the challenges and opportunities for improving network reliability and security in the region, drawing from my experience at NetOne Zambia and Zambia Airports Corporation Limited.</p>
+            <p>As Zambia continues to grow as a hub for technology in Southern Africa, the demand for robust IT infrastructure is at an all-time high. In this post, I explore the challenges and opportunities for improving network reliability and security in the region, drawing from my experience at NetOne Zambia and Zambia Airports Corporation Limited. The rapid adoption of digital services—think mobile banking, e-commerce, and government portals—has put immense pressure on existing systems, many of which were designed decades ago.</p>
+            <p>One major challenge is the inconsistent power supply, which disrupts data centers and network uptime. During my time at NetOne, I worked on implementing backup power solutions and optimizing server configurations to mitigate downtime. Another hurdle is the skills gap; while Zambia has a growing pool of IT talent, advanced expertise in cloud computing and cybersecurity is still scarce. On the flip side, opportunities abound—government initiatives like the Smart Zambia project are paving the way for fiber optic expansion and 5G rollout, which could transform connectivity in rural areas.</p>
+            <p>Looking ahead, I believe partnerships between local firms and global tech giants could accelerate progress. Imagine a future where Zambian engineers collaborate with companies like Cisco or Microsoft to build resilient, scalable networks. It’s an exciting time, and I’m proud to be part of this evolution.</p>
+			<center><video width="320" height="280" controls><source src="router-switch.mp4" type="video/mp4">Your browser does not support the video</video></center>
+            <div class="share-buttons">
+                <a href="#" onclick="shareOnFacebook('post-1'); return false;" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="shareOnTwitter('post-1'); return false;" title="Share on X"><i class="fab fa-twitter"></i></a>
+                <a href="#" onclick="shareOnLinkedIn('post-1'); return false;" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" onclick="shareOnWhatsApp('post-1'); return false;" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
 
-        <div class="blog-post">
+        <div class="blog-post" id="post-2">
             <h2>Why I Love Traveling: A Journey Beyond Tech</h2>
             <p class="date">February 20, 2025</p>
-            <p>While my career is rooted in technology, I find immense joy in traveling and exploring new cultures. From the bustling streets of Singapore to the serene landscapes of Zambia, traveling has taught me resilience and adaptability—skills that I bring back to my work in IT.</p>
+            <p>While my career is rooted in technology, I find immense joy in traveling and exploring new cultures. From the bustling streets of Singapore to the serene landscapes of Zambia, traveling has taught me resilience and adaptability—skills that I bring back to my work in IT. It’s more than just a hobby; it’s a way to recharge and gain perspective beyond the screens and servers I deal with daily.</p>
+            <p>In Singapore, I was struck by the seamless integration of technology into everyday life—smart traffic systems, cashless payments, and towering skyscrapers with rooftop gardens. It inspired me to think about how Zambia could adopt similar innovations. Conversely, exploring Zambia’s rural areas, like the breathtaking Victoria Falls or the quiet villages along the Zambezi River, reminded me of the importance of balance. Technology should enhance life, not dominate it.</p>
+            <p>Traveling also sharpens problem-solving skills. Navigating unfamiliar places, dealing with language barriers, or fixing a sudden tech issue for a fellow traveler (yes, I’ve done that!) mirrors the troubleshooting I do at work. Each trip is a lesson in patience and creativity, and I return home with stories and ideas that fuel both my personal growth and professional projects.</p>
+			<center><video width="320" height="280" controls><source src="videoscene.mp4" type="video/mp4">Your browser does not support the video</video></center>
+            <div class="share-buttons">
+                <a href="#" onclick="shareOnFacebook('post-2'); return false;" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="shareOnTwitter('post-2'); return false;" title="Share on X"><i class="fab fa-twitter"></i></a>
+                <a href="#" onclick="shareOnLinkedIn('post-2'); return false;" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" onclick="shareOnWhatsApp('post-2'); return false;" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
 
-        <div class="blog-post">
+        <div class="blog-post" id="post-3">
             <h2>Tips for Aspiring IT Professionals</h2>
             <p class="date">January 10, 2025</p>
-            <p>Starting a career in IT can be daunting, but with the right mindset and skills, you can thrive. In this post, I share my journey from an intern at Algebra Global to an L2 Support Engineer, along with practical tips for troubleshooting, networking, and career growth.</p>
+            <p>Starting a career in IT can be daunting, but with the right mindset and skills, you can thrive. In this post, I share my journey from an intern at Algebra Global to an L2 Support Engineer, along with practical tips for troubleshooting, networking, and career growth. The IT field is vast, but it rewards persistence and curiosity.</p>
+            <p>My first tip: master the basics. During my internship, I spent hours learning TCP/IP, DNS, and basic scripting—skills that still form the backbone of my work at NetOne Zambia. Don’t rush to the flashy stuff like AI or cloud computing without understanding how networks function. Second, get hands-on. Volunteer for projects, build a home lab, or fix a friend’s Wi-Fi—real-world experience trumps theory every time.</p>
+            <p>Networking (the human kind) is just as crucial. Attend local tech meetups, join online forums, or connect with professionals on LinkedIn. I landed my first big break at Zambia Airports Corporation because a mentor recommended me. Finally, embrace failure. Early on, I botched a server update—hours of downtime taught me more about backups than any textbook could. Keep learning, stay humble, and you’ll go far.</p>
+            <center><img width="494" height="370" src="young_boy_darwin.png" alt="IT professional at work"></center>
+            <div class="share-buttons">
+                <a href="#" onclick="shareOnFacebook('post-3'); return false;" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="shareOnTwitter('post-3'); return false;" title="Share on X"><i class="fab fa-twitter"></i></a>
+                <a href="#" onclick="shareOnLinkedIn('post-3'); return false;" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" onclick="shareOnWhatsApp('post-3'); return false;" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
+    </div>
+
+    <div class="pagination">
+        <span>Page 1 of 2</span>
+        <a href="publications-page2.html">Next →</a>
     </div>
 
     <a href="https://wa.me/260966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
@@ -316,10 +221,7 @@
                 }
             });
         }, { threshold: 0.1 });
-
-        posts.forEach(post => {
-            observer.observe(post);
-        });
+        posts.forEach(post => observer.observe(post));
 
         // Hamburger menu toggle
         const hamburger = document.querySelector('.hamburger');
@@ -328,6 +230,27 @@
             navLinks.classList.toggle('active');
             hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
+
+        // Share functionality
+        const baseUrl = "https://darwinchapuswike.com/publications.html"; // Replace with your actual domain
+        function shareOnFacebook(postId) {
+            const url = `${baseUrl}#${postId}`;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+        }
+        function shareOnTwitter(postId) {
+            const url = `${baseUrl}#${postId}`;
+            const text = document.querySelector(`#${postId} h2`).innerText;
+            window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
+        }
+        function shareOnLinkedIn(postId) {
+            const url = `${baseUrl}#${postId}`;
+            window.open(`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`, '_blank');
+        }
+        function shareOnWhatsApp(postId) {
+            const url = `${baseUrl}#${postId}`;
+            const text = document.querySelector(`#${postId} h2`).innerText;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
+        }
     </script>
 </body>
 </html>
