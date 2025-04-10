@@ -12,26 +12,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="brown.png" type="image/png">
-    <title>Building a Zambia Copper Prices Forecast Tool: Predicting Future Trends - Darwin Chapuswike</title>
+    <title>My First Access Control Project at Netone: A Journey of Growth and Leadership</title>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Building a Zambia Copper Prices Forecast Tool: Predicting Future Trends - Darwin Chapuswike">
-    <meta property="og:description" content="Discover how I developed a tool to forecast copper prices in USD and ZMW, along with ZMW/USD exchange rates, for Zambia's economic insights.">
-    <meta property="og:url" content="https://darwinchapuswike.com/post-8.html">
-    <meta property="og:image" content="https://darwinchapuswike.com/copper-forecast-tool.jpg">
+    <meta property="og:title" content="My First Access Control Project at Netone: A Journey of Growth and Leadership - Darwin Chapuswike">
+    <meta property="og:description" content="On April 10, 2025, I stood outside the IHS Zambia HQ offices, shaking hands with Mukuka, a colleague who had been instrumental in guiding me through a transformative experience.">
+    <meta property="og:url" content="https://darwinchapuswike.com/post-9.html">
+    <meta property="og:image" content="https://darwinchapuswike.com/ihs_handover.jpg">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Darwin Chapuswike">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Building a Zambia Copper Prices Forecast Tool: Predicting Future Trends - Darwin Chapuswike">
-    <meta name="twitter:description" content="Discover how I developed a tool to forecast copper prices in USD and ZMW, along with ZMW/USD exchange rates, for Zambia's economic insights.">
-    <meta name="twitter:image" content="https://darwinchapuswike.com/copper-forecast-tool.jpg">
-    <meta name="twitter:url" content="https://darwinchapuswike.com/post-8.html">
+    <meta name="twitter:title" content="My First Access Control Project at Netone: A Journey of Growth and Leadership - Darwin Chapuswike">
+    <meta name="twitter:description" content="On April 10, 2025, I stood outside the IHS Zambia HQ offices, shaking hands with Mukuka, a colleague who had been instrumental in guiding me through a transformative experience.">
+    <meta name="twitter:image" content="https://darwinchapuswike.com/ihs_handover.jpg">
+    <meta name="twitter:url" content="https://darwinchapuswike.com/post-9.html">
     <meta name="twitter:site" content="@DarwinChapuswi5">
     <!-- Additional SEO Meta Tags -->
-    <meta name="description" content="Discover how I developed a tool to forecast copper prices in USD and ZMW, along with ZMW/USD exchange rates, for Zambia's economic insights.">
-    <link rel="canonical" href="https://darwinchapuswike.com/post-8.html">
+    <meta name="description" content="My First Access Control Project at Netone: A Journey of Growth and Leadership - Darwin Chapuswike">
+    <link rel="canonical" href="https://darwinchapuswike.com/post-9.html">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -129,30 +129,47 @@
     </nav>
 
     <div class="container">
-        <div class="blog-post" id="post-8">
-            <h2>Building a Zambia Copper Prices Forecast Tool: Predicting Future Trends</h2>
-            <p class="date">April 6, 2025</p>
-            <p>In March 2025, I embarked on an exciting project to develop a <a href="https://copper-prices-forecast-zm.streamlit.app/" target="_blank">Zambia Copper Prices Forecast Tool</a>, designed to predict future copper prices in both USD and ZMW, as well as forecast the ZMW/USD exchange rate. As an L2 Support Engineer at NetOne Zambia, I have always been passionate about leveraging technology to solve real-world problems, and this tool is a step toward providing valuable economic insights for Zambia, a country where copper is a cornerstone of the economy.</p>
-            <p>The tool, which I developed using Python and Streamlit, allows users to upload historical data for copper prices (in USD/lb) and ZMW/USD exchange rates, then forecasts prices and rates for up to 30 days beyond March 28, 2025, the last date in the dataset. It is a practical solution for stakeholders in Zambia’s mining sector, helping them anticipate market trends and make informed decisions. You can try the tool yourself at <a href="https://copper-prices-forecast-zm.streamlit.app/" target="_blank">copper-prices-forecast-zm.streamlit.app</a>.</p>
-            <p>The development process involved several key steps. First, I used Streamlit to create an interactive web app where users can upload two Excel files: <code style="color:green">copper_fallback.xlsx</code> for copper prices and <code code style="color:green">zm_fallback.xlsx</code> for exchange rates. Both files must contain a Date column (in YYYY-MM-DD format) and a Close column (for the closing price or rate). The app aligns the data by date, ensuring that copper prices and exchange rates match up, for example, the exchange rate on 28/03/2025 was 28.6817 ZMW/USD.</p>
-            <p>The forecasting logic is based on a simple yet effective trend analysis. Here is how it works:</p>
-            <ul>
-                <li><strong>Data Alignment</strong>: The app matches copper prices and exchange rates by date, creating a unified dataset. If there are no matching dates, it throws an error to ensure data integrity.</li>
-                <li><strong>Historical Trends</strong>: It calculates the average of the last three data points (a 3-day moving average) for both copper prices and exchange rates to establish a baseline.</li>
-                <li><strong>Rate Trend</strong>: The app computes the percentage change in the exchange rate between the last two days (e.g., 27/03/2025 to 28/03/2025) to determine the trend direction, whether the ZMW is appreciating or depreciating against the USD.</li>
-                <li><strong>Forecasting</strong>: For each forecast day, the app adjusts the baseline price and rate by the rate trend, scaled by the number of days into the future. For example, if the exchange rate is increasing by 1% per day, the forecasted rate for day 2 would be the baseline rate multiplied by (1 + 0.01 * 2). Copper prices in USD are adjusted similarly, and ZMW prices are calculated by multiplying the USD price by the forecasted exchange rate.</li>
-                <li><strong>Visualization</strong>: Using Plotly, the app displays historical and forecasted prices on a dual-axis chart, with USD/lb on the left axis and ZMW/lb on the right, making it easy to see trends.</li>
-            </ul>
-            <p>The tool is user-friendly, with detailed instructions on how to format and upload data, including where to source historical data (e.g., MacroTrends for copper prices, Yahoo Finance for exchange rates). It also validates the data, ensuring the last date is 28/03/2025 and that there are enough data points (at least 3) for forecasting. The result is a practical tool that provides actionable insights for Zambia’s copper industry, reflecting my commitment to using tech for economic impact.</p>
-            <center><img width="494" height="370" src="https://darwinchapuswike.com/copper-forecast-tool.jpg" alt="Screenshot of Zambia Copper Prices Forecast Tool"></center>
+        <div class="blog-post" id="post-9">
+            <h2>My First Access Control Project at Netone: A Journey of Growth and Leadership</h2>
+            <p class="date">April 10, 2025</p>
+            <p>On April 10, 2025, I stood outside the IHS Zambia HQ offices, shaking hands with Mukuka, a colleague who had been instrumental in guiding me through a transformative experience. The photo captured a moment of pride and accomplishment—the handover day of my first access control project with Netone, where I not only participated but eventually took on the role of technical lead. This project, which involved the installation of endpoint access control devices and the configuration of employee cards for IHS Zambia, was a steep learning curve filled with challenges, growth, and invaluable lessons.</p>
+            
+            <h3>Stepping into the World of Access Control</h3>
+            <p>When I first joined the Netone team, I was eager to dive into the world of access control systems. I had a foundational understanding of the technology, but this project was my first real hands on experience. IHS Zambia, a key client, needed a robust system to secure their facilities, ensuring that only authorized personnel could access specific areas. The scope of the project included installing endpoint access control devices such as card readers and biometric scanners at various entry points and configuring access cards for all employees.</p>
+            <p>I started as a team member, shadowing more experienced colleagues like Mukuka, who had a wealth of knowledge in access control systems. My initial tasks were straightforward: assisting with the physical installation of devices, running cables, and ensuring the hardware was properly mounted. However, as the project progressed, I quickly realized that access control was far more complex than I had anticipated. It was not just about installing hardware; it required a deep understanding of network integration, software configuration, and user management.</p>
+            
+            <h3>Rising to the Challenge: Becoming the Technical Lead</h3>
+            <p>Midway through the project, an unexpected turn of events thrust me into the role of technical lead. Our original lead had to step away due to personal reasons, and with a tight deadline looming, I was asked to step up. At first, I was overwhelmed. I had never led a project of this scale, and the responsibility of ensuring everything ran smoothly felt daunting. However, I saw this as an opportunity to grow, and with Mukuka’s support, I took on the challenge.</p>
+            <p>As the technical lead, my role expanded significantly. I was now responsible for overseeing the entire installation process, configuring the access control software, and ensuring that each employee’s card was correctly programmed with the appropriate access levels. I also had to coordinate with the IHS Zambia team to understand their specific security needs and ensure the system met their expectations.</p>
+            
+            <h3>Facing Challenges Head-On</h3>
+            <p>The transition to technical lead came with its fair share of challenges. One of the biggest hurdles was troubleshooting connectivity issues between the access control devices and the central server. Several devices failed to sync properly, which meant employees could not access certain areas. I spent hours poring over manuals, testing different configurations, and consulting with Mukuka to identify the root cause. Eventually, we discovered that the issue stemmed from a misconfigured IP address in the system settings a small oversight that had a significant impact.</p>
+            <p>Another challenge was managing the configuration of hundreds of employee cards. Each card needed to be programmed with specific access permissions based on the employee’s role, and any errors could result in security breaches or operational disruptions. I quickly learned the importance of double checking every detail and maintaining clear communication with the IHS Zambia team to ensure accuracy.</p>
+            <p>Time management was also a struggle. With the handover deadline approaching, I had to balance the technical aspects of the project with administrative tasks like updating project documentation and training the IHS Zambia staff on how to use the system. There were moments when I felt overwhelmed, but I leaned on my team for support and focused on tackling one task at a time.</p>
+            
+            <h3>Learning and Growing Through Adversity</h3>
+            <p>Despite the challenges, this project was a crash course in access control systems and project management. I learned how to troubleshoot complex technical issues, manage a team under pressure, and communicate effectively with clients. One of the most valuable lessons was the importance of adaptability. In a field like access control, where technology and client needs are constantly evolving, being able to think on your feet is crucial.</p>
+            <p>I also gained a deeper appreciation for collaboration. Mukuka, in particular, was a mentor throughout the project, offering guidance and encouragement when I needed it most. His expertise helped me navigate the more technical aspects of the system, and his confidence in my abilities gave me the push I needed to succeed as a technical lead.</p>
+            
+            <h3>The Handover Day: A Moment of Pride</h3>
+            <p>By the time April 10, 2025, rolled around, the access control system at IHS Zambia was fully operational. All devices were installed and functioning, the employee cards were configured, and the IHS Zambia team was trained on how to manage the system. The handover ceremony was a moment of celebration, not just for the successful completion of the project but for the personal growth I had experienced along the way.</p>
+            <p>Standing outside the IHS Zambia HQ offices, I shook Mukuka’s hand, holding the project documentation that symbolized the culmination of weeks of hard work. The clear blue sky and modern glass building in the background reflected the bright future I now saw for myself in this field. I had not only delivered a secure and efficient access control system for IHS Zambia but had also proven to myself that I was capable of leading a project of this magnitude.</p>
+            <center><img width="494" height="370" src="ihs_handover.jpg" alt="Darwin Chapuswike and Mukuka at IHS Zambia HQ on handover day"></center>
+            
+            <h3>Looking Ahead</h3>
+            <p>This project was a defining moment in my career. It taught me the importance of resilience, attention to detail, and the value of teamwork. As I move forward, I’m excited to take on more access control projects with Netone, armed with the knowledge and confidence I gained from this experience. I’m also committed to mentoring others, just as Mukuka mentored me, to help them navigate their own challenges and grow in this dynamic field.</p>
+            <p>To anyone embarking on their first access control project, my advice is simple: embrace the challenges, ask questions, and never stop learning. The road may be tough, but the rewards of both personal growth and professional success are well worth it.</p>
+            
+            <p><em>This article reflects my journey with Netone and IHS Zambia, captured on April 10, 2025, at the IHS Zambia HQ offices in Lusaka.</em></p>
+            
             <div class="share-buttons">
-                <a href="#" onclick="shareOnFacebook('post-8'); return false;" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" onclick="shareOnTwitter('post-8'); return false;" title="Share on X"><i class="fab fa-twitter"></i></a>
-                <a href="#" onclick="shareOnLinkedIn('post-8'); return false;" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" onclick="shareOnWhatsApp('post-8'); return false;" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="javascript:void(0)" onclick="shareOnFacebook('post-9')" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="javascript:void(0)" onclick="shareOnTwitter('post-9')" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="javascript:void(0)" onclick="shareOnLinkedIn('post-9')" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="javascript:void(0)" onclick="shareOnWhatsApp('post-9')" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-    </div>
+	</div>
 
     <div class="pagination">
         <a href="publications.html">← Back to Publications</a>
@@ -185,7 +202,7 @@
         });
 
         // Share functionality
-        const baseUrl = "https://darwinchapuswike.com/post-8.html";
+        const baseUrl = "https://darwinchapuswike.com/post-9.html";
         function shareOnFacebook(postId) {
             const url = baseUrl;
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
