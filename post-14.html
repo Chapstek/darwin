@@ -47,14 +47,14 @@
         nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: bold; transition: color 0.3s ease; font-size: 0.85em; }
         nav a:hover { color: #dc3545; }
         .hamburger { display: none; font-size: 1.5em; color: white; background: none; border: none; cursor: pointer; padding: 8px 15px; }
-        .blog-post { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .blog-post { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; overflow-x: hidden; }
         .blog-post.visible { opacity: 1; transform: translateY(0); }
         .blog-post h2 { color: #0A66C2; font-size: 1.4em; margin-bottom: 8px; border-left: 4px solid #dc3545; padding-left: 8px; word-wrap: break-word; }
         .blog-post h3 { color: #333; font-size: 1.2em; margin-top: 15px; margin-bottom: 8px; word-wrap: break-word; }
         .blog-post .date { color: #666; font-size: 0.85em; margin-bottom: 10px; word-wrap: break-word; }
         .blog-post p { margin-bottom: 10px; font-size: 0.95em; word-wrap: break-word; overflow-wrap: break-word; }
-        .blog-post ul { margin: 10px 0 10px 20px; padding-left: 20px; word-wrap: break-word; overflow-wrap: break-word; }
-        .blog-post li { margin-bottom: 8px; font-size: 0.95em; line-height: 1.5; word-wrap: break-word; overflow-wrap: break-word; }
+        .blog-post ul, .blog-post ol { margin: 10px 0 10px 20px; padding-left: 20px; word-wrap: break-word; overflow-wrap: break-word; width: 100%; box-sizing: border-box; }
+        .blog-post li { margin-bottom: 8px; font-size: 0.95em; line-height: 1.5; word-wrap: break-word; overflow-wrap: break-word; width: 100%; box-sizing: border-box; }
         .blog-post code {
             font-family: 'Courier New', Courier, monospace;
             background-color: #f4f4f4;
@@ -98,7 +98,7 @@
             .blog-post h3 { font-size: 1.1em; }
             .blog-post .date { font-size: 0.8em; }
             .blog-post p { font-size: 0.9em; }
-            .blog-post ul { margin: 8px 0 8px 15px; padding-left: 15px; }
+            .blog-post ul, .blog-post ol { margin: 8px 0 8px 15px; padding-left: 15px; }
             .blog-post li { font-size: 0.9em; line-height: 1.4; }
             .blog-post code { font-size: 0.85em; padding: 1px 3px; }
             .whatsapp-btn { padding: 6px 10px; font-size: 0.75em; bottom: 8px; right: 8px; }
@@ -112,7 +112,7 @@
             .blog-post h3 { font-size: 1em; }
             .blog-post .date { font-size: 0.75em; }
             .blog-post p { font-size: 0.85em; }
-            .blog-post ul { margin: 6px 0 6px 10px; padding-left: 10px; }
+            .blog-post ul, .blog-post ol { margin: 6px 0 6px 10px; padding-left: 10px; }
             .blog-post li { font-size: 0.85em; line-height: 1.3; }
             .blog-post code { font-size: 0.8em; padding: 1px 2px; }
         }
@@ -149,7 +149,7 @@
         <div class="blog-post" id="post-14">
             <h2>Living Simply: Finding Peace in a Complicated World</h2>
             <p class="date">April 16, 2025</p>
-            <p>In my journey as an L2 Support Engineer at NetOne Zambia, I have often found myself caught up in the fast paced demands of technology and work. But recently, I have been reflecting on the beauty of living simply, a principle that has brought me immense peace amidst life’s complexities. In a world that constantly demands more, more hustle, more success, more stuff, the idea of <em>living simply</em> feels almost radical. Yet, simplicity is not about deprivation or giving everything up. It is about making room for peace, presence, and what truly matters. In this post, I will share what living simply means to me, its benefits, and practical steps to embrace it in your own life.</p>
+            <p>In my journey as an L2 Support Engineer at NetOne Zambia, I have often found myself caught up in the fast-paced demands of technology and work. But recently, I have been reflecting on the beauty of living simply, a principle that has brought me immense peace amidst life’s complexities. In a world that constantly demands more, more hustle, more success, more stuff, the idea of <em>living simply</em> feels almost radical. Yet, simplicity is not about deprivation or giving everything up. It is about making room for peace, presence, and what truly matters. In this post, I will share what living simply means to me, its benefits, and practical steps to embrace it in your own life.</p>
 
             <h3>What Does It Mean to Live Simply?</h3>
             <p>Living simply means choosing quality over quantity. It is about shifting focus from the external noise to the internal calm. It does not mean you have to live off the grid, throw out all your possessions, or quit your job. It just means being intentional. Simplicity is less about <em>having less</em> and more about <em>making space</em>. It could be as small as clearing clutter from your desk or as big as rethinking how you spend your time and money.</p>
@@ -175,11 +175,11 @@
             </ol>
 
             <h3>Reflection: A Moment of Simplicity</h3>
-            <p>The photo below captures a moment from 2018, taken during a quiet evening in Lusaka. I was dressed in a simple suit, reflecting on my journey and the values that ground me. The black and white filter adds a timeless quality, reminding me of the enduring importance of simplicity. In that moment, I was not chasing the next big thing, I was simply present, finding peace in the stillness. This image serves as a personal reminder of what living simply looks like for me: stepping back, breathing deeply, and focusing on what truly matters.</p>
+            <p>The photo below captures a moment from 2018, taken during a quiet evening in Lusaka. I was dressed in a simple suit, reflecting on my journey and the values that ground me. The black and white filter adds a timeless quality, reminding me of the enduring importance of simplicity. In that moment, I was not chasing the next big thin, I was simply present, finding peace in the stillness. This image serves as a personal reminder of what living simply looks like for me: stepping back, breathing deeply, and focusing on what truly matters.</p>
             <center><img width="494" height="370" src="https://darwinchapuswike.com/simply.jpg" alt="Darwin Chapuswike in a suit during a reflective moment in Lusaka, 2018"></center>
 
             <h3>Final Thoughts</h3>
-            <p>Living simply is not a trend, it is a return. A return to self, to clarity, to purpose. It is not about what you give up, but what you gain: peace, contentment, and a life that feels truly yours. In the end, simplicity is not something you chase. It is something you <em>remember</em>something that is always been there, waiting for you to come home. As I continue to balance my technical career at NetOne with my personal growth, I am committed to embracing simplicity and sharing these reflections with the tech community in Zambia and beyond.</p>
+            <p>Living simply is not a trend, it is a return. A return to self, to clarity, to purpose. It is not about what you give up, but what you gain: peace, contentment, and a life that feels truly yours. In the end, simplicity is not something you chase. It is something you <em>remember</em>—something that is always been there, waiting for you to come home. As I continue to balance my technical career at NetOne with my personal growth, I am committed to embracing simplicity and sharing these reflections with the tech community in Zambia and beyond.</p>
 
             <div class="share-buttons">
                 <a href="#" onclick="shareOnFacebook('post-14'); return false;" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
