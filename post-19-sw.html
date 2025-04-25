@@ -391,9 +391,18 @@
         event.preventDefault();
         const lang = localStorage.getItem('preferredLang') || 'sw';
         const url = baseUrl;
-        const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
-        const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-        window.location.href = shareUrl;
+        // Temporarily hardcode text to test if encoding is the issue
+        const text = "Angalia chapisho hili"; // Simplified text for testing
+        // const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText; // Original dynamic text
+        const encodedText = encodeURIComponent(text);
+        const encodedUrl = encodeURIComponent(url);
+        const shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
+        console.log("Twitter Share URL:", shareUrl); // Debug log
+        try {
+            window.location.href = shareUrl;
+        } catch (error) {
+            console.error("Error sharing on Twitter:", error);
+        }
     }
 
     function shareOnLinkedIn(postId, event) {
@@ -407,9 +416,22 @@
         event.preventDefault();
         const lang = localStorage.getItem('preferredLang') || 'sw';
         const url = baseUrl;
-        const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
-        const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`;
-        window.location.href = shareUrl;
+        // Temporarily hardcode text to test if encoding is the issue
+        const text = "Angalia chapisho hili"; // Simplified text for testing
+        // const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText; // Original dynamic text
+        const encodedMessage = encodeURIComponent(`${text} ${url}`);
+        const shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+        console.log("WhatsApp Share URL:", shareUrl); // Debug log
+        try {
+            window.location.href = shareUrl;
+            // Fallback to whatsapp:// protocol for mobile devices
+            setTimeout(() => {
+                const fallbackUrl = `whatsapp://send?text=${encodedMessage}`;
+                window.location.href = fallbackUrl;
+            }, 1000); // Attempt fallback after 1 second if the first URL doesn't work
+        } catch (error) {
+            console.error("Error sharing on WhatsApp:", error);
+        }
     }
 
     function eatCookie(lang) {

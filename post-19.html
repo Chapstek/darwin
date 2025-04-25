@@ -21,7 +21,7 @@
     <meta property="og:url" content="https://darwinchapuswike.com/post-19.html">
     <meta property="og:image" content="https://darwinchapuswike.com/work-hard-stay-humble.jpg">
     <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Darwin  Chapuswike">
+    <meta property="og:site_name" content="Darwin Chapuswike">
     <!-- Twitter Card Meta Tags (English) -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Work Hard, Stay Humble: A Throwback to NIPA Days - Darwin Chapuswike">
@@ -115,9 +115,6 @@
         }
         .language-switcher select:hover { border-color: #0A66C2; }
         .language-switcher select:focus { outline: none; border-color: #0A66C2; }
-        /* Language Content Styles */
-        [data-lang] { display: none; }
-        [data-lang].active { display: block; }
         /* Styles for the Eat Cookie Activity */
         .cookie-activity { text-align: center; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
         .cookie-activity .emoji { font-size: 2.5em; margin-bottom: 10px; transition: transform 0.3s ease; }
@@ -192,12 +189,8 @@
     <header>
         <div class="container">
             <img src="profile_photo.jpg" alt="Darwin Chapuswike in a suit">
-            <h1 data-lang="en">Darwin Chapuswike</h1>
-            <h1 data-lang="fr">Darwin Chapuswike</h1>
-            <h1 data-lang="sw">Darwin Chapuswike</h1>
-            <p data-lang="en">L2 Support Engineer | Lusaka Province, Zambia</p>
-            <p data-lang="fr">Ingénieur de support L2 | Province de Lusaka, Zambie</p>
-            <p data-lang="sw">Mhandisi wa Usaidizi wa Ngazi ya 2 | Mkoa wa Lusaka, Zambia</p>
+            <h1>Darwin Chapuswike</h1>
+            <p>L2 Support Engineer | Lusaka Province, Zambia</p>
             <div class="language-switcher">
                 <select id="language-select" onchange="changeLanguage()">
                     <option value="en">English</option>
@@ -211,164 +204,70 @@
     <nav>
         <button class="hamburger" aria-label="Toggle navigation">☰</button>
         <div class="nav-links">
-            <a href="index.html" data-lang="en">Home</a>
-            <a href="index.html?lang=fr" data-lang="fr">Accueil</a>
-            <a href="index.html?lang=sw" data-lang="sw">Nyumbani</a>
-            <a href="contact.html" data-lang="en">Contact</a>
-            <a href="contact.html?lang=fr" data-lang="fr">Contact</a>
-            <a href="contact.html?lang=sw" data-lang="sw">Mawasiliano</a>
-            <a href="summary.html" data-lang="en">Summary</a>
-            <a href="summary.html?lang=fr" data-lang="fr">Résumé</a>
-            <a href="summary.html?lang=sw" data-lang="sw">Muhtasari</a>
-            <a href="experience.html" data-lang="en">Experience</a>
-            <a href="experience.html?lang=fr" data-lang="fr">Expérience</a>
-            <a href="experience.html?lang=sw" data-lang="sw">Uzoefu</a>
-            <a href="gallery.html" data-lang="en">Gallery</a>
-            <a href="gallery.html?lang=fr" data-lang="fr">Galerie</a>
-            <a href="gallery.html?lang=sw" data-lang="sw">Matunzio</a>
-            <a href="education.html" data-lang="en">Education</a>
-            <a href="education.html?lang=fr" data-lang="fr">Éducation</a>
-            <a href="education.html?lang=sw" data-lang="sw">Elimu</a>
-            <a href="skills.html" data-lang="en">Skills</a>
-            <a href="skills.html?lang=fr" data-lang="fr">Compétences</a>
-            <a href="skills.html?lang=sw" data-lang="sw">Ujuzi</a>
-            <a href="certifications.html" data-lang="en">Certifications</a>
-            <a href="certifications.html?lang=fr" data-lang="fr">Certifications</a>
-            <a href="certifications.html?lang=sw" data-lang="sw">Vyeti</a>
-            <a href="publications.html" data-lang="en">Publications</a>
-            <a href="publications.html?lang=fr" data-lang="fr">Publications</a>
-            <a href="publications.html?lang=sw" data-lang="sw">Machapisho</a>
-            <a href="achievements.html" data-lang="en">Achievements</a>
-            <a href="achievements.html?lang=fr" data-lang="fr">Réalisations</a>
-            <a href="achievements.html?lang=sw" data-lang="sw">Mafanikio</a>
-            <a href="testimonials.html" data-lang="en">Testimonials</a>
-            <a href="testimonials.html?lang=fr" data-lang="fr">Témoignages</a>
-            <a href="testimonials.html?lang=sw" data-lang="sw">Ushuhuda</a>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="summary.html">Summary</a>
+            <a href="experience.html">Experience</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html">Skills</a>
+            <a href="certifications.html">Certifications</a>
+            <a href="publications.html">Publications</a>
+            <a href="achievements.html">Achievements</a>
+            <a href="testimonials.html">Testimonials</a>
         </div>
     </nav>
 
     <div class="container">
         <div class="blog-post" id="post-19">
-            <!-- English Content -->
-            <div data-lang="en" class="active">
-                <h2>Work Hard, Stay Humble: A Throwback to NIPA Days</h2>
-                <p class="date">April 21, 2025</p>
-                <p>Looking back at my journey as an L2 Support Engineer at NetOne Zambia, I often find myself reflecting on the moments that shaped my passion for technology. One such memory takes me back to 2021, during my time at the National Institute of Public Administration (NIPA) in Lusaka, Zambia. It was in NIPA’s computer lab, surrounded by the hum of machines and the focus of my peers, that I began to truly understand the value of hard work and humility in the pursuit of becoming a skilled developer. In this post, I share a raw moment from a technical lab session that became a stepping stone in my coding journey.</p>
+            <h2>Work Hard, Stay Humble: A Throwback to NIPA Days</h2>
+            <p class="date">April 21, 2025</p>
+            <p>Looking back at my journey as an L2 Support Engineer at NetOne Zambia, I often find myself reflecting on the moments that shaped my passion for technology. One such memory takes me back to 2021, during my time at the National Institute of Public Administration (NIPA) in Lusaka, Zambia. It was in NIPA’s computer lab, surrounded by the hum of machines and the focus of my peers, that I began to truly understand the value of hard work and humility in the pursuit of becoming a skilled developer. In this post, I share a raw moment from a technical lab session that became a stepping stone in my coding journey.</p>
 
-                <h3>A Day in the Computer Lab</h3>
-                <p>In 2021, while pursuing my Bachelor’s Degree in Computer Science at NIPA, I spent countless hours in the computer lab, honing my skills in programming. The photo below captures one of those days a special technical lab session where we were fully immersed in hands-on Android development using Android Studio. I am seen here with my headphones on, likely debugging code or listening to a tutorial, as my classmates worked around me. The lab was a hub of learning, filled with laptops, cables, and the shared energy of aspiring developers.</p>
-                <center><img width="494" height="370" src="https://darwinchapuswike.com/work-hard-stay-humble.jpg" alt="Darwin Chapuswike in the computer lab at NIPA, Lusaka, Zambia, 2021"></center>
+            <h3>A Day in the Computer Lab</h3>
+            <p>In 2021, while pursuing my Bachelor’s Degree in Computer Science at NIPA, I spent countless hours in the computer lab, honing my skills in programming. The photo below captures one of those days a special technical lab session where we were fully immersed in hands-on Android development using Android Studio. I am seen here with my headphones on, likely debugging code or listening to a tutorial, as my classmates worked around me. The lab was a hub of learning, filled with laptops, cables, and the shared energy of aspiring developers.</p>
+            <center><img width="494" height="370" src="https://darwinchapuswike.com/work-hard-stay-humble.jpg" alt="Darwin Chapuswike in the computer lab at NIPA, Lusaka, Zambia, 2021"></center>
 
-                <h3>The "Eat Cookie" Challenge</h3>
-                <p>That day, our lecturer assigned us an interactive task called the "Eat Cookie" activity. The objective was simple yet insightful: create a button that, when clicked, changes a cookie emoji from sad to smiling and displays a toast message saying <code>Cookie eaten</code> on the screen. It was a small exercise, but it taught us the fundamentals of event handling, UI interaction, and Android development. I remember the satisfaction of getting the button to work, seeing the emoji change, and the toast message pop up small victories that fueled my passion for coding.</p>
+            <h3>The "Eat Cookie" Challenge</h3>
+            <p>That day, our lecturer assigned us an interactive task called the "Eat Cookie" activity. The objective was simple yet insightful: create a button that, when clicked, changes a cookie emoji from sad to smiling and displays a toast message saying <code>Cookie eaten</code> on the screen. It was a small exercise, but it taught us the fundamentals of event handling, UI interaction, and Android development. I remember the satisfaction of getting the button to work, seeing the emoji change, and the toast message pop up small victories that fueled my passion for coding.</p>
 
-                <h3>Lessons Beyond the Code</h3>
-                <p>Those lab sessions at NIPA were more than just coding exercises; they were building blocks for my growth as a developer and problem solver. Every line of code written, every bug fixed, and every success message displayed was a step forward. But beyond the technical skills, these moments taught me the importance of perseverance and humility. The challenges of debugging, the late nights studying, and the collaborative spirit of the lab shaped my perspective reminding me to work hard on my craft, stay consistent, and remain humble, no matter how far I progress in my career.</p>
+            <h3>Lessons Beyond the Code</h3>
+            <p>Those lab sessions at NIPA were more than just coding exercises; they were building blocks for my growth as a developer and problem solver. Every line of code written, every bug fixed, and every success message displayed was a step forward. But beyond the technical skills, these moments taught me the importance of perseverance and humility. The challenges of debugging, the late nights studying, and the collaborative spirit of the lab shaped my perspective reminding me to work hard on my craft, stay consistent, and remain humble, no matter how far I progress in my career.</p>
 
-                <h3>Carrying the Mindset Forward</h3>
-                <p>Now, as an L2 Support Engineer at NetOne, I carry the lessons from NIPA with me. The same dedication I applied to the "Eat Cookie" activity is what I bring to solving complex IT challenges today. Whether I am troubleshooting network issues or configuring systems, I am reminded of the computer lab at NIPA where I learned that growth comes from embracing the process, celebrating small wins, and staying grounded. This throwback is a testament to how foundational experiences shape our journeys, both as professionals and as individuals.</p>
+            <h3>Carrying the Mindset Forward</h3>
+            <p>Now, as an L2 Support Engineer at NetOne, I carry the lessons from NIPA with me. The same dedication I applied to the "Eat Cookie" activity is what I bring to solving complex IT challenges today. Whether I am troubleshooting network issues or configuring systems, I am reminded of the computer lab at NIPA where I learned that growth comes from embracing the process, celebrating small wins, and staying grounded. This throwback is a testament to how foundational experiences shape our journeys, both as professionals and as individuals.</p>
 
-                <h3>Try It Yourself: Eat Cookie Activity</h3>
-                <p>Want to experience a taste of what we worked on at NIPA? I have recreated a simplified version of the "Eat Cookie" activity using JavaScript for you to try right here. Click the button below to change the cookie emoji from sad to smiling and see the message just like we did in Android Studio back in 2021. It is a fun way to get a feel for basic event handling and UI interaction in web development!</p>
-                <div class="cookie-activity">
-                    <div class="emoji" id="cookieEmoji-en">🍪😢</div>
-                    <button onclick="eatCookie('en')">Eat Cookie</button>
-                    <div class="message" id="cookieMessage-en">Cookie eaten</div>
-                </div>
-
-                <h3>Final Thoughts</h3>
-                <p>This memory from 2021 is a simple reminder to work hard, stay humble, and never stop learning. My time at NIPA, earning my Bachelor’s Degree in Computer Science, laid the groundwork for my career in tech. From the computer lab in Lusaka to my current role at NetOne, the journey has been one of growth, challenges, and gratitude. I hope this story and the little activity above inspires others to embrace their own coding journeys, to tackle every task with dedication, and to remain humble through every milestone. #WorkHardStayHumble #AndroidStudio #NIPA #ZambiaTech #StudentLife #CodingJourney #Throwback</p>
+            <h3>Try It Yourself: Eat Cookie Activity</h3>
+            <p>Want to experience a taste of what we worked on at NIPA? I have recreated a simplified version of the "Eat Cookie" activity using JavaScript for you to try right here. Click the button below to change the cookie emoji from sad to smiling and see the message just like we did in Android Studio back in 2021. It is a fun way to get a feel for basic event handling and UI interaction in web development!</p>
+            <div class="cookie-activity">
+                <div class="emoji" id="cookieEmoji">🍪😢</div>
+                <button onclick="eatCookie()">Eat Cookie</button>
+                <div class="message" id="cookieMessage">Cookie eaten</div>
             </div>
 
-            <!-- French Content -->
-            <div data-lang="fr">
-                <h2>Travaillez Dur, Restez Humble : Retour sur les Jours à NIPA</h2>
-                <p class="date">21 avril 2025</p>
-                <p>En repensant à mon parcours en tant qu'ingénieur de support L2 chez NetOne Zambia, je me surprends souvent à réfléchir aux moments qui ont façonné ma passion pour la technologie. L'un de ces souvenirs me ramène à 2021, lors de mon passage à l'Institut National d'Administration Publique (NIPA) à Lusaka, Zambie. C’est dans le laboratoire informatique de NIPA, entouré du bourdonnement des machines et de la concentration de mes pairs, que j’ai véritablement compris la valeur du travail acharné et de l’humilité dans ma quête pour devenir un développeur compétent. Dans cet article, je partage un moment brut d’une session de laboratoire technique qui a marqué un tournant dans mon parcours de codage.</p>
-
-                <h3>Un Jour dans le Laboratoire Informatique</h3>
-                <p>En 2021, alors que je poursuivais mon diplôme de licence en informatique à NIPA, j’ai passé d’innombrables heures dans le laboratoire informatique, affinant mes compétences en programmation. La photo ci-dessous capture l’un de ces jours une session de laboratoire technique spéciale où nous étions pleinement immergés dans le développement pratique d’applications Android avec Android Studio. On me voit ici avec mes écouteurs, probablement en train de déboguer du code ou d’écouter un tutoriel, pendant que mes camarades travaillaient autour de moi. Le laboratoire était un centre d’apprentissage, rempli d’ordinateurs portables, de câbles et de l’énergie partagée des développeurs en herbe.</p>
-                <center><img width="494" height="370" src="https://darwinchapuswike.com/work-hard-stay-humble.jpg" alt="Darwin Chapuswike dans le laboratoire informatique à NIPA, Lusaka, Zambie, 2021"></center>
-
-                <h3>Le Défi "Manger le Biscuit"</h3>
-                <p>Ce jour là, notre professeur nous a assigné une tâche interactive appelée l'activité "Manger le Biscuit". L’objectif était simple mais révélateur : créer un bouton qui, lorsqu’on clique dessus, change un emoji de biscuit de triste à souriant et affiche un message toast disant <code>Biscuit mangé</code> à l’écran. C’était un petit exercice, mais il nous a appris les bases de la gestion des événements, de l’interaction avec l’interface utilisateur et du développement Android. Je me souviens de la satisfaction d’avoir fait fonctionner le bouton, de voir l’emoji changer et le message toast apparaître de petites victoires qui ont alimenté ma passion pour le codage.</p>
-
-                <h3>Leçons au-delà du Code</h3>
-                <p>Ces sessions de laboratoire à NIPA étaient bien plus que de simples exercices de codage ; elles ont constitué les fondations de ma croissance en tant que développeur et résolveur de problèmes. Chaque ligne de code écrite, chaque bogue corrigé et chaque message de succès affiché était un pas en avant. Mais au-delà des compétences techniques, ces moments m’ont appris l’importance de la persévérance et de l’humilité. Les défis du débogage, les nuits tardives à étudier et l’esprit collaboratif du laboratoire ont façonné ma perspective me rappelant de travailler dur sur mon métier, de rester constant et de rester humble, peu importe jusqu’où j’avance dans ma carrière.</p>
-
-                <h3>Appliquer cette Mentalité à l’Avenir</h3>
-                <p>Maintenant, en tant qu’ingénieur de support L2 chez NetOne, je porte les leçons de NIPA avec moi. La même dévotion que j’ai appliquée à l’activité "Manger le Biscuit" est ce que j’apporte aujourd’hui pour résoudre des défis informatiques complexes. Que je sois en train de dépanner des problèmes de réseau ou de configurer des systèmes, je me souviens du laboratoire informatique de NIPA où j’ai appris que la croissance vient de l’acceptation du processus, de la célébration des petites victoires et de rester ancré. Ce retour en arrière témoigne de la manière dont les expériences fondamentales façonnent nos parcours, à la fois en tant que professionnels et en tant qu’individus.</p>
-
-                <h3>Essayez Vous-Même : Activité "Manger le Biscuit"</h3>
-                <p>Envie de découvrir un aperçu de ce sur quoi nous avons travaillé à NIPA ? J’ai recréé une version simplifiée de l’activité "Manger le Biscuit" en utilisant JavaScript pour que vous puissiez l’essayer ici même. Cliquez sur le bouton ci-dessous pour changer l’emoji de biscuit de triste à souriant et voir le message exactement comme nous l’avons fait dans Android Studio en 2021. C’est une manière amusante de découvrir les bases de la gestion des événements et de l’interaction avec l’interface utilisateur en développement web !</p>
-                <div class="cookie-activity">
-                    <div class="emoji" id="cookieEmoji-fr">🍪😢</div>
-                    <button onclick="eatCookie('fr')">Manger le Biscuit</button>
-                    <div class="message" id="cookieMessage-fr">Biscuit mangé</div>
-                </div>
-
-                <h3>Réflexions Finales</h3>
-                <p>Ce souvenir de 2021 est un simple rappel de travailler dur, de rester humble et de ne jamais cesser d’apprendre. Mon temps à NIPA, où j’ai obtenu mon diplôme de licence en informatique, a jeté les bases de ma carrière dans la technologie. Du laboratoire informatique à Lusaka à mon rôle actuel chez NetOne, le voyage a été marqué par la croissance, les défis et la gratitude. J’espère que cette histoire et la petite activité ci-dessus inspire d’autres à embrasser leur propre parcours de codage, à aborder chaque tâche avec dévouement et à rester humble à chaque étape importante. #TravaillezDurRestezHumble #AndroidStudio #NIPA #ZambiaTech #VieÉtudiante #ParcoursDeCodage #RetourEnArrière</p>
-            </div>
-
-            <!-- Swahili Content -->
-            <div data-lang="sw">
-                <h2>Fanya Kazi kwa Bidii, Baki Mnyenyekevu: Kurudi Nyuma kwenye Siku za NIPA</h2>
-                <p class="date">Aprili 21, 2025</p>
-                <p>Ninapotazama nyuma safari yangu kama Mhandisi wa Usaidizi wa Ngazi ya 2 katika NetOne Zambia, mara nyingi najikuta nikifikiria juu ya nyakati zilizochagiza shauku yangu ya teknolojia. Kumbukumbu moja kama hiyo inanipeleka nyuma mwaka wa 2021, wakati nilipokuwa katika Taasisi ya Kitaifa ya Utawala wa Umma (NIPA) huko Lusaka, Zambia. Ilikuwa katika maabara ya kompyuta ya NIPA, nikiwa nimezungukwa na kelele za mashine na umakini wa wenzangu, ndipo nilipoanza kuelewa kwa kweli thamani ya kufanya kazi kwa bidii na unyenyekevu katika harakati za kuwa mwandishi wa programu mwenye ujuzi. Katika chapisho hili, ninashiriki wakati wa kweli kutoka kwa kikao cha maabara ya kiufundi ambacho kilikuwa hatua ya msingi katika safari yangu ya kuandika programu.</p>
-
-                <h3>Siku Moja katika Maabara ya Kompyuta</h3>
-                <p>Mnamo 2021, nilipokuwa nikisomea Shahada yangu ya Sayansi ya Kompyuta katika NIPA, nilitumia saa nyingi zisizoweza kuhesabika katika maabara ya kompyuta, nikiboresha ujuzi wangu wa kuandika programu. Picha hapa chini inaonyesha moja ya siku hizo kikao cha maabara ya kiufundi cha pekee ambapo tulikuwa tumejikita kikamilifu katika maendeleo ya vitendo ya Android kwa kutumia Android Studio. Ninaonekana hapa nikiwa nimevaa vipokea sauti, labda nikisahihisha msimbo au nikisikiliza mafunzo, huku wenzangu wakifanya kazi karibu yangu. Maabara ilikuwa kitivu cha kujifunza, kilichojazwa na kompyuta za mkononi, kebo, na nguvu ya pamoja ya wale waliotaka kuwa waprogramu.</p>
-                <center><img width="494" height="370" src="https://darwinchapuswike.com/work-hard-stay-humble.jpg" alt="Darwin Chapuswike katika maabara ya kompyuta huko NIPA, Lusaka, Zambia, 2021"></center>
-
-                <h3>Changamoto ya "Kula Kuki"</h3>
-                <p>Siku hiyo, mwalimu wetu alitupa kazi ya moja kwa moja iitwayo shughuli ya "Kula Kuki". Lengo lilikuwa rahisi lakini la kufundisha: tengeneza kitufe ambacho, kinapobonyezwa, kinabadilisha emoji ya kuki kutoka kwa huzuni hadi tabasamu na kuonyesha ujumbe wa toast unaosema <code>Kuki imeliwa</code> kwenye skrini. Ilikuwa zoezi dogo, lakini lilitufundisha misingi ya usimamizi wa matukio, mwingiliano wa kiolesura cha mtumiaji, na maendeleo ya Android. Nakumbuka kuridhika kwa kufanya kitufe kifanye kazi, kuona emoji ikibadilika, na ujumbe wa toast ukionekana—ushindi mdogo ambao ulichochea shauku yangu ya kuandika programu.</p>
-
-                <h3>Mafunzo Yanayopita Msimbo</h3>
-                <p>Vikao hivyo vya maabara huko NIPA vilikuwa zaidi ya mazoezi ya kuandika programu tu; vilikuwa nguzo za ukuaji wangu kama mwandishi wa programu na mtu wa kutatua shida. Kila mstari wa msimbo ulioandikwa, kila hitilafu iliyorekebishwa, na kila ujumbe wa mafanikio ulioonyeshwa ulikuwa hatua ya mbele. Lakini zaidi ya ujuzi wa kiufundi, nyakati hizi zilinifundisha umuhimu wa uvumilivu na unyenyekevu. Changamoto za kusahihisha hitilafu, usiku wa manane wa kusoma, na roho ya ushirikiano ya maabara iliumba mtazamo wangu ikinikumbusha kufanya kazi kwa bidii kwenye ufundi wangu, kubaki thabiti, na kubaki mnyenyekevu, bila kujali jinsi ninavyopiga hatua katika kazi yangu.</p>
-
-                <h3>Kubeba Mtazamo wa Kuendelea Mbele</h3>
-                <p>Sasa, kama Mhandisi wa Usaidizi wa Ngazi ya 2 katika NetOne, ninabeba mafunzo kutoka NIPA nami. Bidii ileile niliyotumia kwenye shughuli ya "Kula Kuki" ndiyo ninayoleta katika kutatua changamoto za IT ngumu leo. Iwe ninatatua matatizo ya mtandao au ninapanga mifumo, nakumbushwa juu ya maabara ya kompyuta huko NIPA ambapo nilijifunza kuwa ukuaji unatokana na kukubali mchakato, kusherehekea ushindi mdogo, na kubaki thabiti. Kurudi nyuma huku kunathibitisha jinsi uzoefu wa msingi unavyochagiza safari zetu, wote kama wataalamu na kama watu binafsi.</p>
-
-                <h3>Jipime Mwenyewe: Shughuli ya "Kula Kuki"</h3>
-                <p>Unataka kupata ladha ya kile tulichofanya huko NIPA? Nimeunda tena toleo rahisi la shughuli ya "Kula Kuki" kwa kutumia JavaScript ili ujaribu hapa. Bonyeza kitufe hapo chini ili kubadilisha emoji ya kuki kutoka kwa huzuni hadi tabasamu na kuona ujumbe kama vile tulivyofanya katika Android Studio mwaka wa 2021. Ni njia ya kufurahisha ya kuhisi usimamizi wa matukio ya msingi na mwingiliano wa kiolesura cha mtumiaji katika maendeleo ya wavuti!</p>
-                <div class="cookie-activity">
-                    <div class="emoji" id="cookieEmoji-sw">🍪😢</div>
-                    <button onclick="eatCookie('sw')">Kula Kuki</button>
-                    <div class="message" id="cookieMessage-sw">Kuki imeliwa</div>
-                </div>
-
-                <h3>Mawazo ya Mwisho</h3>
-                <p>Kumbukumbu hii ya 2021 ni ukumbusho rahisi wa kufanya kazi kwa bidii, kubaki mnyenyekevu, na kutoacha kujifunza. Muda wangu huko NIPA, nilipopata Shahada yangu ya Sayansi ya Kompyuta, uliweka msingi wa kazi yangu katika teknolojia. Kutoka maabara ya kompyuta huko Lusaka hadi jukumu langu la sasa katika NetOne, safari imekuwa moja ya ukuaji, changamoto, na shukrani. Natumai hadithi hii na shughuli ndogo hapo juu—inawahimiza wengine kukubali safari zao za kuandika programu, kushughulikia kila kazi kwa kujitolea, na kubaki wanyenyekevu katika kila hatua muhimu. #FanyaKaziKwaBidiiBakiMnyenyekevu #AndroidStudio #NIPA #ZambiaTech #MaishaYaMwanafunzi #SafariYaKuandikaProgramu #KurudiNyuma</p>
-            </div>
+            <h3>Final Thoughts</h3>
+            <p>This memory from 2021 is a simple reminder to work hard, stay humble, and never stop learning. My time at NIPA, earning my Bachelor’s Degree in Computer Science, laid the groundwork for my career in tech. From the computer lab in Lusaka to my current role at NetOne, the journey has been one of growth, challenges, and gratitude. I hope this story and the little activity above inspires others to embrace their own coding journeys, to tackle every task with dedication, and to remain humble through every milestone. #WorkHardStayHumble #AndroidStudio #NIPA #ZambiaTech #StudentLife #CodingJourney #Throwback</p>
 
             <div class="share-buttons">
-    <a href="#" onclick="shareOnFacebook('post-19', event);" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
-    <a href="#" onclick="shareOnTwitter('post-19', event);" title="Share on X"><i class="fab fa-twitter"></i></a>
-    <a href="#" onclick="shareOnLinkedIn('post-19', event);" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    <a href="#" onclick="shareOnWhatsApp('post-19', event);" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-</div>
+                <a href="#" onclick="shareOnFacebook('post-19'); return false;" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="shareOnTwitter('post-19', event);" title="Share on X"><i class="fab fa-twitter"></i></a>
+                <a href="#" onclick="shareOnLinkedIn('post-19', event);" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" onclick="shareOnWhatsApp('post-19', event);" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
             <div class="pagination">
-                <a href="publications.html" data-lang="en">← Back to Publications</a>
-                <a href="publications.html?lang=fr" data-lang="fr">← Retour aux Publications</a>
-                <a href="publications.html?lang=sw" data-lang="sw">← Rudi kwenye Machapisho</a>
+                <a href="publications.html">← Back to Publications</a>
             </div>
         </div>
     </div>
 
-    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
-    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
-    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
     <div class="scroll-down" title="Scroll down to read more"><i class="fas fa-chevron-down"></i></div>
 
     <footer>
-        <p data-lang="en">© 2025 Darwin Chapuswike. All rights reserved.</p>
-        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits réservés.</p>
-        <p data-lang="sw">© 2025 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
+        <p>© 2025 Darwin Chapuswike. All rights reserved.</p>
     </footer>
 
     <script>
-    // Language Switcher Functionality
     function changeLanguage() {
         const selectedLang = document.getElementById('language-select').value;
         localStorage.setItem('preferredLang', selectedLang);
@@ -382,32 +281,11 @@
         }
     }
 
-    function updateLanguage(lang) {
-        if (!lang) {
-            console.error('Language not specified');
-            return;
-        }
-
-        document.querySelectorAll('[data-lang]').forEach(element => {
-            element.classList.remove('active');
-            if (element.getAttribute('data-lang') === lang) {
-                element.classList.add('active');
-            }
-        });
-
-        const languageSelect = document.getElementById('language-select');
-        if (languageSelect) {
-            languageSelect.value = lang;
-        }
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
         const savedLang = localStorage.getItem('preferredLang') || 'en';
-        updateLanguage(savedLang);
-
         const languageSelect = document.getElementById('language-select');
         if (languageSelect) {
-            languageSelect.value = 'en';
+            languageSelect.value = savedLang;
         }
 
         const posts = document.querySelectorAll('.blog-post');
@@ -450,43 +328,60 @@
         }
     });
 
-    // Updated Share Functionality
     const baseUrl = "https://darwinchapuswike.com/post-19.html";
-    function shareOnFacebook(postId, event) {
-        event.preventDefault();
-        const url = baseUrl;
-        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-        window.location.href = shareUrl; // Direct redirect
-    }
+        function shareOnFacebook(postId) {
+            const url = baseUrl;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+        }
 
     function shareOnTwitter(postId, event) {
         event.preventDefault();
-        const lang = localStorage.getItem('preferredLang') || 'en';
         const url = baseUrl;
-        const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
-        const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
-        window.location.href = shareUrl; // Direct redirect
+        let text = document.querySelector(`h2`).innerText;
+        const urlLength = encodeURIComponent(url).length + 1;
+        const maxTextLength = 280 - urlLength - 23;
+        if (text.length > maxTextLength) {
+            text = text.substring(0, maxTextLength - 3) + '...';
+        }
+        const encodedText = encodeURIComponent(text);
+        const encodedUrl = encodeURIComponent(url);
+        const shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
+        console.log("Twitter Share URL:", shareUrl);
+        try {
+            window.location.href = shareUrl;
+        } catch (error) {
+            console.error("Error sharing on Twitter:", error);
+        }
     }
 
     function shareOnLinkedIn(postId, event) {
         event.preventDefault();
         const url = baseUrl;
         const shareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
-        window.location.href = shareUrl; // Direct redirect
+        window.location.href = shareUrl;
     }
 
     function shareOnWhatsApp(postId, event) {
         event.preventDefault();
-        const lang = localStorage.getItem('preferredLang') || 'en';
         const url = baseUrl;
-        const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
-        const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`;
-        window.location.href = shareUrl; // Direct redirect
+        const text = document.querySelector(`h2`).innerText;
+        const encodedMessage = encodeURIComponent(`${text} ${url}`);
+        const shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+        console.log("WhatsApp Share URL:", shareUrl);
+        try {
+            window.location.href = shareUrl;
+            setTimeout(() => {
+                const fallbackUrl = `whatsapp://send?text=${encodedMessage}`;
+                window.location.href = fallbackUrl;
+            }, 1000);
+        } catch (error) {
+            console.error("Error sharing on WhatsApp:", error);
+        }
     }
 
-    function eatCookie(lang) {
-        const emoji = document.getElementById(`cookieEmoji-${lang}`);
-        const message = document.getElementById(`cookieMessage-${lang}`);
+    function eatCookie() {
+        const emoji = document.getElementById('cookieEmoji');
+        const message = document.getElementById('cookieMessage');
         if (emoji && message) {
             emoji.innerHTML = '🍪😊';
             emoji.style.transform = 'scale(1.2)';
@@ -498,6 +393,7 @@
             }, 2000);
         }
     }
-</script>
+    </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'936117ddbc73454e',t:'MTc0NTYxODIxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
