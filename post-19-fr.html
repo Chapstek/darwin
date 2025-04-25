@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W7RTBTJLRV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="brown.png" type="image/png">
+    <title>Travaillez Dur, Restez Humble : Retour sur les Jours à NIPA - Darwin Chapuswike</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Open Graph Meta Tags (French) -->
+    <meta property="og:title" content="Travaillez Dur, Restez Humble : Retour sur les Jours à NIPA - Darwin Chapuswike">
+    <meta property="og:description" content="Un retour sur mes jours à NIPA en 2021, cet article capture un moment d’apprentissage du développement Android, soulignant l’importance du travail acharné et de l’humilité dans le parcours pour devenir un développeur compétent.">
+    <meta property="og:url" content="https://darwinchapuswike.com/post-19-fr.html">
+    <meta property="og:image" content="https://darwinchapuswike.com/work-hard-stay-humble.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Darwin Chapuswike">
+    <!-- Twitter Card Meta Tags (French) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Travaillez Dur, Restez Humble : Retour sur les Jours à NIPA - Darwin Chapuswike">
+    <meta name="twitter:description" content="Un retour sur mes jours à NIPA en 2021, cet article capture un moment d’apprentissage du développement Android, soulignant l’importance du travail acharné et de l’humilité dans le parcours pour devenir un développeur compétent.">
+    <meta name="twitter:image" content="https://darwinchapuswike.com/work-hard-stay-humble.jpg">
+    <meta name="twitter:url" content="https://darwinchapuswike.com/post-19-fr.html">
+    <meta name="twitter:site" content="@DarwinChapuswi5">
+    <!-- Additional SEO Meta Tags -->
+    <meta name="description" content="Un retour sur mes jours à NIPA en 2021, cet article capture un moment d’apprentissage du développement Android, soulignant l’importance du travail acharné et de l’humilité dans le parcours pour devenir un développeur compétent.">
+    <link rel="canonical" href="https://darwinchapuswike.com/post-19-fr.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #e9ecef; color: #333; overflow-x: hidden; }
+        .container { width: 100%; max-width: 720px; margin: auto; padding: 15px; }
+        header { background: linear-gradient(135deg, #0A66C2 0%, #004182 100%); color: white; padding: 30px 10px; text-align: center; border-bottom: 5px solid #dc3545; position: relative; }
+        header img { width: 100px; height: 100px; border-radius: 50%; border: 4px solid white; margin-bottom: 10px; object-fit: cover; transition: transform 0.3s ease; }
+        header img:hover { transform: scale(1.1); }
+        header h1 { font-size: 1.8em; margin-bottom: 5px; word-wrap: break-word; }
+        header p { font-size: 1em; opacity: 0.9; word-wrap: break-word; }
+        nav { background: #004182; padding: 8px 0; text-align: center; position: relative; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: bold; transition: color 0.3s ease; font-size: 0.85em; }
+        nav a:hover { color: #dc3545; }
+        .hamburger { display: none; font-size: 1.5em; color: white; background: none; border: none; cursor: pointer; padding: 8px 15px; }
+        .blog-post { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; overflow-x: hidden; }
+        .blog-post.visible { opacity: 1; transform: translateY(0); }
+        .blog-post h2 { color: #0A66C2; font-size: 1.4em; margin-bottom: 8px; border-left: 4px solid #dc3545; padding-left: 8px; word-wrap: break-word; }
+        .blog-post h3 { color: #333; font-size: 1.2em; margin-top: 15px; margin-bottom: 8px; word-wrap: break-word; }
+        .blog-post .date { color: #666; font-size: 0.85em; margin-bottom: 10px; word-wrap: break-word; }
+        .blog-post p { margin-bottom: 10px; font-size: 0.95em; word-wrap: break-word; overflow-wrap: break-word; }
+        .blog-post ul, .blog-post ol { margin: 10px 0 10px 20px; padding-left: 20px; word-wrap: break-word; overflow-wrap: break-word; width: 100%; box-sizing: border-box; }
+        .blog-post li { margin-bottom: 8px; font-size: 0.95em; line-height: 1.5; word-wrap: break-word; overflow-wrap: break-word; width: 100%; box-sizing: border-box; }
+        .blog-post code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #333;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            display: inline-block;
+            line-height: 1.2;
+        }
+        .blog-post img, .blog-post iframe { max-width: 100%; height: auto; border-radius: 5px; margin: 10px 0; }
+        .share-buttons { margin-top: 10px; display: flex; gap: 10px; }
+        .share-buttons a { font-size: 1.2em; color: #333; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease; padding: 5px; }
+        .share-buttons a:hover { transform: scale(1.2); }
+        .share-buttons .fa-facebook-f:hover { color: #3b5998; }
+        .share-buttons .fa-twitter:hover { color: #1da1f2; }
+        .share-buttons .fa-linkedin-in:hover { color: #0077b5; }
+        .share-buttons .fa-whatsapp:hover { color: #25d366; }
+        .whatsapp-btn { position: fixed; bottom: 10px; right: 10px; background: #25D366; color: white; padding: 8px 12px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); transition: background 0.3s ease, transform 0.3s ease; font-size: 0.8em; z-index: 1000; }
+        .whatsapp-btn:hover { background: #1ebe56; transform: scale(1.1); }
+        .scroll-down {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #0A66C2;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .scroll-down.hidden { display: none; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        footer { text-align: center; padding: 10px; background: #004182; color: white; font-size: 0.8em; position: relative; bottom: 0; width: 100%; }
+        .pagination { text-align: center; margin: 20px 0; }
+        .pagination a { color: #0A66C2; text-decoration: none; font-size: 1em; padding: 5px 10px; }
+        .pagination a:hover { color: #dc3545; }
+        a { color: #0A66C2; text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: #dc3545; }
+        /* Language Switcher Styles */
+        .language-switcher { position: absolute; top: 10px; right: 10px; z-index: 1000; }
+        .language-switcher select {
+            padding: 5px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .language-switcher select:hover { border-color: #0A66C2; }
+        .language-switcher select:focus { outline: none; border-color: #0A66C2; }
+        /* Language Content Styles */
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        /* Styles for the Eat Cookie Activity */
+        .cookie-activity { text-align: center; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+        .cookie-activity .emoji { font-size: 2.5em; margin-bottom: 10px; transition: transform 0.3s ease; }
+        .cookie-activity button { 
+            background: #0A66C2; 
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            font-size: 1em; 
+            cursor: pointer; 
+            transition: background 0.3s ease, transform 0.2s ease; 
+        }
+        .cookie-activity button:hover { background: #004182; transform: scale(1.05); }
+        .cookie-activity button:active { transform: scale(0.95); }
+        .cookie-activity .message { 
+            margin-top: 10px; 
+            font-size: 1em; 
+            color: #333; 
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+        }
+        .cookie-activity .message.show { opacity: 1; }
+        @media (max-width: 720px) {
+            .container { padding: 10px; }
+            header { padding: 25px 8px; }
+            header img { width: 90px; height: 90px; }
+            header h1 { font-size: 1.6em; }
+            header p { font-size: 0.95em; }
+            .hamburger { display: block; }
+            .nav-links { display: none; flex-direction: column; background: #004182; position: absolute; top: 100%; left: 0; width: 100%; padding: 10px 0; z-index: 1000; }
+            .nav-links.active { display: flex; }
+            nav a { margin: 10px 0; font-size: 1em; display: block; padding: 5px 0; }
+            .blog-post { padding: 12px; margin: 8px 0; }
+            .blog-post h2 { font-size: 1.3em; }
+            .blog-post h3 { font-size: 1.1em; }
+            .blog-post .date { font-size: 0.8em; }
+            .blog-post p { font-size: 0.9em; }
+            .blog-post ul, .blog-post ol { margin: 8px 0 8px 15px; padding-left: 15px; }
+            .blog-post li { font-size: 0.9em; line-height: 1.4; }
+            .blog-post code { font-size: 0.85em; padding: 1px 3px; }
+            .whatsapp-btn { padding: 6px 10px; font-size: 0.75em; bottom: 8px; right: 8px; }
+            .scroll-down { bottom: 40px; font-size: 1.8em; }
+            footer { padding: 8px; font-size: 0.75em; }
+            .cookie-activity .emoji { font-size: 2em; }
+            .cookie-activity button { padding: 8px 16px; font-size: 0.95em; }
+            .cookie-activity .message { font-size: 0.95em; }
+            .language-switcher { top: 5px; right: 5px; }
+            .language-switcher select { font-size: 0.85em; padding: 4px; }
+        }
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.4em; }
+            header p { font-size: 0.9em; }
+            nav a { font-size: 0.9em; }
+            .blog-post h2 { font-size: 1.2em; }
+            .blog-post h3 { font-size: 1em; }
+            .blog-post .date { font-size: 0.75em; }
+            .blog-post p { font-size: 0.85em; }
+            .blog-post ul, .blog-post ol { margin: 6px 0 6px 10px; padding-left: 10px; }
+            .blog-post li { font-size: 0.85em; line-height: 1.3; }
+            .blog-post code { font-size: 0.8em; padding: 1px 2px; }
+            .scroll-down { bottom: 30px; font-size: 1.5em; }
+            .cookie-activity .emoji { font-size: 1.8em; }
+            .cookie-activity button { padding: 6px 12px; font-size: 0.9em; }
+            .cookie-activity .message { font-size: 0.9em; }
+            .language-switcher select { font-size: 0.8em; padding: 3px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="profile_photo.jpg" alt="Darwin Chapuswike in a suit">
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <p data-lang="fr">Ingénieur de support L2 | Province de Lusaka, Zambie</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+        <div class="nav-links">
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html?lang=fr" data-lang="fr" class="active">Accueil</a>
+            <a href="index.html?lang=sw" data-lang="sw">Nyumbani</a>
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html?lang=fr" data-lang="fr" class="active">Contact</a>
+            <a href="contact.html?lang=sw" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html?lang=fr" data-lang="fr" class="active">Résumé</a>
+            <a href="summary.html?lang=sw" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html?lang=fr" data-lang="fr" class="active">Expérience</a>
+            <a href="experience.html?lang=sw" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html?lang=fr" data-lang="fr" class="active">Galerie</a>
+            <a href="gallery.html?lang=sw" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html?lang=fr" data-lang="fr" class="active">Éducation</a>
+            <a href="education.html?lang=sw" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html?lang=fr" data-lang="fr" class="active">Compétences</a>
+            <a href="skills.html?lang=sw" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html?lang=fr" data-lang="fr" class="active">Certifications</a>
+            <a href="certifications.html?lang=sw" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html?lang=fr" data-lang="fr" class="active">Publications</a>
+            <a href="publications.html?lang=sw" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html?lang=fr" data-lang="fr" class="active">Réalisations</a>
+            <a href="achievements.html?lang=sw" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html?lang=fr" data-lang="fr" class="active">Témoignages</a>
+            <a href="testimonials.html?lang=sw" data-lang="sw">Ushuhuda</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="blog-post" id="post-19">
+            <!-- French Content -->
+            <div data-lang="fr" class="active">
+                <h2>Travaillez Dur, Restez Humble : Retour sur les Jours à NIPA</h2>
+                <p class="date">21 avril 2025</p>
+                <p>En repensant à mon parcours en tant qu'ingénieur de support L2 chez NetOne Zambia, je me surprends souvent à réfléchir aux moments qui ont façonné ma passion pour la technologie. L'un de ces souvenirs me ramène à 2021, lors de mon passage à l'Institut National d'Administration Publique (NIPA) à Lusaka, Zambie. C’est dans le laboratoire informatique de NIPA, entouré du bourdonnement des machines et de la concentration de mes pairs, que j’ai véritablement compris la valeur du travail acharné et de l’humilité dans ma quête pour devenir un développeur compétent. Dans cet article, je partage un moment brut d’une session de laboratoire technique qui a marqué un tournant dans mon parcours de codage.</p>
+
+                <h3>Un Jour dans le Laboratoire Informatique</h3>
+                <p>En 2021, alors que je poursuivais mon diplôme de licence en informatique à NIPA, j’ai passé d’innombrables heures dans le laboratoire informatique, affinant mes compétences en programmation. La photo ci-dessous capture l’un de ces jours une session de laboratoire technique spéciale où nous étions pleinement immergés dans le développement pratique d’applications Android avec Android Studio. On me voit ici avec mes écouteurs, probablement en train de déboguer du code ou d’écouter un tutoriel, pendant que mes camarades travaillaient autour de moi. Le laboratoire était un centre d’apprentissage, rempli d’ordinateurs portables, de câbles et de l’énergie partagée des développeurs en herbe.</p>
+                <center><img width="494" height="370" src="https://darwinchapuswike.com/work-hard-stay-humble.jpg" alt="Darwin Chapuswike dans le laboratoire informatique à NIPA, Lusaka, Zambie, 2021"></center>
+
+                <h3>Le Défi "Manger le Biscuit"</h3>
+                <p>Ce jour là, notre professeur nous a assigné une tâche interactive appelée l'activité "Manger le Biscuit". L’objectif était simple mais révélateur : créer un bouton qui, lorsqu’on clique dessus, change un emoji de biscuit de triste à souriant et affiche un message toast disant <code>Biscuit mangé</code> à l’écran. C’était un petit exercice, mais il nous a appris les bases de la gestion des événements, de l’interaction avec l’interface utilisateur et du développement Android. Je me souviens de la satisfaction d’avoir fait fonctionner le bouton, de voir l’emoji changer et le message toast apparaître de petites victoires qui ont alimenté ma passion pour le codage.</p>
+
+                <h3>Leçons au-delà du Code</h3>
+                <p>Ces sessions de laboratoire à NIPA étaient bien plus que de simples exercices de codage ; elles ont constitué les fondations de ma croissance en tant que développeur et résolveur de problèmes. Chaque ligne de code écrite, chaque bogue corrigé et chaque message de succès affiché était un pas en avant. Mais au-delà des compétences techniques, ces moments m’ont appris l’importance de la persévérance et de l’humilité. Les défis du débogage, les nuits tardives à étudier et l’esprit collaboratif du laboratoire ont façonné ma perspective me rappelant de travailler dur sur mon métier, de rester constant et de rester humble, peu importe jusqu’où j’avance dans ma carrière.</p>
+
+                <h3>Appliquer cette Mentalité à l’Avenir</h3>
+                <p>Maintenant, en tant qu’ingénieur de support L2 chez NetOne, je porte les leçons de NIPA avec moi. La même dévotion que j’ai appliquée à l’activité "Manger le Biscuit" est ce que j’apporte aujourd’hui pour résoudre des défis informatiques complexes. Que je sois en train de dépanner des problèmes de réseau ou de configurer des systèmes, je me souviens du laboratoire informatique de NIPA où j’ai appris que la croissance vient de l’acceptation du processus, de la célébration des petites victoires et de rester ancré. Ce retour en arrière témoigne de la manière dont les expériences fondamentales façonnent nos parcours, à la fois en tant que professionnels et en tant qu’individus.</p>
+
+                <h3>Essayez Vous-Même : Activité "Manger le Biscuit"</h3>
+                <p>Envie de découvrir un aperçu de ce sur quoi nous avons travaillé à NIPA ? J’ai recréé une version simplifiée de l’activité "Manger le Biscuit" en utilisant JavaScript pour que vous puissiez l’essayer ici même. Cliquez sur le bouton ci-dessous pour changer l’emoji de biscuit de triste à souriant et voir le message exactement comme nous l’avons fait dans Android Studio en 2021. C’est une manière amusante de découvrir les bases de la gestion des événements et de l’interaction avec l’interface utilisateur en développement web !</p>
+                <div class="cookie-activity">
+                    <div class="emoji" id="cookieEmoji-fr">🍪😢</div>
+                    <button onclick="eatCookie('fr')">Manger le Biscuit</button>
+                    <div class="message" id="cookieMessage-fr">Biscuit mangé</div>
+                </div>
+
+                <h3>Réflexions Finales</h3>
+                <p>Ce souvenir de 2021 est un simple rappel de travailler dur, de rester humble et de ne jamais cesser d’apprendre. Mon temps à NIPA, où j’ai obtenu mon diplôme de licence en informatique, a jeté les bases de ma carrière dans la technologie. Du laboratoire informatique à Lusaka à mon rôle actuel chez NetOne, le voyage a été marqué par la croissance, les défis et la gratitude. J’espère que cette histoire et la petite activité ci-dessus inspire d’autres à embrasser leur propre parcours de codage, à aborder chaque tâche avec dévouement et à rester humble à chaque étape importante. #TravaillezDurRestezHumble #AndroidStudio #NIPA #ZambiaTech #VieÉtudiante #ParcoursDeCodage #RetourEnArrière</p>
+            </div>
+
+            <div class="share-buttons">
+                <a href="#" onclick="shareOnFacebook('post-19-fr');" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="shareOnTwitter('post-19-fr');" title="Share on X"><i class="fab fa-twitter"></i></a>
+                <a href="#" onclick="shareOnLinkedIn('post-19-fr');" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" onclick="shareOnWhatsApp('post-19-fr');" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="pagination">
+                <a href="publications.html" data-lang="en">← Back to Publications</a>
+                <a href="publications.html?lang=fr" data-lang="fr" class="active">← Retour aux Publications</a>
+                <a href="publications.html?lang=sw" data-lang="sw">← Rudi kwenye Machapisho</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
+    <div class="scroll-down" title="Scroll down to read more"><i class="fas fa-chevron-down"></i></div>
+
+    <footer>
+        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Language Switcher Functionality
+        function changeLanguage() {
+            const selectedLang = document.getElementById('language-select').value;
+            localStorage.setItem('preferredLang', selectedLang);
+
+            // Redirect to the appropriate language-specific page
+            if (selectedLang === 'en') {
+                window.location.href = 'post-19.html';
+            } else if (selectedLang === 'fr') {
+                window.location.href = 'post-19-fr.html';
+            } else if (selectedLang === 'sw') {
+                window.location.href = 'post-19-sw.html';
+            }
+        }
+
+        function updateLanguage(lang) {
+            if (!lang) {
+                console.error('Language not specified');
+                return;
+            }
+
+            // Update page content
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                element.classList.remove('active');
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('active');
+                }
+            });
+
+            // Update the language select dropdown
+            const languageSelect = document.getElementById('language-select');
+            if (languageSelect) {
+                languageSelect.value = lang;
+            }
+        }
+
+        // Ensure DOM is loaded before running initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the initial language (default to 'fr' for this file)
+            const savedLang = localStorage.getItem('preferredLang') || 'fr';
+            updateLanguage(savedLang);
+
+            // Update the language select dropdown to reflect the current page
+            const languageSelect = document.getElementById('language-select');
+            if (languageSelect) {
+                languageSelect.value = 'fr'; // This is the French page
+            }
+
+            // Fade-in effect for blog posts on scroll
+            const posts = document.querySelectorAll('.blog-post');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            posts.forEach(post => observer.observe(post));
+
+            // Hamburger menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+                });
+            }
+
+            // Scroll-down arrow functionality
+            const scrollDown = document.querySelector('.scroll-down');
+            if (scrollDown) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        scrollDown.classList.add('hidden');
+                    } else {
+                        scrollDown.classList.remove('hidden');
+                    }
+                });
+                setTimeout(() => {
+                    scrollDown.classList.add('hidden');
+                }, 10000);
+                scrollDown.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: window.innerHeight,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+
+        // Share functionality
+        const baseUrl = "https://darwinchapuswike.com/post-19-fr.html";
+        function shareOnFacebook(postId) {
+            const url = baseUrl;
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank');
+        }
+
+        function shareOnTwitter(postId) {
+            const lang = localStorage.getItem('preferredLang') || 'fr';
+            const url = baseUrl;
+            const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
+            const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+            window.open(shareUrl, '_blank');
+        }
+
+        function shareOnLinkedIn(postId) {
+            const url = baseUrl;
+            const shareUrl = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank');
+        }
+
+        function shareOnWhatsApp(postId) {
+            const lang = localStorage.getItem('preferredLang') || 'fr';
+            const url = baseUrl;
+            const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
+            const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`;
+            const newWindow = window.open(shareUrl, '_blank');
+            if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                // Fallback if window.open fails (e.g., popup blocked)
+                window.location.href = shareUrl;
+            }
+        }
+
+        // Eat Cookie Activity Functionality (language-aware)
+        function eatCookie(lang) {
+            const emoji = document.getElementById(`cookieEmoji-${lang}`);
+            const message = document.getElementById(`cookieMessage-${lang}`);
+            if (emoji && message) {
+                emoji.innerHTML = '🍪😊'; // Change to smiling cookie
+                emoji.style.transform = 'scale(1.2)'; // Small animation
+                message.classList.add('show'); // Show the message
+                setTimeout(() => {
+                    emoji.innerHTML = '🍪😢'; // Reset to sad cookie
+                    emoji.style.transform = 'scale(1)';
+                    message.classList.remove('show'); // Hide the message
+                }, 2000); // Reset after 2 seconds
+            }
+        }
+    </script>
+</body>
+</html>
