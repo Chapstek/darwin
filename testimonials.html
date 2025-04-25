@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W7RTBTJLRV');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W7RTBTJLRV');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="light-bulb.png" type="image/png">
-    <title>Testimonials - Darwin Chapuswike</title>
+    <link rel="icon" href="light-bulb.png" type="image/png">
+    <title data-lang="en">Testimonials - Darwin Chapuswike</title>
+    <title data-lang="fr">Témoignages - Darwin Chapuswike</title>
+    <title data-lang="sw">Ushuhuda - Darwin Chapuswike</title>
     <style>
         * {
             margin: 0;
@@ -202,6 +203,37 @@
         a:hover {
             color: #dc3545;
         }
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+        .language-switcher select {
+            padding: 5px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .language-switcher select:hover {
+            border-color: #0A66C2;
+        }
+        .language-switcher select:focus {
+            outline: none;
+            border-color: #0A66C2;
+        }
+        /* Language Content Styles */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
         @media (max-width: 720px) {
             .container {
                 padding: 10px;
@@ -283,6 +315,14 @@
                 padding: 8px;
                 font-size: 0.75em;
             }
+            .language-switcher {
+                top: 5px;
+                right: 5px;
+            }
+            .language-switcher select {
+                font-size: 0.85em;
+                padding: 4px;
+            }
         }
         @media (max-width: 480px) {
             header h1 {
@@ -312,6 +352,10 @@
             .testimonial-text {
                 font-size: 0.85em;
             }
+            .language-switcher select {
+                font-size: 0.8em;
+                padding: 3px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -320,71 +364,201 @@
     <header>
         <div class="container">
             <img src="profile_photo.jpg" alt="Darwin Chapuswike in a suit">
-            <h1>Darwin Chapuswike</h1>
-            <p>L2 Support Engineer | Lusaka Province, Zambia</p>
+            <h1 data-lang="en">Darwin Chapuswike</h1>
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <h1 data-lang="sw">Darwin Chapuswike</h1>
+            <p data-lang="en">L2 Support Engineer | Lusaka Province, Zambia</p>
+            <p data-lang="fr">Ingénieur de support L2 | Province de Lusaka, Zambie</p>
+            <p data-lang="sw">Mhandisi wa Usaidizi wa Ngazi ya 2 | Mkoa wa Lusaka, Zambia</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <nav>
         <button class="hamburger" aria-label="Toggle navigation">☰</button>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="summary.html">Summary</a>
-            <a href="experience.html">Experience</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="education.html">Education</a>
-            <a href="skills.html">Skills</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="publications.html">Publications</a>
-            <a href="achievements.html">Achievements</a>
-            <a href="testimonials.html">Testimonials</a>
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html" data-lang="fr">Accueil</a>
+            <a href="index.html" data-lang="sw">Nyumbani</a>
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html" data-lang="fr">Contact</a>
+            <a href="contact.html" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html" data-lang="fr">Résumé</a>
+            <a href="summary.html" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html" data-lang="fr">Expérience</a>
+            <a href="experience.html" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html" data-lang="fr">Galerie</a>
+            <a href="gallery.html" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html" data-lang="fr">Éducation</a>
+            <a href="education.html" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html" data-lang="fr">Compétences</a>
+            <a href="skills.html" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html" data-lang="fr">Certifications</a>
+            <a href="certifications.html" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html" data-lang="fr">Publications</a>
+            <a href="publications.html" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html" data-lang="fr">Réalisations</a>
+            <a href="achievements.html" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html" data-lang="fr">Témoignages</a>
+            <a href="testimonials.html" data-lang="sw">Ushuhuda</a>
         </div>
     </nav>
 
     <div class="container">
         <section>
-            <h2>Testimonials</h2>
-            <div class="testimonial">
-                <img src="edric_pemhiwa.jpeg" alt="Edric Pemhiwa">
-                <div class="testimonial-content">
-                    <div class="testimonial-name">Edric Pemhiwa</div>
-                    <div class="testimonial-title">Operations | Team Building</div>
-                    <div class="testimonial-date">April 5, 2023</div>
-                    <div class="testimonial-relationship">Edric was senior to Darwin but didn't manage Darwin directly</div>
-                    <div class="testimonial-text">"Excellent team player and pays attention to detail."</div>
+            <!-- English -->
+            <div data-lang="en">
+                <h2>Testimonials</h2>
+                <div class="testimonial">
+                    <img src="edric_pemhiwa.jpeg" alt="Edric Pemhiwa">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Edric Pemhiwa</div>
+                        <div class="testimonial-title">Operations | Team Building</div>
+                        <div class="testimonial-date">April 5, 2023</div>
+                        <div class="testimonial-relationship">Edric was senior to Darwin but didn't manage Darwin directly</div>
+                        <div class="testimonial-text">"Excellent team player and pays attention to detail."</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="placeholder.jpeg" alt="Kufekisa Nawa">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Kufekisa Nawa</div>
+                        <div class="testimonial-title">IT Systems and Support Coordinator at Barrick Gold Corporation</div>
+                        <div class="testimonial-date">April 4, 2023</div>
+                        <div class="testimonial-relationship">Kufekisa was Darwin’s mentor</div>
+                        <div class="testimonial-text">"Darwin has the drive to be one of the best in the Tech world. His determination and hunger to learn makes him distinct and a great team member to have in an IT team."</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="placeholder1.jpeg" alt="Morgan Mutila">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Morgan Mutila</div>
+                        <div class="testimonial-title">Software Developer | IT Technician | Tech Enthusiast | Bachelor of Computer Science</div>
+                        <div class="testimonial-date">Date not specified</div>
+                        <div class="testimonial-relationship">First-degree connection</div>
+                        <div class="testimonial-text">"Darwin is very passionate about programming. I have worked with him on school projects and he has shown great competence in programming."</div>
+                    </div>
                 </div>
             </div>
-            <div class="testimonial">
-                <img src="placeholder.jpeg" alt="Kufekisa Nawa">
-                <div class="testimonial-content">
-                    <div class="testimonial-name">Kufekisa Nawa</div>
-                    <div class="testimonial-title">IT Systems and Support Coordinator at Barrick Gold Corporation</div>
-                    <div class="testimonial-date">April 4, 2023</div>
-                    <div class="testimonial-relationship">Kufekisa was Darwin’s mentor</div>
-                    <div class="testimonial-text">"Darwin has the drive to be one of the best in the Tech world. His determination and hunger to learn makes him distinct and a great team member to have in an IT team."</div>
+            <!-- French -->
+            <div data-lang="fr">
+                <h2>Témoignages</h2>
+                <div class="testimonial">
+                    <img src="edric_pemhiwa.jpeg" alt="Edric Pemhiwa">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Edric Pemhiwa</div>
+                        <div class="testimonial-title">Opérations | Renforcement d'équipe</div>
+                        <div class="testimonial-date">5 avril 2023</div>
+                        <div class="testimonial-relationship">Edric était senior par rapport à Darwin mais ne gérait pas Darwin directement</div>
+                        <div class="testimonial-text">"Excellent joueur d'équipe et très attentif aux détails."</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="placeholder.jpeg" alt="Kufekisa Nawa">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Kufekisa Nawa</div>
+                        <div class="testimonial-title">Coordinateur des systèmes et du support informatique chez Barrick Gold Corporation</div>
+                        <div class="testimonial-date">4 avril 2023</div>
+                        <div class="testimonial-relationship">Kufekisa était le mentor de Darwin</div>
+                        <div class="testimonial-text">"Darwin a l'élan pour être l'un des meilleurs dans le monde de la technologie. Sa détermination et son envie d'apprendre le distinguent et en font un excellent membre d'équipe dans une équipe informatique."</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="placeholder1.jpeg" alt="Morgan Mutila">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Morgan Mutila</div>
+                        <div class="testimonial-title">Développeur de logiciels | Technicien informatique | Passionné de technologie | Titulaire d'un baccalauréat en informatique</div>
+                        <div class="testimonial-date">Date non spécifiée</div>
+                        <div class="testimonial-relationship">Connexion de premier degré</div>
+                        <div class="testimonial-text">"Darwin est très passionné par la programmation. J'ai travaillé avec lui sur des projets scolaires et il a démontré une grande compétence en programmation."</div>
+                    </div>
                 </div>
             </div>
-            <div class="testimonial">
-                <img src="placeholder1.jpeg" alt="Morgan Mutila">
-                <div class="testimonial-content">
-                    <div class="testimonial-name">Morgan Mutila</div>
-                    <div class="testimonial-title">Software Developer | IT Technician | Tech Enthusiast | Bachelor of Computer Science</div>
-                    <div class="testimonial-date">Date not specified</div>
-                    <div class="testimonial-relationship">First-degree connection</div>
-                    <div class="testimonial-text">"Darwin is very passionate about programming. I have worked with him on school projects and he has shown great competence in programming."</div>
+            <!-- Swahili -->
+            <div data-lang="sw">
+                <h2>Ushuhuda</h2>
+                <div class="testimonial">
+                    <img src="edric_pemhiwa.jpeg" alt="Edric Pemhiwa">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Edric Pemhiwa</div>
+                        <div class="testimonial-title">Operesheni | Ujenzi wa Timu</div>
+                        <div class="testimonial-date">Aprili 5, 2023</div>
+                        <div class="testimonial-relationship">Edric alikuwa mwandamizi wa Darwin lakini hakumudu Darwin moja kwa moja</div>
+                        <div class="testimonial-text">"Mchezaji bora wa timu na anazingatia maelezo."</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="placeholder.jpeg" alt="Kufekisa Nawa">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Kufekisa Nawa</div>
+                        <div class="testimonial-title">Mratibu wa Mifumo ya TEHAMA na Usaidizi katika Barrick Gold Corporation</div>
+                        <div class="testimonial-date">Aprili 4, 2023</div>
+                        <div class="testimonial-relationship">Kufekisa alikuwa mshauri wa Darwin</div>
+                        <div class="testimonial-text">"Darwin ana shauku ya kuwa mmoja wa bora katika ulimwengu wa Teknolojia. Azimio lake na hamu yake ya kujifunza inamfanya awe tofauti na mwanachama bora wa timu katika timu ya TEHAMA."</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <img src="placeholder1.jpeg" alt="Morgan Mutila">
+                    <div class="testimonial-content">
+                        <div class="testimonial-name">Morgan Mutila</div>
+                        <div class="testimonial-title">Mtengenezaji wa Programu | Fundi wa TEHAMA | Mpenda Teknolojia | Shahada ya Sayansi ya Kompyuta</div>
+                        <div class="testimonial-date">Tarehe haijabainishwa</div>
+                        <div class="testimonial-relationship">Muunganisho wa Daraja la Kwanza</div>
+                        <div class="testimonial-text">"Darwin ana shauku kubwa juu ya programu. Nimefanya kazi naye kwenye miradi ya shule na ameonyesha uwezo mkubwa katika programu."</div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <a href="https://wa.me/260966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
 
     <footer>
-        <p>© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="en">© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits réservés.</p>
+        <p data-lang="sw">© 2025 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
     </footer>
 
     <script>
+        // Language Switcher Functionality
+        function changeLanguage() {
+            const selectedLang = document.getElementById('language-select').value;
+            localStorage.setItem('preferredLang', selectedLang);
+            updateLanguage(selectedLang);
+        }
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                element.classList.remove('active');
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('active');
+                }
+            });
+            document.title = document.querySelector(`title[data-lang="${lang}"]`).textContent;
+        }
+
+        // Set initial language
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        document.getElementById('language-select').value = savedLang;
+        updateLanguage(savedLang);
+
         // Fade-in effect for sections on scroll
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
@@ -406,6 +580,38 @@
             navLinks.classList.toggle('active');
             hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
+    </script>
+    <script>
+        (function(){
+            function c(){
+                var b=a.contentDocument||a.contentWindow.document;
+                if(b){
+                    var d=b.createElement('script');
+                    d.innerHTML="window.__CF$cv$params={r:'93607e6b694cade3',t:'MTc0NTYxMTkzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d);
+                }
+            }
+            if(document.body){
+                var a=document.createElement('iframe');
+                a.height=1;
+                a.width=1;
+                a.style.position='absolute';
+                a.style.top=0;
+                a.style.left=0;
+                a.style.border='none';
+                a.style.visibility='hidden';
+                document.body.appendChild(a);
+                if('loading'!==document.readyState) c();
+                else if(window.addEventListener) document.addEventListener('DOMContentLoaded',c);
+                else{
+                    var e=document.onreadystatechange||function(){};
+                    document.onreadystatechange=function(b){
+                        e(b);
+                        'loading'!==document.readyState&&(document.onreadystatechange=e,c());
+                    }
+                }
+            }
+        })();
     </script>
 </body>
 </html>

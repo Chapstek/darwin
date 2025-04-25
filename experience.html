@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W7RTBTJLRV');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W7RTBTJLRV');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="purple.png" type="image/png">
-    <title>Experience - Darwin Chapuswike</title>
+    <link rel="icon" href="purple.png" type="image/png">
+    <title data-lang="en">Experience - Darwin Chapuswike</title>
+    <title data-lang="fr">Expérience - Darwin Chapuswike</title>
+    <title data-lang="sw">Uzoefu - Darwin Chapuswike</title>
     <style>
         * {
             margin: 0;
@@ -173,6 +174,37 @@
         a:hover {
             color: #dc3545;
         }
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+        .language-switcher select {
+            padding: 5px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .language-switcher select:hover {
+            border-color: #0A66C2;
+        }
+        .language-switcher select:focus {
+            outline: none;
+            border-color: #0A66C2;
+        }
+        /* Language Content Styles */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
         @media (max-width: 720px) {
             .container {
                 padding: 10px;
@@ -236,6 +268,14 @@
                 padding: 8px;
                 font-size: 0.75em;
             }
+            .language-switcher {
+                top: 5px;
+                right: 5px;
+            }
+            .language-switcher select {
+                font-size: 0.85em;
+                padding: 4px;
+            }
         }
         @media (max-width: 480px) {
             header h1 {
@@ -256,6 +296,10 @@
             ul li {
                 font-size: 0.85em;
             }
+            .language-switcher select {
+                font-size: 0.8em;
+                padding: 3px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -264,98 +308,282 @@
     <header>
         <div class="container">
             <img src="profile_photo.jpg" alt="Darwin Chapuswike in a suit">
-            <h1>Darwin Chapuswike</h1>
-            <p>L2 Support Engineer | Lusaka Province, Zambia</p>
+            <h1 data-lang="en">Darwin Chapuswike</h1>
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <h1 data-lang="sw">Darwin Chapuswike</h1>
+            <p data-lang="en">L2 Support Engineer | Lusaka Province, Zambia</p>
+            <p data-lang="fr">Ingénieur de support L2 | Province de Lusaka, Zambie</p>
+            <p data-lang="sw">Mhandisi wa Usaidizi wa Ngazi ya 2 | Mkoa wa Lusaka, Zambia</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <nav>
         <button class="hamburger" aria-label="Toggle navigation">☰</button>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="summary.html">Summary</a>
-            <a href="experience.html">Experience</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="education.html">Education</a>
-            <a href="skills.html">Skills</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="publications.html">Publications</a>
-			<a href="achievements.html">Achievements</a>
-			<a href="testimonials.html">Testimonials</a>
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html" data-lang="fr">Accueil</a>
+            <a href="index.html" data-lang="sw">Nyumbani</a>
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html" data-lang="fr">Contact</a>
+            <a href="contact.html" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html" data-lang="fr">Résumé</a>
+            <a href="summary.html" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html" data-lang="fr">Expérience</a>
+            <a href="experience.html" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html" data-lang="fr">Galerie</a>
+            <a href="gallery.html" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html" data-lang="fr">Éducation</a>
+            <a href="education.html" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html" data-lang="fr">Compétences</a>
+            <a href="skills.html" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html" data-lang="fr">Certifications</a>
+            <a href="certifications.html" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html" data-lang="fr">Publications</a>
+            <a href="publications.html" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html" data-lang="fr">Réalisations</a>
+            <a href="achievements.html" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html" data-lang="fr">Témoignages</a>
+            <a href="testimonials.html" data-lang="sw">Ushuhuda</a>
         </div>
     </nav>
 
     <div class="container">
         <section>
-            <h2>Experience</h2>
-            <div class="job">
-                <h3>L2 Support Engineer - NetOne Zambia</h3>
-                <p>September 2024 - Present (8 months) | Lusaka, Zambia</p>
-                <ul>
-                    <li>Provide Level 2 technical support for IT infrastructure including servers, networks, storage, and security systems.</li>
-                    <li>Troubleshoot and resolve escalated technical issues efficiently, minimizing system downtime.</li>
-                    <li>Collaborate with Level 1 support teams, offering guidance and knowledge transfer.</li>
-                    <li>Implement and maintain IT infrastructure solutions in alignment with project requirements.</li>
-                </ul>
+            <!-- English -->
+            <div data-lang="en">
+                <h2>Experience</h2>
+                <div class="job">
+                    <h3>L2 Support Engineer - NetOne Zambia</h3>
+                    <p>September 2024 - Present (8 months) | Lusaka, Zambia</p>
+                    <ul>
+                        <li>Provide Level 2 technical support for IT infrastructure including servers, networks, storage, and security systems.</li>
+                        <li>Troubleshoot and resolve escalated technical issues efficiently, minimizing system downtime.</li>
+                        <li>Collaborate with Level 1 support teams, offering guidance and knowledge transfer.</li>
+                        <li>Implement and maintain IT infrastructure solutions in alignment with project requirements.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Sales Representative - Router-switch.com</h3>
+                    <p>June 2024 - Present (11 months) | Zambia</p>
+                    <ul>
+                        <li>Represent and sell the company's products and services (routers, switches, servers, firewalls, access points) in Zambia.</li>
+                        <li>Support the Regional Manager with customer-related issues within the sales territory.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Service Partner - TRT</h3>
+                    <p>July 2022 - Present (2 years 10 months) | Singapore</p>
+                    <ul>
+                        <li>Provide cost-effective solutions for IBM, HP, Dell, Cisco EMC, Netapp & more servers, storage & networking brands.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Information Communication Technology Officer - Zambia Airports Corporation Limited</h3>
+                    <p>July 2022 - July 2024 (2 years 1 month) | Kenneth Kaunda International Airport</p>
+                    <ul>
+                        <li>Diagnose and resolve faults related to CCTV systems and manage the Flight Information Display System (FIDS).</li>
+                        <li>Monitor and maintain the airport campus network across 10 edge rooms.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Information Technology Service Delivery Apprentice - Barrick Gold Corporation</h3>
+                    <p>August 2020 - November 2020 (4 months) | Lumwana Mine Site</p>
+                    <ul>
+                        <li>Collaborate with the IT Service Delivery team to ensure timely resolution of user issues.</li>
+                        <li>Provide assistance and expertise to address challenges and maintain service levels.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Information Systems Engineer Apprentice - Balaji Constructions</h3>
+                    <p>May 2018 - June 2020 (2 years 2 months) | Lusaka, Zambia</p>
+                    <ul>
+                        <li>Provide 1st & 2nd Level support to end users addressing hardware, software and network related issues.</li>
+                        <li>Install, configure and maintain computer systems hardware components and software applications.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Information Technology Support Intern - Algebra Global</h3>
+                    <p>June 2017 - November 2017 (6 months) | Lusaka, Zambia</p>
+                    <ul>
+                        <li>To support employees who are experiencing problems with their computers or software.</li>
+                        <li>Troubleshooting to detect and solve technical problems.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="job">
-                <h3>Sales Representative - Router-switch.com</h3>
-                <p>June 2024 - Present (11 months) | Zambia</p>
-                <ul>
-                    <li>Represent and sell the company's products and services (routers, switches, servers, firewalls, access points) in Zambia.</li>
-                    <li>Support the Regional Manager with customer-related issues within the sales territory.</li>
-                </ul>
+            <!-- French -->
+            <div data-lang="fr">
+                <h2>Expérience</h2>
+                <div class="job">
+                    <h3>Ingénieur de support L2 - NetOne Zambia</h3>
+                    <p>Septembre 2024 - Présent (8 mois) | Lusaka, Zambie</p>
+                    <ul>
+                        <li>Fournir un support technique de niveau 2 pour l’infrastructure informatique, y compris les serveurs, les réseaux, le stockage et les systèmes de sécurité.</li>
+                        <li>Dépanner et résoudre efficacement les problèmes techniques escaladés, minimisant les temps d’arrêt du système.</li>
+                        <li>Collaborer avec les équipes de support de niveau 1, en offrant des conseils et un transfert de connaissances.</li>
+                        <li>Mettre en œuvre et maintenir des solutions d’infrastructure informatique conformément aux exigences des projets.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Représentant commercial - Router-switch.com</h3>
+                    <p>Juin 2024 - Présent (11 mois) | Zambie</p>
+                    <ul>
+                        <li>Représenter et vendre les produits et services de l’entreprise (routeurs, commutateurs, serveurs, pare-feu, points d’accès) en Zambie.</li>
+                        <li>Soutenir le responsable régional sur les problèmes liés aux clients dans le territoire de vente.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Partenaire de service - TRT</h3>
+                    <p>Juillet 2022 - Présent (2 ans 10 mois) | Singapour</p>
+                    <ul>
+                        <li>Fournir des solutions économiques pour les serveurs, le stockage et les marques de réseaux IBM, HP, Dell, Cisco EMC, Netapp et plus encore.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Officier des technologies de l’information et de la communication - Zambia Airports Corporation Limited</h3>
+                    <p>Juillet 2022 - Juillet 2024 (2 ans 1 mois) | Aéroport international Kenneth Kaunda</p>
+                    <ul>
+                        <li>Diagnostiquer et résoudre les pannes liées aux systèmes de vidéosurveillance et gérer le système d’affichage des informations de vol (FIDS).</li>
+                        <li>Surveiller et maintenir le réseau du campus de l’aéroport à travers 10 salles de bordure.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Apprenti en prestation de services informatiques - Barrick Gold Corporation</h3>
+                    <p>Août 2020 - Novembre 2020 (4 mois) | Site minier de Lumwana</p>
+                    <ul>
+                        <li>Collaborer avec l’équipe de prestation de services informatiques pour assurer une résolution rapide des problèmes des utilisateurs.</li>
+                        <li>Fournir une assistance et une expertise pour relever les défis et maintenir les niveaux de service.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Apprenti ingénieur des systèmes d’information - Balaji Constructions</h3>
+                    <p>Mai 2018 - Juin 2020 (2 ans 2 mois) | Lusaka, Zambie</p>
+                    <ul>
+                        <li>Fournir un support de niveau 1 et 2 aux utilisateurs finaux pour résoudre les problèmes liés au matériel, aux logiciels et aux réseaux.</li>
+                        <li>Installer, configurer et maintenir les composants matériels des systèmes informatiques et les applications logicielles.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Stagiaire en support informatique - Algebra Global</h3>
+                    <p>Juin 2017 - Novembre 2017 (6 mois) | Lusaka, Zambie</p>
+                    <ul>
+                        <li>Soutenir les employés rencontrant des problèmes avec leurs ordinateurs ou logiciels.</li>
+                        <li>Dépannage pour détecter et résoudre les problèmes techniques.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="job">
-                <h3>Service Partner - TRT</h3>
-                <p>July 2022 - Present (2 years 10 months) | Singapore</p>
-                <ul>
-                    <li>Provide cost-effective solutions for IBM, HP, Dell, Cisco EMC, Netapp & more servers, storage & networking brands.</li>
-                </ul>
-            </div>
-            <div class="job">
-                <h3>Information Communication Technology Officer - Zambia Airports Corporation Limited</h3>
-                <p>July 2022 - July 2024 (2 years 1 month) | Kenneth Kaunda International Airport</p>
-                <ul>
-                    <li>Diagnose and resolve faults related to CCTV systems and manage the Flight Information Display System (FIDS).</li>
-                    <li>Monitor and maintain the airport campus network across 10 edge rooms.</li>
-                </ul>
-            </div>
-			<div class="job">
-                <h3>Information Technology Service Delivery Apprentice - Barrick Gold corporation</h3>
-                <p>August 2020 - November 2020 (4 months) | Lumwana Mine Site</p>
-                <ul>
-                    <li>Collaborate with the IT Service Delivery team to ensure timely resolution of user issues.</li>
-                    <li>Provide assistance and expertise to address challenges and maintain service levels.</li>
-                </ul>
-            </div>
-			<div class="job">
-                <h3>Information Systems Engineer Apprentice - Balaji Constructions </h3>
-                <p>May 2018 - June 2020 (2 years 2 months) | Lusaka, Zambia</p>
-                <ul>
-                    <li>Provide 1st & 2nd Level support to end users addressing hardware, software and network related issues.</li>
-                    <li>Install, configure and maintain computer systems hardware components and software applications.</li>
-                </ul>
-            </div>
-			<div class="job">
-                <h3>Information Technology Support Intern - Algebra Global </h3>
-                <p>June 2017 - November 2017 (6 months) | Lusaka, Zambia</p>
-                <ul>
-                    <li>To support employees who are experiencing problems with their computers or software.</li>
-                    <li>Troubleshooting to detect and solve technical problems.</li>
-                </ul>
+            <!-- Swahili -->
+            <div data-lang="sw">
+                <h2>Uzoefu</h2>
+                <div class="job">
+                    <h3>Mhandisi wa Usaidizi wa Ngazi ya 2 - NetOne Zambia</h3>
+                    <p>Septemba 2024 - Sasa (Miezi 8) | Lusaka, Zambia</p>
+                    <ul>
+                        <li>Kutoa usaidizi wa kiufundi wa Ngazi ya 2 kwa miundombinu ya TEHAMA ikijumuisha seva, mitandao, hifadhi, na mifumo ya usalama.</li>
+                        <li>Kutatua na kusuluhisha matatizo ya kiufundi yaliyopandishwa kwa ufanisi, kupunguza muda wa kupumzika kwa mfumo.</li>
+                        <li>Kushirikiana na timu za usaidizi wa Ngazi ya 1, kutoa mwongozo na uhamisho wa maarifa.</li>
+                        <li>Kutekeleza na kudumisha suluhisho za miundombinu ya TEHAMA kwa mujibu wa mahitaji ya mradi.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Mwakilishi wa Mauzo - Router-switch.com</h3>
+                    <p>Juni 2024 - Sasa (Miezi 11) | Zambia</p>
+                    <ul>
+                        <li>Kuwakilisha na kuuza bidhaa na huduma za kampuni (ruta, swichi, seva, firewall, vituo vya ufikiaji) nchini Zambia.</li>
+                        <li>Kusaidia Meneja wa Mkoa na masuala yanayohusiana na wateja ndani ya eneo la mauzo.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Mshirika wa Huduma - TRT</h3>
+                    <p>Julai 2022 - Sasa (Miaka 2 Miezi 10) | Singapore</p>
+                    <ul>
+                        <li>Kutoa suluhisho za gharama nafuu kwa seva za IBM, HP, Dell, Cisco EMC, Netapp na chapa zaidi za mitandao na hifadhi.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Afisa wa Teknolojia ya Habari na Mawasiliano - Zambia Airports Corporation Limited</h3>
+                    <p>Julai 2022 - Julai 2024 (Miaka 2 Mwezi 1) | Uwanja wa Ndege wa Kimataifa wa Kenneth Kaunda</p>
+                    <ul>
+                        <li>Kuchunguza na kutatua hitilafu zinazohusiana na mifumo ya CCTV na kusimamia Mfumo wa Kuonyesha Habari za Ndege (FIDS).</li>
+                        <li>Kufuatilia na kudumisha mtandao wa kampasi ya uwanja wa ndege katika vyumba 10 vya pembeni.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Mwanafunzi wa Utoaji wa Huduma za Teknolojia ya Habari - Barrick Gold Corporation</h3>
+                    <p>Agosti 2020 - Novemba 2020 (Miezi 4) | Tovuti ya Migodi ya Lumwana</p>
+                    <ul>
+                        <li>Kushirikiana na timu ya Utoaji wa Huduma za TEHAMA ili kuhakikisha utatuzi wa haraka wa matatizo ya watumiaji.</li>
+                        <li>Kutoa msaada na utaalamu wa kushughulikia changamoto na kudumisha viwango vya huduma.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Mwanafunzi wa Uhandisi wa Mifumo ya Habari - Balaji Constructions</h3>
+                    <p>Mei 2018 - Juni 2020 (Miaka 2 Miezi 2) | Lusaka, Zambia</p>
+                    <ul>
+                        <li>Kutoa usaidizi wa Ngazi ya 1 na 2 kwa watumiaji wa mwisho kushughulikia masuala yanayohusiana na vifaa, programu na mtandao.</li>
+                        <li>Kusakinisha, kusanidi na kudumisha vifaa vya mifumo ya kompyuta na programu za maombi.</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3>Mwanafunzi wa Usaidizi wa Teknolojia ya Habari - Algebra Global</h3>
+                    <p>Juni 2017 - Novemba 2017 (Miezi 6) | Lusaka, Zambia</p>
+                    <ul>
+                        <li>Kusaidia wafanyakazi wanaopata matatizo na kompyuta zao au programu.</li>
+                        <li>Kutatua matatizo ili kugundua na kusuluhisha matatizo ya kiufundi.</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </div>
 
-    <a href="https://wa.me/260966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
 
     <footer>
-        <p>© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="en">© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits réservés.</p>
+        <p data-lang="sw">© 2025 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
     </footer>
 
     <script>
+        // Language Switcher Functionality
+        function changeLanguage() {
+            const selectedLang = document.getElementById('language-select').value;
+            localStorage.setItem('preferredLang', selectedLang);
+            updateLanguage(selectedLang);
+        }
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                element.classList.remove('active');
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('active');
+                }
+            });
+            document.title = document.querySelector(`title[data-lang="${lang}"]`).textContent;
+        }
+
+        // Set initial language
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        document.getElementById('language-select').value = savedLang;
+        updateLanguage(savedLang);
+
         // Fade-in effect for sections on scroll
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
@@ -377,6 +605,38 @@
             navLinks.classList.toggle('active');
             hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
+    </script>
+    <script>
+        (function(){
+            function c(){
+                var b=a.contentDocument||a.contentWindow.document;
+                if(b){
+                    var d=b.createElement('script');
+                    d.innerHTML="window.__CF$cv$params={r:'936052f66bca53e6',t:'MTc0NTYxMDE1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d);
+                }
+            }
+            if(document.body){
+                var a=document.createElement('iframe');
+                a.height=1;
+                a.width=1;
+                a.style.position='absolute';
+                a.style.top=0;
+                a.style.left=0;
+                a.style.border='none';
+                a.style.visibility='hidden';
+                document.body.appendChild(a);
+                if('loading'!==document.readyState) c();
+                else if(window.addEventListener) document.addEventListener('DOMContentLoaded',c);
+                else{
+                    var e=document.onreadystatechange||function(){};
+                    document.onreadystatechange=function(b){
+                        e(b);
+                        'loading'!==document.readyState&&(document.onreadystatechange=e,c());
+                    }
+                }
+            }
+        })();
     </script>
 </body>
 </html>

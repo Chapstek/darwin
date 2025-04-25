@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W7RTBTJLRV');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W7RTBTJLRV');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="purple1.png" type="image/png">
-    <title>Certifications - Darwin Chapuswike</title>
+    <link rel="icon" href="purple1.png" type="image/png">
+    <title data-lang="en">Certifications - Darwin Chapuswike</title>
+    <title data-lang="fr">Certifications - Darwin Chapuswike</title>
+    <title data-lang="sw">Vyeti - Darwin Chapuswike</title>
     <style>
         * {
             margin: 0;
@@ -165,6 +166,37 @@
         a:hover {
             color: #dc3545;
         }
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+        .language-switcher select {
+            padding: 5px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .language-switcher select:hover {
+            border-color: #0A66C2;
+        }
+        .language-switcher select:focus {
+            outline: none;
+            border-color: #0A66C2;
+        }
+        /* Language Content Styles */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
         @media (max-width: 720px) {
             .container {
                 padding: 10px;
@@ -225,6 +257,14 @@
                 padding: 8px;
                 font-size: 0.75em;
             }
+            .language-switcher {
+                top: 5px;
+                right: 5px;
+            }
+            .language-switcher select {
+                font-size: 0.85em;
+                padding: 4px;
+            }
         }
         @media (max-width: 480px) {
             header h1 {
@@ -242,6 +282,10 @@
             ul li {
                 font-size: 0.85em;
             }
+            .language-switcher select {
+                font-size: 0.8em;
+                padding: 3px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -250,47 +294,129 @@
     <header>
         <div class="container">
             <img src="profile_photo.jpg" alt="Darwin Chapuswike in a suit">
-            <h1>Darwin Chapuswike</h1>
-            <p>L2 Support Engineer | Lusaka Province, Zambia</p>
+            <h1 data-lang="en">Darwin Chapuswike</h1>
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <h1 data-lang="sw">Darwin Chapuswike</h1>
+            <p data-lang="en">L2 Support Engineer | Lusaka Province, Zambia</p>
+            <p data-lang="fr">Ingénieur de support L2 | Province de Lusaka, Zambie</p>
+            <p data-lang="sw">Mhandisi wa Usaidizi wa Ngazi ya 2 | Mkoa wa Lusaka, Zambia</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <nav>
         <button class="hamburger" aria-label="Toggle navigation">☰</button>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="summary.html">Summary</a>
-            <a href="experience.html">Experience</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="education.html">Education</a>
-            <a href="skills.html">Skills</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="publications.html">Publications</a>
-			<a href="achievements.html">Achievements</a>
-			<a href="testimonials.html">Testimonials</a>
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html" data-lang="fr">Accueil</a>
+            <a href="index.html" data-lang="sw">Nyumbani</a>
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html" data-lang="fr">Contact</a>
+            <a href="contact.html" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html" data-lang="fr">Résumé</a>
+            <a href="summary.html" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html" data-lang="fr">Expérience</a>
+            <a href="experience.html" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html" data-lang="fr">Galerie</a>
+            <a href="gallery.html" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html" data-lang="fr">Éducation</a>
+            <a href="education.html" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html" data-lang="fr">Compétences</a>
+            <a href="skills.html" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html" data-lang="fr">Certifications</a>
+            <a href="certifications.html" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html" data-lang="fr">Publications</a>
+            <a href="publications.html" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html" data-lang="fr">Réalisations</a>
+            <a href="achievements.html" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html" data-lang="fr">Témoignages</a>
+            <a href="testimonials.html" data-lang="sw">Ushuhuda</a>
         </div>
     </nav>
 
     <div class="container">
         <section>
-            <h2>Certifications</h2>
-            <ul>
-                <li>Creating Your IT Strategy</li>
-                <li>Program Management for IT Professionals</li>
-                <li>Succeeding as a First-Time Tech Manager (2019)</li>
-                <li>Linux Troubleshooting at the Command Line</li>
-            </ul>
+            <!-- English -->
+            <div data-lang="en">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>Creating Your IT Strategy</li>
+                    <li>Program Management for IT Professionals</li>
+                    <li>Succeeding as a First-Time Tech Manager (2019)</li>
+                    <li>Linux Troubleshooting at the Command Line</li>
+                </ul>
+            </div>
+            <!-- French -->
+            <div data-lang="fr">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>Créer votre stratégie informatique</li>
+                    <li>Gestion de programmes pour les professionnels de l'informatique</li>
+                    <li>Réussir en tant que nouveau gestionnaire technologique (2019)</li>
+                    <li>Dépannage Linux en ligne de commande</li>
+                </ul>
+            </div>
+            <!-- Swahili -->
+            <div data-lang="sw">
+                <h2>Vyeti</h2>
+                <ul>
+                    <li>Kuunda Mkakati wako wa TEHAMA</li>
+                    <li>Usimamizi wa Programu kwa Wataalamu wa TEHAMA</li>
+                    <li>Kufanikiwa kama Meneja wa Teknolojia wa Mara ya Kwanza (2019)</li>
+                    <li>Utatuzi wa Linux kwenye Amri ya Mstari</li>
+                </ul>
+            </div>
         </section>
     </div>
 
-    <a href="https://wa.me/260966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
 
     <footer>
-        <p>© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="en">© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits réservés.</p>
+        <p data-lang="sw">© 2025 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
     </footer>
 
     <script>
+        // Language Switcher Functionality
+        function changeLanguage() {
+            const selectedLang = document.getElementById('language-select').value;
+            localStorage.setItem('preferredLang', selectedLang);
+            updateLanguage(selectedLang);
+        }
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                element.classList.remove('active');
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('active');
+                }
+            });
+            document.title = document.querySelector(`title[data-lang="${lang}"]`).textContent;
+        }
+
+        // Set initial language
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        document.getElementById('language-select').value = savedLang;
+        updateLanguage(savedLang);
+
         // Fade-in effect for sections on scroll
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
@@ -312,6 +438,38 @@
             navLinks.classList.toggle('active');
             hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
+    </script>
+    <script>
+        (function(){
+            function c(){
+                var b=a.contentDocument||a.contentWindow.document;
+                if(b){
+                    var d=b.createElement('script');
+                    d.innerHTML="window.__CF$cv$params={r:'93606b203d2dbca2',t:'MTc0NTYxMTE0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d);
+                }
+            }
+            if(document.body){
+                var a=document.createElement('iframe');
+                a.height=1;
+                a.width=1;
+                a.style.position='absolute';
+                a.style.top=0;
+                a.style.left=0;
+                a.style.border='none';
+                a.style.visibility='hidden';
+                document.body.appendChild(a);
+                if('loading'!==document.readyState) c();
+                else if(window.addEventListener) document.addEventListener('DOMContentLoaded',c);
+                else{
+                    var e=document.onreadystatechange||function(){};
+                    document.onreadystatechange=function(b){
+                        e(b);
+                        'loading'!==document.readyState&&(document.onreadystatechange=e,c());
+                    }
+                }
+            }
+        })();
     </script>
 </body>
 </html>

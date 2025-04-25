@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W7RTBTJLRV');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W7RTBTJLRV');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Darwin Chapuswike’s portfolio:skills, certifications, and experience. Explore my work and achievements!">
+    <meta name="description" content="Darwin Chapuswike’s portfolio: skills, certifications, and experience. Explore my work and achievements!">
     <meta name="keywords" content="Best IT Engineer in Zambia, Best Software Developer in Zambia, Experienced IT Professional in Zambia, Best IT Engineer in Lusaka, Best Software Developer in Lusaka, Experienced IT Professional in Lusaka">
     <meta name="author" content="Darwin Chapuswike">
-	<link rel="icon" href="ecology.png" type="image/png">
-    <title>Darwin Chapuswike - L2 Support Engineer</title>
+    <link rel="icon" href="index_logo.png" type="image/png">
+    <title data-lang="en">Darwin Chapuswike - L2 Support Engineer</title>
+    <title data-lang="fr">Darwin Chapuswike - Ingénieur de support L2</title>
+    <title data-lang="sw">Darwin Chapuswike - Mhandisi wa Usaidizi wa Ngazi ya 2</title>
     <style>
         * {
             margin: 0;
@@ -146,7 +147,7 @@
             color: #555;
             margin-top: 10px;
         }
-        #score-display {
+        .score-display {
             font-size: 1.2em;
             font-weight: bold;
             color: #0A66C2;
@@ -188,6 +189,37 @@
         }
         a:hover {
             color: #dc3545;
+        }
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+        .language-switcher select {
+            padding: 5px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .language-switcher select:hover {
+            border-color: #0A66C2;
+        }
+        .language-switcher select:focus {
+            outline: none;
+            border-color: #0A66C2;
+        }
+        /* Language Content Styles */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
         }
         @media (max-width: 720px) {
             .container {
@@ -246,7 +278,7 @@
             #pong-instructions {
                 font-size: 0.85em;
             }
-            #score-display {
+            .score-display {
                 font-size: 1.1em;
             }
             .whatsapp-btn {
@@ -258,6 +290,14 @@
             footer {
                 padding: 8px;
                 font-size: 0.75em;
+            }
+            .language-switcher {
+                top: 5px;
+                right: 5px;
+            }
+            .language-switcher select {
+                font-size: 0.85em;
+                padding: 4px;
             }
         }
         @media (max-width: 480px) {
@@ -282,8 +322,12 @@
             #pong-instructions {
                 font-size: 0.8em;
             }
-            #score-display {
+            .score-display {
                 font-size: 1em;
+            }
+            .language-switcher select {
+                font-size: 0.8em;
+                padding: 3px;
             }
         }
     </style>
@@ -293,84 +337,120 @@
     <header>
         <div class="container">
             <img src="profile_photo.jpg" alt="Darwin Chapuswike in a suit">
-            <h1>Darwin Chapuswike</h1>
-            <p>L2 Support Engineer | Lusaka Province, Zambia</p>
+            <h1 data-lang="en">Darwin Chapuswike</h1>
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <h1 data-lang="sw">Darwin Chapuswike</h1>
+            <p data-lang="en">L2 Support Engineer | Lusaka Province, Zambia</p>
+            <p data-lang="fr">Ingénieur de support L2 | Province de Lusaka, Zambie</p>
+            <p data-lang="sw">Mhandisi wa Usaidizi wa Ngazi ya 2 | Mkoa wa Lusaka, Zambia</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <nav>
         <button class="hamburger" aria-label="Toggle navigation">☰</button>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="summary.html">Summary</a>
-            <a href="experience.html">Experience</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="education.html">Education</a>
-            <a href="skills.html">Skills</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="publications.html">Publications</a>
-			<a href="achievements.html">Achievements</a>
-			<a href="testimonials.html">Testimonials</a>
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html" data-lang="fr">Accueil</a>
+            <a href="index.html" data-lang="sw">Nyumbani</a>
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html" data-lang="fr">Contact</a>
+            <a href="contact.html" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html" data-lang="fr">Résumé</a>
+            <a href="summary.html" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html" data-lang="fr">Expérience</a>
+            <a href="experience.html" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html" data-lang="fr">Galerie</a>
+            <a href="gallery.html" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html" data-lang="fr">Éducation</a>
+            <a href="education.html" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html" data-lang="fr">Compétences</a>
+            <a href="skills.html" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html" data-lang="fr">Certifications</a>
+            <a href="certifications.html" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html" data-lang="fr">Publications</a>
+            <a href="publications.html" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html" data-lang="fr">Réalisations</a>
+            <a href="achievements.html" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html" data-lang="fr">Témoignages</a>
+            <a href="testimonials.html" data-lang="sw">Ushuhuda</a>
         </div>
     </nav>
 
     <div class="container">
         <section id="welcome-section">
-            <h2>Welcome</h2>
-            <p>Hello! I'm Darwin Chapuswike, an experienced ICT Professional with over 6 years of experience in hardware, software, networking, and troubleshooting. Explore my portfolio to learn more about my work, skills, and interests.</p>
+            <!-- English -->
+            <div data-lang="en">
+                <h2>Welcome</h2>
+                <p>Hello! I'm Darwin Chapuswike, an experienced ICT Professional with over 6 years of experience in hardware, software, networking, and troubleshooting. Explore my portfolio to learn more about my work, skills, and interests.</p>
+            </div>
+            <!-- French -->
+            <div data-lang="fr">
+                <h2>Bienvenue</h2>
+                <p>Bonjour ! Je suis Darwin Chapuswike, un professionnel des TIC expérimenté avec plus de 6 ans d’expérience en matériel, logiciel, réseaux et dépannage. Explorez mon portefeuille pour en savoir plus sur mon travail, mes compétences et mes centres d’intérêt.</p>
+            </div>
+            <!-- Swahili -->
+            <div data-lang="sw">
+                <h2>Karibu</h2>
+                <p>Habari! Mimi ni Darwin Chapuswike, mtaalamu wa TIC mwenye uzoefu wa zaidi ya miaka 6 katika vifaa, programu, mitandao, na utatuzi wa matatizo. Chunguza portifolio yangu ili ujifunze zaidi kuhusu kazi yangu, ujuzi wangu, na mambo ninayopenda.</p>
+            </div>
         </section>
 
         <section id="pong-section">
-            <h2>Play Pong!</h2>
-            <div id="score-display">Player: 0 | AI: 0</div>
+            <h2 data-lang="en">Play Pong!</h2>
+            <h2 data-lang="fr">Jouez à Pong !</h2>
+            <h2 data-lang="sw">Cheza Pong!</h2>
+
+            <div class="score-display" data-lang="en">Player: 0 | AI: 0</div>
+            <div class="score-display" data-lang="fr">Joueur : 0 | IA : 0</div>
+            <div class="score-display" data-lang="sw">Mchezaji: 0 | AI: 0</div>
+
             <canvas id="pong-canvas"></canvas>
-            <p id="pong-instructions">On desktop, use the Up and Down arrow keys to move your paddle (left side). On mobile, touch and drag on the left side of the canvas to move your paddle. First to 5 points wins!</p>
+
+            <p data-lang="en" class="pong-instructions">Use ↑ ↓ keys or drag to play. First to 5 wins.</p>
+            <p data-lang="fr" class="pong-instructions">Utilisez les flèches ↑ ↓ ou faites glisser. Premier à 5 gagne.</p>
+            <p data-lang="sw" class="pong-instructions">Tumia ↑ ↓ au gusa na buruta. Wa kwanza kufikia 5 anashinda.</p>
         </section>
     </div>
 
-    <a href="https://wa.me/260966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
 
     <footer>
-        <p>© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="en">© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits réservés.</p>
+        <p data-lang="sw">© 2025 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
     </footer>
 
     <script>
-        // Fade-in effect for sections on scroll
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        // Hamburger menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-        });
-
-        // Pong Game Logic
+        // Game objects
         const canvas = document.getElementById('pong-canvas');
         const ctx = canvas.getContext('2d');
-        const scoreDisplay = document.getElementById('score-display');
 
-        // Set canvas size
+        // Set initial canvas size
         canvas.width = 600;
         canvas.height = 400;
 
-        // Game objects
         const paddleWidth = 10;
         const paddleHeight = 60;
         const ballSize = 10;
+        let baseBallSpeed = 4; // Base speed for ball, adjusted on resize
 
         let playerPaddle = {
             x: 10,
@@ -394,8 +474,8 @@
             x: canvas.width / 2,
             y: canvas.height / 2,
             size: ballSize,
-            speedX: 4,
-            speedY: 4
+            speedX: baseBallSpeed,
+            speedY: baseBallSpeed
         };
 
         // Game state
@@ -404,50 +484,143 @@
         let touchActive = false;
         let touchY = 0;
 
-        // Event listeners for keyboard input (desktop)
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowUp') keys.ArrowUp = true;
-            if (e.key === 'ArrowDown') keys.ArrowDown = true;
-        });
+        // Helper function to get the current score display element
+        function getScoreDisplay() {
+            const lang = localStorage.getItem('preferredLang') || 'en';
+            return document.querySelector(`.score-display[data-lang="${lang}"]`);
+        }
 
-        document.addEventListener('keyup', (e) => {
-            if (e.key === 'ArrowUp') keys.ArrowUp = false;
-            if (e.key === 'ArrowDown') keys.ArrowDown = false;
-        });
+        // Language Switcher Functionality
+        function changeLanguage() {
+            const selectedLang = document.getElementById('language-select').value;
+            localStorage.setItem('preferredLang', selectedLang);
+            updateLanguage(selectedLang);
+        }
 
-        // Event listeners for touch input (mobile)
-        canvas.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            const touch = e.touches[0];
-            const rect = canvas.getBoundingClientRect();
-            const touchX = touch.clientX - rect.left;
-            touchY = touch.clientY - rect.top;
+        function updateLanguage(lang) {
+            // Update visibility of elements with data-lang
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                element.classList.remove('active');
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('active');
+                }
+            });
 
-            // Only allow touch on the left half of the canvas (player's side)
-            if (touchX < canvas.width / 2) {
-                touchActive = true;
+            // Update page title
+            document.title = document.querySelector(`title[data-lang="${lang}"]`).textContent;
+
+            // Update meta tags dynamically
+            const descriptions = {
+                en: "Darwin Chapuswike’s portfolio: skills, certifications, and experience. Explore my work and achievements!",
+                fr: "Portefeuille de Darwin Chapuswike : compétences, certifications et expérience. Découvrez mon travail et mes réalisations !",
+                sw: "Portifolio ya Darwin Chapuswike: ujuzi, vyeti, na uzoefu. Chunguza kazi yangu na mafanikio yangu!"
+            };
+            const keywords = {
+                en: "Best IT Engineer in Zambia, Best Software Developer in Zambia, Experienced IT Professional in Zambia, Best IT Engineer in Lusaka, Best Software Developer in Lusaka, Experienced IT Professional in Lusaka",
+                fr: "Meilleur ingénieur IT en Zambie, Meilleur développeur logiciel en Zambie, Professionnel IT expérimenté en Zambie, Meilleur ingénieur IT à Lusaka, Meilleur développeur logiciel à Lusaka, Professionnel IT expérimenté à Lusaka",
+                sw: "Mhandisi Bora wa IT nchini Zambia, Mwandishi Bora wa Programu nchini Zambia, Mtaalamu wa IT mwenye Uzoefu nchini Zambia, Mhandisi Bora wa IT mjini Lusaka, Mwandishi Bora wa Programu mjini Lusaka, Mtaalamu wa IT mwenye Uzoefu mjini Lusaka"
+            };
+            document.querySelector('meta[name="description"]').setAttribute('content', descriptions[lang]);
+            document.querySelector('meta[name="keywords"]').setAttribute('content', keywords[lang]);
+
+            // Update score display
+            updateScoreDisplay();
+        }
+
+        // Function to update the score display
+        function updateScoreDisplay() {
+            const lang = localStorage.getItem('preferredLang') || 'en';
+            const scoreText = lang === 'en' ? `Player: ${playerPaddle.score} | AI: ${aiPaddle.score}` :
+                             lang === 'fr' ? `Joueur : ${playerPaddle.score} | IA : ${aiPaddle.score}` :
+                             `Mchezaji: ${playerPaddle.score} | AI: ${aiPaddle.score}`;
+            getScoreDisplay().textContent = scoreText;
+        }
+
+        // Check for game over
+        function checkGameOver() {
+            if (playerPaddle.score >= 5 || aiPaddle.score >= 5) {
+                gameRunning = false;
+                const lang = localStorage.getItem('preferredLang') || 'en';
+                const message = lang === 'en' ?
+                    (playerPaddle.score >= 5 ? 'You Win! Refresh to play again.' : 'AI Wins! Refresh to play again.') :
+                    lang === 'fr' ?
+                    (playerPaddle.score >= 5 ? 'Vous avez gagné ! Rafraîchissez pour rejouer.' : 'L’IA a gagné ! Rafraîchissez pour rejouer.') :
+                    (playerPaddle.score >= 5 ? 'Umepata Ushindi! Ongeza upya kucheza tena.' : 'AI Imeshinda! Ongeza upya kucheza tena.');
+                getScoreDisplay().textContent = message;
             }
-        });
+        }
 
-        canvas.addEventListener('touchmove', (e) => {
-            e.preventDefault();
-            if (touchActive) {
+        // Fade-in effect for sections on scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Hamburger menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Event listeners for keyboard input (desktop)
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowUp') keys.ArrowUp = true;
+                if (e.key === 'ArrowDown') keys.ArrowDown = true;
+            });
+
+            document.addEventListener('keyup', (e) => {
+                if (e.key === 'ArrowUp') keys.ArrowUp = false;
+                if (e.key === 'ArrowDown') keys.ArrowDown = false;
+            });
+
+            // Event listeners for touch input (mobile)
+            canvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
                 const touch = e.touches[0];
                 const rect = canvas.getBoundingClientRect();
+                const touchX = touch.clientX - rect.left;
                 touchY = touch.clientY - rect.top;
 
-                // Update player paddle position based on touch
-                playerPaddle.y = touchY - playerPaddle.height / 2;
-                if (playerPaddle.y < 0) playerPaddle.y = 0;
-                if (playerPaddle.y > canvas.height - playerPaddle.height) {
-                    playerPaddle.y = canvas.height - playerPaddle.height;
+                // Only allow touch on the left half of the canvas (player's side)
+                if (touchX < canvas.width / 2) {
+                    touchActive = true;
                 }
-            }
-        });
+            });
 
-        canvas.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            touchActive = false;
+            canvas.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                if (touchActive) {
+                    const touch = e.touches[0];
+                    const rect = canvas.getBoundingClientRect();
+                    touchY = touch.clientY - rect.top;
+
+                    // Update player paddle position based on touch with boundary checks
+                    playerPaddle.y = touchY - playerPaddle.height / 2;
+                    if (playerPaddle.y < 0) playerPaddle.y = 0;
+                    if (playerPaddle.y > canvas.height - playerPaddle.height) {
+                        playerPaddle.y = canvas.height - playerPaddle.height;
+                    }
+                }
+            });
+
+            canvas.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                touchActive = false;
+            });
+
+            // Start the game
+            gameLoop();
         });
 
         // Update game state
@@ -497,19 +670,14 @@
             if (ball.x <= 0) {
                 aiPaddle.score++;
                 resetBall();
+                updateScoreDisplay();
+                checkGameOver();
             }
             if (ball.x >= canvas.width - ball.size) {
                 playerPaddle.score++;
                 resetBall();
-            }
-
-            // Update score display
-            scoreDisplay.textContent = `Player: ${playerPaddle.score} | AI: ${aiPaddle.score}`;
-
-            // Check for game over
-            if (playerPaddle.score >= 5 || aiPaddle.score >= 5) {
-                gameRunning = false;
-                scoreDisplay.textContent = playerPaddle.score >= 5 ? 'You Win! Refresh to play again.' : 'AI Wins! Refresh to play again.';
+                updateScoreDisplay();
+                checkGameOver();
             }
         }
 
@@ -555,33 +723,33 @@
             }
         }
 
-        // Start the game
-        gameLoop();
-
         // Adjust canvas size for mobile
         function resizeCanvas() {
+            const previousWidth = canvas.width;
             if (window.innerWidth <= 720) {
                 canvas.width = window.innerWidth - 40; // Adjust for padding
                 canvas.height = 300;
-
-                // Adjust game objects for new canvas size
-                playerPaddle.x = 10;
-                aiPaddle.x = canvas.width - paddleWidth - 10;
-                ball.x = canvas.width / 2;
-                ball.y = canvas.height / 2;
             } else {
                 canvas.width = 600;
                 canvas.height = 400;
-
-                // Reset positions for desktop size
-                playerPaddle.x = 10;
-                aiPaddle.x = canvas.width - paddleWidth - 10;
-                ball.x = canvas.width / 2;
-                ball.y = canvas.height / 2;
             }
+
+            // Scale game objects proportionally
+            const scale = canvas.width / previousWidth;
+            playerPaddle.x = 10;
+            aiPaddle.x = canvas.width - paddleWidth - 10;
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+            ball.speedX = baseBallSpeed * scale;
+            ball.speedY = baseBallSpeed * (canvas.height / 400); // Scale vertical speed based on height
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
+
+        // Set initial language
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        document.getElementById('language-select').value = savedLang;
+        updateLanguage(savedLang);
     </script>
 </body>
 </html>

@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-W7RTBTJLRV');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W7RTBTJLRV');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="star.png" type="image/png">
-    <title>Achievements - Darwin Chapuswike</title>
+    <link rel="icon" href="star.png" type="image/png">
+    <title data-lang="en">Achievements - Darwin Chapuswike</title>
+    <title data-lang="fr">RÈalisations - Darwin Chapuswike</title>
+    <title data-lang="sw">Mafanikio - Darwin Chapuswike</title>
     <style>
         * {
             margin: 0;
@@ -131,7 +132,7 @@
             padding-left: 20px;
         }
         ul li::before {
-            content: 'üèÜ';
+            content: '??';
             position: absolute;
             left: 0;
             font-size: 1em;
@@ -184,6 +185,37 @@
         }
         a:hover {
             color: #dc3545;
+        }
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+        .language-switcher select {
+            padding: 5px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .language-switcher select:hover {
+            border-color: #0A66C2;
+        }
+        .language-switcher select:focus {
+            outline: none;
+            border-color: #0A66C2;
+        }
+        /* Language Content Styles */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
         }
         @media (max-width: 720px) {
             .container {
@@ -251,6 +283,14 @@
                 padding: 8px;
                 font-size: 0.75em;
             }
+            .language-switcher {
+                top: 5px;
+                right: 5px;
+            }
+            .language-switcher select {
+                font-size: 0.85em;
+                padding: 4px;
+            }
         }
         @media (max-width: 480px) {
             header h1 {
@@ -274,6 +314,10 @@
             .achievement-skills {
                 font-size: 0.8em;
             }
+            .language-switcher select {
+                font-size: 0.8em;
+                padding: 3px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -282,73 +326,207 @@
     <header>
         <div class="container">
             <img src="profile_photo.jpg" alt="Darwin Chapuswike in a suit">
-            <h1>Darwin Chapuswike</h1>
-            <p>L2 Support Engineer | Lusaka Province, Zambia</p>
+            <h1 data-lang="en">Darwin Chapuswike</h1>
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <h1 data-lang="sw">Darwin Chapuswike</h1>
+            <p data-lang="en">L2 Support Engineer | Lusaka Province, Zambia</p>
+            <p data-lang="fr">IngÈnieur de support L2 | Province de Lusaka, Zambie</p>
+            <p data-lang="sw">Mhandisi wa Usaidizi wa Ngazi ya 2 | Mkoa wa Lusaka, Zambia</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr">FranÁais</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
         </div>
     </header>
 
     <nav>
-        <button class="hamburger" aria-label="Toggle navigation">‚ò∞</button>
+        <button class="hamburger" aria-label="Toggle navigation">?</button>
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="summary.html">Summary</a>
-            <a href="experience.html">Experience</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="education.html">Education</a>
-            <a href="skills.html">Skills</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="publications.html">Publications</a>
-            <a href="achievements.html">Achievements</a>
-			<a href="testimonials.html">Testimonials</a>
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html" data-lang="fr">Accueil</a>
+            <a href="index.html" data-lang="sw">Nyumbani</a>
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html" data-lang="fr">Contact</a>
+            <a href="contact.html" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html" data-lang="fr">RÈsumÈ</a>
+            <a href="summary.html" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html" data-lang="fr">ExpÈrience</a>
+            <a href="experience.html" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html" data-lang="fr">Galerie</a>
+            <a href="gallery.html" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html" data-lang="fr">…ducation</a>
+            <a href="education.html" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html" data-lang="fr">CompÈtences</a>
+            <a href="skills.html" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html" data-lang="fr">Certifications</a>
+            <a href="certifications.html" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html" data-lang="fr">Publications</a>
+            <a href="publications.html" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html" data-lang="fr">RÈalisations</a>
+            <a href="achievements.html" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html" data-lang="fr">TÈmoignages</a>
+            <a href="testimonials.html" data-lang="sw">Ushuhuda</a>
         </div>
     </nav>
 
     <div class="container">
         <section>
-            <h2>Achievements</h2>
-            <ul>
-                <li>
-                    <span class="achievement-date">Nov 2024 - Present</span>
-                    Led the migration of NetOne IT Ltd's email infrastructure to a new Microsoft Exchange version, overseeing the transition of email domains, mailboxes, and distribution lists with minimal disruption. Ensured data integrity, configured mail flow, and provided post-migration support, resulting in a more secure and efficient email system for all NetOne IT clientele.
-                    <div class="achievement-skills">Skills: Microsoft Exchange</div>
-                </li>
-                <li>
-                    <span class="achievement-date">Aug 2023</span>
-                    Resolved a critical DPE power supply issue at a client site in Lusaka, Zambia, as a Service Partner with TRT. Led a team to diagnose and replace a faulty input dual 12V power supply unit, restoring system stability with minimal downtime. Delivered a detailed service report, earning client satisfaction for the swift resolution.
-                    <div class="achievement-skills">Skills: Project Management, Communication, Customer Service</div>
-                </li>
-                <li>
-                    <span class="achievement-date">Feb 2023</span>
-                    Installed and commissioned an HPE server infrastructure (DL380 Gen10) for a client in Lusaka, Zambia, as a Service Partner with TRT. Led the team in integrating processors, memory, storage, and network components, enhancing data processing and scalability. Completed the project on schedule, meeting HPE standards and achieving client satisfaction.
-                    <div class="achievement-skills">Skills: Project Management, Hardware Installation, Leadership</div>
-                </li>
-                <li>
-                    <span class="achievement-date">Aug 2022 - Dec 2022</span>
-                    Contributed to the aero bridge system upgrade at Kenneth Kaunda International Airport with Zambia Airports Corporation Limited. Managed the project, led technicians in installing state-of-the-art technology, and ensured integration with existing infrastructure, reducing boarding times and enhancing safety, setting a benchmark for other airports.
-                    <div class="achievement-skills">Skills: Project Management, Networking, Leadership</div>
-                </li>
-                <li>
-                    <span class="achievement-date">Mar 2021 - Nov 2021</span>
-                    Developed a location-aware mobile app at the National Institute of Public Administration to recommend nearby retail stores with the cheapest prices in Zambia. Integrated Google Maps and a price comparison algorithm, saving users time and money while enhancing business visibility through mobile commerce.
-                    <div class="achievement-skills">Skills: Mobile Application Development, Location-Based Services, Algorithm Development, Database Management</div>
-                </li>
-                <li>
-                    <span class="achievement-date">Sep 2018 - Jan 2019</span>
-                    Improved fleet management for Balaji Constructions by implementing a GPS-based real-time monitoring system. Conducted a needs assessment, selected technology, and managed installation, leading to increased efficiency, reduced downtime, optimized routes, and cost savings through lower fuel consumption.
-                    <div class="achievement-skills">Skills: Project Management, GPS Technology, Stakeholder Collaboration</div>
-                </li>
-            </ul>
+            <!-- English -->
+            <div data-lang="en">
+                <h2>Achievements</h2>
+                <ul>
+                    <li>
+                        <span class="achievement-date">Nov 2024 - Present</span>
+                        Led the migration of NetOne IT Ltd's email infrastructure to a new Microsoft Exchange version, overseeing the transition of email domains, mailboxes, and distribution lists with minimal disruption. Ensured data integrity, configured mail flow, and provided post-migration support, resulting in a more secure and efficient email system for all NetOne IT clientele.
+                        <div class="achievement-skills">Skills: Microsoft Exchange</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Aug 2023</span>
+                        Resolved a critical DPE power supply issue at a client site in Lusaka, Zambia, as a Service Partner with TRT. Led a team to diagnose and replace a faulty input dual 12V power supply unit, restoring system stability with minimal downtime. Delivered a detailed service report, earning client satisfaction for the swift resolution.
+                        <div class="achievement-skills">Skills: Project Management, Communication, Customer Service</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Feb 2023</span>
+                        Installed and commissioned an HPE server infrastructure (DL380 Gen10) for a client in Lusaka, Zambia, as a Service Partner with TRT. Led the team in integrating processors, memory, storage, and network components, enhancing data processing and scalability. Completed the project on schedule, meeting HPE standards and achieving client satisfaction.
+                        <div class="achievement-skills">Skills: Project Management, Hardware Installation, Leadership</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Aug 2022 - Dec 2022</span>
+                        Contributed to the aero bridge system upgrade at Kenneth Kaunda International Airport with Zambia Airports Corporation Limited. Managed the project, led technicians in installing state-of-the-art technology, and ensured integration with existing infrastructure, reducing boarding times and enhancing safety, setting a benchmark for other airports.
+                        <div class="achievement-skills">Skills: Project Management, Networking, Leadership</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Mar 2021 - Nov 2021</span>
+                        Developed a location-aware mobile app at the National Institute of Public Administration to recommend nearby retail stores with the cheapest prices in Zambia. Integrated Google Maps and a price comparison algorithm, saving users time and money while enhancing business visibility through mobile commerce.
+                        <div class="achievement-skills">Skills: Mobile Application Development, Location-Based Services, Algorithm Development, Database Management</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Sep 2018 - Jan 2019</span>
+                        Improved fleet management for Balaji Constructions by implementing a GPS-based real-time monitoring system. Conducted a needs assessment, selected technology, and managed installation, leading to increased efficiency, reduced downtime, optimized routes, and cost savings through lower fuel consumption.
+                        <div class="achievement-skills">Skills: Project Management, GPS Technology, Stakeholder Collaboration</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- French -->
+            <div data-lang="fr">
+                <h2>RÈalisations</h2>
+                <ul>
+                    <li>
+                        <span class="achievement-date">Nov 2024 - PrÈsent</span>
+                        A dirigÈ la migration de l'infrastructure de messagerie de NetOne IT Ltd vers une nouvelle version de Microsoft Exchange, supervisant la transition des domaines de messagerie, des boÓtes aux lettres et des listes de distribution avec une perturbation minimale. A assurÈ l'intÈgritÈ des donnÈes, configurÈ le flux de messagerie et fourni un support post-migration, aboutissant ‡ un systËme de messagerie plus sÈcurisÈ et efficace pour tous les clients de NetOne IT.
+                        <div class="achievement-skills">CompÈtences : Microsoft Exchange</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Ao˚t 2023</span>
+                        A rÈsolu un problËme critique d'alimentation DPE sur un site client ‡ Lusaka, Zambie, en tant que partenaire de service avec TRT. A dirigÈ une Èquipe pour diagnostiquer et remplacer une unitÈ d'alimentation duale 12V dÈfectueuse, restaurant la stabilitÈ du systËme avec un temps d'arrÍt minimal. A fourni un rapport de service dÈtaillÈ, obtenant la satisfaction du client pour la rÈsolution rapide.
+                        <div class="achievement-skills">CompÈtences : Gestion de projet, Communication, Service client</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">FÈv 2023</span>
+                        A installÈ et mis en service une infrastructure de serveur HPE (DL380 Gen10) pour un client ‡ Lusaka, Zambie, en tant que partenaire de service avec TRT. A dirigÈ l'Èquipe dans l'intÈgration des processeurs, de la mÈmoire, du stockage et des composants rÈseau, amÈliorant le traitement des donnÈes et la scalabilitÈ. A terminÈ le projet dans les dÈlais, respectant les normes HPE et obtenant la satisfaction du client.
+                        <div class="achievement-skills">CompÈtences : Gestion de projet, Installation de matÈriel, Leadership</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Ao˚t 2022 - DÈc 2022</span>
+                        A contribuÈ ‡ la mise ‡ niveau du systËme de pont d'embarquement ‡ l'aÈroport international Kenneth Kaunda avec la Zambia Airports Corporation Limited. A gÈrÈ le projet, dirigÈ les techniciens dans l'installation de technologies de pointe et assurÈ l'intÈgration avec l'infrastructure existante, rÈduisant les temps d'embarquement et amÈliorant la sÈcuritÈ, Ètablissant une rÈfÈrence pour les autres aÈroports.
+                        <div class="achievement-skills">CompÈtences : Gestion de projet, RÈseautage, Leadership</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Mar 2021 - Nov 2021</span>
+                        A dÈveloppÈ une application mobile sensible ‡ la localisation ‡ l'Institut national d'administration publique pour recommander les magasins de dÈtail ‡ proximitÈ avec les prix les plus bas en Zambie. A intÈgrÈ Google Maps et un algorithme de comparaison de prix, permettant aux utilisateurs d'Èconomiser du temps et de l'argent tout en amÈliorant la visibilitÈ des entreprises gr‚ce au commerce mobile.
+                        <div class="achievement-skills">CompÈtences : DÈveloppement d'applications mobiles, Services basÈs sur la localisation, DÈveloppement d'algorithmes, Gestion de bases de donnÈes</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Sep 2018 - Jan 2019</span>
+                        A amÈliorÈ la gestion de flotte pour Balaji Constructions en mettant en úuvre un systËme de surveillance en temps rÈel basÈ sur le GPS. A effectuÈ une Èvaluation des besoins, sÈlectionnÈ la technologie et gÈrÈ l'installation, entraÓnant une efficacitÈ accrue, une rÈduction des temps d'arrÍt, des itinÈraires optimisÈs et des Èconomies gr‚ce ‡ une consommation de carburant rÈduite.
+                        <div class="achievement-skills">CompÈtences : Gestion de projet, Technologie GPS, Collaboration avec les parties prenantes</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Swahili -->
+            <div data-lang="sw">
+                <h2>Mafanikio</h2>
+                <ul>
+                    <li>
+                        <span class="achievement-date">Nov 2024 - Sasa</span>
+                        Aliongoza uhamiaji wa miundombinu ya barua pepe ya NetOne IT Ltd kwenye toleo jipya la Microsoft Exchange, akisimamia mabadiliko ya vikoa vya barua pepe, sanduku za barua, na orodha za usambazaji bila usumbufu mdogo. Alihakikisha uadilifu wa data, akasanidi mtiririko wa barua, na kutoa usaidizi baada ya uhamiaji, na kusababisha mfumo wa barua pepe salama na wa ufanisi zaidi kwa wateja wote wa NetOne IT.
+                        <div class="achievement-skills">Ujuzi: Microsoft Exchange</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Agosti 2023</span>
+                        Alitatua tatizo muhimu la usambazaji wa nguvu wa DPE katika tovuti ya mteja huko Lusaka, Zambia, kama Mshirika wa Huduma na TRT. Aliongoza timu kugundua na kubadilisha kitengo cha usambazaji wa nguvu cha 12V kilichoharibika, akirejesha utulivu wa mfumo kwa wakati mdogo wa kupumzika. Alitoa ripoti ya huduma ya kina, akipata kuridhika kwa mteja kwa utatuzi wa haraka.
+                        <div class="achievement-skills">Ujuzi: Usimamizi wa Mradi, Mawasiliano, Huduma kwa Wateja</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Februari 2023</span>
+                        Alisakinisha na kuanzisha miundombinu ya seva ya HPE (DL380 Gen10) kwa mteja huko Lusaka, Zambia, kama Mshirika wa Huduma na TRT. Aliongoza timu katika kuunganisha wasindikaji, kumbukumbu, hifadhi, na vifaa vya mtandao, akiboresha usindikaji wa data na uwezo wa kupanuka. Alikamilisha mradi kwa ratiba, akifikia viwango vya HPE na kufikia kuridhika kwa mteja.
+                        <div class="achievement-skills">Ujuzi: Usimamizi wa Mradi, Usakinishaji wa Vifaa, Uongozi</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Agosti 2022 - Desemba 2022</span>
+                        Alichangia katika uboreshaji wa mfumo wa daraja la ndege katika Uwanja wa Ndege wa Kimataifa wa Kenneth Kaunda na Shirika la Viwanja vya Ndege la Zambia. Alisimamia mradi, akiongoza mafundi katika kusakinisha teknolojia ya hali ya juu, na kuhakikisha uunganishaji na miundombinu iliyopo, kupunguza muda wa kupanda na kuimarisha usalama, kuweka kiwango cha viwanja vya ndege vingine.
+                        <div class="achievement-skills">Ujuzi: Usimamizi wa Mradi, Mitandao, Uongozi</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Machi 2021 - Novemba 2021</span>
+                        Aliunda programu ya simu inayotambua eneo katika Taasisi ya Kitaifa ya Utawala wa Umma ili kupendekeza maduka ya rejareja ya karibu yenye bei za chini zaidi nchini Zambia. Aliunganisha Google Maps na algoriti ya kulinganisha bei, akiokoa watumiaji muda na pesa huku akiboresha mwonekano wa Biashara kupitia Biashara ya Simu.
+                        <div class="achievement-skills">Ujuzi: Uundaji wa Programu za Simu, Huduma za Msingi wa Mahali, Uundaji wa Algoriti, Usimamizi wa Hifadhidata</div>
+                    </li>
+                    <li>
+                        <span class="achievement-date">Septemba 2018 - Januari 2019</span>
+                        Aliboresha usimamizi wa meli kwa Balaji Constructions kwa kutekeleza mfumo wa ufuatiliaji wa wakati halisi unaotegemea GPS. Alifanya tathmini ya mahitaji, akachagua teknolojia, na akasimamia usakinishaji, na kusababisha ufanisi ulioongezeka, kupunguzwa kwa wakati wa kupumzika, njia zilizoboreshwa, na gharama za kuokoa kupitia matumizi ya chini ya mafuta.
+                        <div class="achievement-skills">Ujuzi: Usimamizi wa Mradi, Teknolojia ya GPS, Ushirikiano na Wadau</div>
+                    </li>
+                </ul>
+            </div>
         </section>
     </div>
 
-    <a href="https://wa.me/260966130153" class="whatsapp-btn" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
 
     <footer>
-        <p>¬© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="en">© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits rÈservÈs.</p>
+        <p data-lang="sw">© 2025 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
     </footer>
 
     <script>
+        // Language Switcher Functionality
+        function changeLanguage() {
+            const selectedLang = document.getElementById('language-select').value;
+            localStorage.setItem('preferredLang', selectedLang);
+            updateLanguage(selectedLang);
+        }
+
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                element.classList.remove('active');
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('active');
+                }
+            });
+            document.title = document.querySelector(`title[data-lang="${lang}"]`).textContent;
+        }
+
+        // Set initial language
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        document.getElementById('language-select').value = savedLang;
+        updateLanguage(savedLang);
+
         // Fade-in effect for sections on scroll
         const sections = document.querySelectorAll('section');
         const observer = new IntersectionObserver((entries) => {
@@ -368,8 +546,40 @@
         const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            hamburger.textContent = navLinks.classList.contains('active') ? '‚úï' : '‚ò∞';
+            hamburger.textContent = navLinks.classList.contains('active') ? '?' : '?';
         });
+    </script>
+    <script>
+        (function(){
+            function c(){
+                var b=a.contentDocument||a.contentWindow.document;
+                if(b){
+                    var d=b.createElement('script');
+                    d.innerHTML="window.__CF$cv$params={r:'936070217c5c458a',t:'MTc0NTYxMTM0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                    b.getElementsByTagName('head')[0].appendChild(d);
+                }
+            }
+            if(document.body){
+                var a=document.createElement('iframe');
+                a.height=1;
+                a.width=1;
+                a.style.position='absolute';
+                a.style.top=0;
+                a.style.left=0;
+                a.style.border='none';
+                a.style.visibility='hidden';
+                document.body.appendChild(a);
+                if('loading'!==document.readyState) c();
+                else if(window.addEventListener) document.addEventListener('DOMContentLoaded',c);
+                else{
+                    var e=document.onreadystatechange||function(){};
+                    document.onreadystatechange=function(b){
+                        e(b);
+                        'loading'!==document.readyState&&(document.onreadystatechange=e,c());
+                    }
+                }
+            }
+        })();
     </script>
 </body>
 </html>
