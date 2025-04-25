@@ -12,6 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="brown.png" type="image/png">
+    <!-- Titles for each language -->
     <title data-lang="en">Work Hard, Stay Humble: A Throwback to NIPA Days - Darwin Chapuswike</title>
     <title data-lang="fr">Travaillez Dur, Restez Humble : Retour sur les Jours à NIPA - Darwin Chapuswike</title>
     <title data-lang="sw">Fanya Kazi kwa Bidii, Baki Mnyenyekevu: Kurudi Nyuma kwenye Siku za NIPA - Darwin Chapuswike</title>
@@ -219,6 +220,93 @@
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Dynamically add meta tags based on language -->
+    <script>
+        // Function to get URL parameter
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the language from URL, localStorage, or default to 'en'
+        const urlLang = getUrlParameter('lang');
+        const savedLang = localStorage.getItem('preferredLang');
+        const initialLang = urlLang || savedLang || 'en';
+
+        // Add meta tags for the initial language
+        const metaTags = {
+            og: [
+                { property: 'og:title', content: '' },
+                { property: 'og:description', content: '' },
+                { property: 'og:url', content: 'https://darwinchapuswike.com/post-19.html' },
+                { property: 'og:image', content: 'https://darwinchapuswike.com/work-hard-stay-humble.jpg' },
+                { property: 'og:type', content: 'article' },
+                { property: 'og:site_name', content: 'Darwin Chapuswike' }
+            ],
+            twitter: [
+                { name: 'twitter:card', content: 'summary_large_image' },
+                { name: 'twitter:title', content: '' },
+                { name: 'twitter:description', content: '' },
+                { name: 'twitter:image', content: 'https://darwinchapuswike.com/work-hard-stay-humble.jpg' },
+                { name: 'twitter:url', content: 'https://darwinchapuswike.com/post-19.html' },
+                { name: 'twitter:site', content: '@DarwinChapuswi5' }
+            ],
+            seo: [
+                { name: 'description', content: '' }
+            ]
+        };
+
+        // Update meta tag content based on initial language
+        const ogMetas = document.querySelectorAll(`.og-meta[data-lang="${initialLang}"]`);
+        const twitterMetas = document.querySelectorAll(`.twitter-meta[data-lang="${initialLang}"]`);
+        const seoMeta = document.querySelector(`.seo-meta[data-lang="${initialLang}"]`);
+
+        ogMetas.forEach(meta => {
+            const property = meta.getAttribute('property');
+            const content = meta.getAttribute('content');
+            const metaTag = metaTags.og.find(tag => tag.property === property);
+            if (metaTag) metaTag.content = content;
+        });
+
+        twitterMetas.forEach(meta => {
+            const name = meta.getAttribute('name');
+            const content = meta.getAttribute('content');
+            const metaTag = metaTags.twitter.find(tag => tag.name === name);
+            if (metaTag) metaTag.content = content;
+        });
+
+        if (seoMeta) {
+            metaTags.seo[0].content = seoMeta.getAttribute('content');
+        }
+
+        // Add the meta tags to the head
+        metaTags.og.forEach(tag => {
+            const meta = document.createElement('meta');
+            meta.setAttribute('property', tag.property);
+            meta.setAttribute('content', tag.content);
+            document.head.appendChild(meta);
+        });
+
+        metaTags.twitter.forEach(tag => {
+            const meta = document.createElement('meta');
+            meta.setAttribute('name', tag.name);
+            meta.setAttribute('content', tag.content);
+            document.head.appendChild(meta);
+        });
+
+        metaTags.seo.forEach(tag => {
+            const meta = document.createElement('meta');
+            meta.setAttribute('name', tag.name);
+            meta.setAttribute('content', tag.content);
+            document.head.appendChild(meta);
+        });
+
+        // Set the document title
+        const titleElement = document.querySelector(`title[data-lang="${initialLang}"]`);
+        if (titleElement) {
+            document.title = titleElement.textContent;
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -404,7 +492,11 @@
         function changeLanguage() {
             const selectedLang = document.getElementById('language-select').value;
             localStorage.setItem('preferredLang', selectedLang);
-            updateLanguage(selectedLang);
+
+            // Update the URL with the lang parameter and reload the page
+            const url = new URL(window.location);
+            url.searchParams.set('lang', selectedLang);
+            window.location.href = url.toString();
         }
 
         function updateLanguage(lang) {
@@ -421,61 +513,22 @@
                 }
             });
 
-            // Update document title
-            const titleElement = document.querySelector(`title[data-lang="${lang}"]`);
-            if (titleElement) {
-                document.title = titleElement.textContent;
-            }
-
-            // Update Open Graph meta tags
-            document.querySelectorAll('.og-meta').forEach(meta => {
-                const property = meta.getAttribute('property');
-                const langMeta = document.querySelector(`.og-meta[data-lang="${lang}"][property="${property}"]`);
-                if (langMeta) {
-                    const existingMeta = document.querySelector(`meta[property="${property}"]:not([data-lang])`);
-                    if (existingMeta) existingMeta.remove();
-                    const newMeta = document.createElement('meta');
-                    newMeta.setAttribute('property', property);
-                    newMeta.setAttribute('content', langMeta.getAttribute('content'));
-                    document.head.appendChild(newMeta);
-                }
-            });
-
-            // Update Twitter Card meta tags
-            document.querySelectorAll('.twitter-meta').forEach(meta => {
-                const name = meta.getAttribute('name');
-                const langMeta = document.querySelector(`.twitter-meta[data-lang="${lang}"][name="${name}"]`);
-                if (langMeta) {
-                    const existingMeta = document.querySelector(`meta[name="${name}"]:not([data-lang])`);
-                    if (existingMeta) existingMeta.remove();
-                    const newMeta = document.createElement('meta');
-                    newMeta.setAttribute('name', name);
-                    newMeta.setAttribute('content', langMeta.getAttribute('content'));
-                    document.head.appendChild(newMeta);
-                }
-            });
-
-            // Update SEO description meta tag
-            const seoMeta = document.querySelector(`.seo-meta[data-lang="${lang}"]`);
-            if (seoMeta) {
-                const existingSeoMeta = document.querySelector('meta[name="description"]:not([data-lang])');
-                if (existingSeoMeta) existingSeoMeta.remove();
-                const newMeta = document.createElement('meta');
-                newMeta.setAttribute('name', 'description');
-                newMeta.setAttribute('content', seoMeta.getAttribute('content'));
-                document.head.appendChild(newMeta);
+            // Update the language select dropdown
+            const languageSelect = document.getElementById('language-select');
+            if (languageSelect) {
+                languageSelect.value = lang;
             }
         }
 
         // Ensure DOM is loaded before running initial setup
         document.addEventListener('DOMContentLoaded', () => {
-            // Set initial language
-            const savedLang = localStorage.getItem('preferredLang') || 'en';
-            const languageSelect = document.getElementById('language-select');
-            if (languageSelect) {
-                languageSelect.value = savedLang;
-                updateLanguage(savedLang);
-            }
+            // Get the language from URL, localStorage, or default to 'en'
+            const urlLang = new URLSearchParams(window.location.search).get('lang');
+            const savedLang = localStorage.getItem('preferredLang');
+            const initialLang = urlLang || savedLang || 'en';
+
+            // Update the page content based on the initial language
+            updateLanguage(initialLang);
 
             // Fade-in effect for blog posts on scroll
             const posts = document.querySelectorAll('.blog-post');
@@ -523,26 +576,28 @@
         // Share functionality
         const baseUrl = "https://darwinchapuswike.com/post-19.html";
         function shareOnFacebook(postId) {
-            const url = baseUrl;
+            const lang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('preferredLang') || 'en';
+            const url = `${baseUrl}?lang=${lang}`;
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
         }
 
         function shareOnTwitter(postId) {
-            const lang = localStorage.getItem('preferredLang') || 'en';
-            const url = baseUrl;
-            const text = document.querySelector(`.twitter-meta[data-lang="${lang}"][name="twitter:title"]`).getAttribute('content');
+            const lang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('preferredLang') || 'en';
+            const url = `${baseUrl}?lang=${lang}`;
+            const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
             window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank');
         }
 
         function shareOnLinkedIn(postId) {
-            const url = baseUrl;
+            const lang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('preferredLang') || 'en';
+            const url = `${baseUrl}?lang=${lang}`;
             window.open(`https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`, '_blank');
         }
 
         function shareOnWhatsApp(postId) {
-            const lang = localStorage.getItem('preferredLang') || 'en';
-            const url = baseUrl;
-            const text = document.querySelector(`.twitter-meta[data-lang="${lang}"][name="twitter:title"]`).getAttribute('content');
+            const lang = new URLSearchParams(window.location.search).get('lang') || localStorage.getItem('preferredLang') || 'en';
+            const url = `${baseUrl}?lang=${lang}`;
+            const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
             window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}`, '_blank');
         }
 
