@@ -375,9 +375,8 @@
 
     function shareOnWhatsApp(postId, event) {
         event.preventDefault();
-        const lang = localStorage.getItem('preferredLang') || 'sw';
         const url = baseUrl;
-        const text = document.querySelector(`h2[data-lang="${lang}"]`).innerText;
+        const text = document.querySelector(`h2`).innerText;
         const encodedMessage = encodeURIComponent(`${text} ${url}`);
         const shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
         console.log("WhatsApp Share URL:", shareUrl);
