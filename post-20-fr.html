@@ -1,0 +1,448 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W7RTBTJLRV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="brown.png" type="image/png">
+    <title>Le doute est coûteux : une leçon de ma sœur Matanda - Darwin Chapuswike</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Le doute est coûteux : une leçon de ma sœur Matanda - Darwin Chapuswike">
+    <meta property="og:description" content="Inspiré par ma sœur Matanda et une citation de Robert Kiyosaki, ce post explore comment surmonter le doute et le cynisme peut mener au succès, tant dans la vie que dans ma carrière d'ingénieur de support L2.">
+    <meta property="og:url" content="https://darwinchapuswike.com/post-20-fr.html">
+    <meta property="og:image" content="https://darwinchapuswike.com/matanda_at_home.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Darwin Chapuswike">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Le doute est coûteux : une leçon de ma sœur Matanda - Darwin Chapuswike">
+    <meta name="twitter:description" content="Inspiré par ma sœur Matanda et une citation de Robert Kiyosaki, ce post explore comment surmonter le doute et le cynisme peut mener au succès, tant dans la vie que dans ma carrière d'ingénieur de support L2.">
+    <meta name="twitter:image" content="https://darwinchapuswike.com/matanda_at_home.jpg">
+    <meta name="twitter:url" content="https://darwinchapuswike.com/post-20-fr.html">
+    <meta name="twitter:site" content="@DarwinChapuswi5">
+    <!-- Additional SEO Meta Tags -->
+    <meta name="description" content="Inspiré par ma sœur Matanda et une citation de Robert Kiyosaki, ce post explore comment surmonter le doute et le cynisme peut mener au succès, tant dans la vie que dans ma carrière d'ingénieur de support L2.">
+    <link rel="canonical" href="https://darwinchapuswike.com/post-20-fr.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #e9ecef; color: #333; overflow-x: hidden; }
+        .container { width: 100%; max-width: 720px; margin: auto; padding: 15px; }
+        header { background: linear-gradient(135deg, #0A66C2 0%, #004182 100%); color: white; padding: 30px 10px; text-align: center; border-bottom: 5px solid #dc3545; position: relative; }
+        header img { width: 100px; height: 100px; border-radius: 50%; border: 4px solid white; margin-bottom: 10px; object-fit: cover; transition: transform 0.3s ease; }
+        header img:hover { transform: scale(1.1); }
+        header h1 { font-size: 1.8em; margin-bottom: 5px; word-wrap: break-word; }
+        header p { font-size: 1em; opacity: 0.9; word-wrap: break-word; }
+        nav { background: #004182; padding: 8px 0; text-align: center; position: relative; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: bold; transition: color 0.3s ease; font-size: 0.85em; }
+        nav a:hover { color: #dc3545; }
+        .hamburger { display: none; font-size: 1.5em; color: white; background: none; border: none; cursor: pointer; padding: 8px 15px; }
+        .blog-post { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; overflow-x: hidden; }
+        .blog-post.visible { opacity: 1; transform: translateY(0); }
+        .blog-post h2 { color: #0A66C2; font-size: 1.4em; margin-bottom: 8px; border-left: 4px solid #dc3545; padding-left: 8px; word-wrap: break-word; }
+        .blog-post h3 { color: #333; font-size: 1.2em; margin-top: 15px; margin-bottom: 8px; word-wrap: break-word; }
+        .blog-post .date { color: #666; font-size: 0.85em; margin-bottom: 10px; word-wrap: break-word; }
+        .blog-post p { margin-bottom: 10px; font-size: 0.95em; word-wrap: break-word; overflow-wrap: break-word; }
+        .blog-post ul, .blog-post ol { margin: 10px 0 10px 20px; padding-left: 20px; word-wrap: break-word; overflow-wrap: break-word; width: 100%; box-sizing: border-box; }
+        .blog-post li { margin-bottom: 8px; font-size: 0.95em; line-height: 1.5; word-wrap: break-word; overflow-wrap: break-word; width: 100%; box-sizing: border-box; }
+        .blog-post code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #333;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            display: inline-block;
+            line-height: 1.2;
+        }
+        .blog-post img, .blog-post iframe { max-width: 100%; height: auto; border-radius: 5px; margin: 10px 0; }
+        .share-buttons { margin-top: 10px; display: flex; gap: 10px; }
+        .share-buttons a { font-size: 1.2em; color: #333; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease; padding: 5px; }
+        .share-buttons a:hover { transform: scale(1.2); }
+        .share-buttons .fa-facebook-f:hover { color: #3b5998; }
+        .share-buttons .fa-twitter:hover { color: #1da1f2; }
+        .share-buttons .fa-linkedin-in:hover { color: #0077b5; }
+        .share-buttons .fa-whatsapp:hover { color: #25d366; }
+        .whatsapp-btn { position: fixed; bottom: 10px; right: 10px; background: #25D366; color: white; padding: 8px 12px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); transition: background 0.3s ease, transform 0.3s ease; font-size: 0.8em; z-index: 1000; }
+        .whatsapp-btn:hover { background: #1ebe56; transform: scale(1.1); }
+        .scroll-down {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2em;
+            color: #0A66C2;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .scroll-down.hidden { display: none; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        footer { text-align: center; padding: 10px; background: #004182; color: white; font-size: 0.8em; position: relative; bottom: 0; width: 100%; }
+        .pagination { text-align: center; margin: 20px 0; }
+        .pagination a { color: #0A66C2; text-decoration: none; font-size: 1em; padding: 5px 10px; }
+        .pagination a:hover { color: #dc3545; }
+        a { color: #0A66C2; text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: #dc3545; }
+        /* Language Switcher Styles */
+        .language-switcher { position: absolute; top: 10px; right: 10px; z-index: 1000; }
+        .language-switcher select {
+            padding: 5px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+            color: #333;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        .language-switcher select:hover { border-color: #0A66C2; }
+        .language-switcher select:focus { outline: none; border-color: #0A66C2; }
+        /* Language Content Styles */
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        @media (max-width: 720px) {
+            .container { padding: 10px; }
+            header { padding: 25px 8px; }
+            header img { width: 90px; height: 90px; }
+            header h1 { font-size: 1.6em; }
+            header p { font-size: 0.95em; }
+            .hamburger { display: block; }
+            .nav-links { display: none; flex-direction: column; background: #004182; position: absolute; top: 100%; left: 0; width: 100%; padding: 10px 0; z-index: 1000; }
+            .nav-links.active { display: flex; }
+            nav a { margin: 10px 0; font-size: 1em; display: block; padding: 5px 0; }
+            .blog-post { padding: 12px; margin: 8px 0; }
+            .blog-post h2 { font-size: 1.3em; }
+            .blog-post h3 { font-size: 1.1em; }
+            .blog-post .date { font-size: 0.8em; }
+            .blog-post p { font-size: 0.9em; }
+            .blog-post ul, .blog-post ol { margin: 8px 0 8px 15px; padding-left: 15px; }
+            .blog-post li { font-size: 0.9em; line-height: 1.4; }
+            .blog-post code { font-size: 0.85em; padding: 1px 3px; }
+            .whatsapp-btn { padding: 6px 10px; font-size: 0.75em; bottom: 8px; right: 8px; }
+            .scroll-down { bottom: 40px; font-size: 1.8em; }
+            footer { padding: 8px; font-size: 0.75em; }
+            .language-switcher { top: 5px; right: 5px; }
+            .language-switcher select { font-size: 0.85em; padding: 4px; }
+        }
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.4em; }
+            header p { font-size: 0.9em; }
+            nav a { font-size: 0.9em; }
+            .blog-post h2 { font-size: 1.2em; }
+            .blog-post h3 { font-size: 1em; }
+            .blog-post .date { font-size: 0.75em; }
+            .blog-post p { font-size: 0.85em; }
+            .blog-post ul, .blog-post ol { margin: 6px 0 6px 10px; padding-left: 10px; }
+            .blog-post li { font-size: 0.85em; line-height: 1.3; }
+            .blog-post code { font-size: 0.8em; padding: 1px 2px; }
+            .scroll-down { bottom: 30px; font-size: 1.5em; }
+            .language-switcher select { font-size: 0.8em; padding: 3px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="profile_photo.jpg" alt="Darwin Chapuswike en costume">
+            <h1 data-lang="en">Darwin Chapuswike</h1>
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <h1 data-lang="sw">Darwin Chapuswike</h1>
+            <p data-lang="en">L2 Support Engineer | Lusaka Province, Zambia</p>
+            <p data-lang="fr">Ingénieur de support L2 | Province de Lusaka, Zambie</p>
+            <p data-lang="sw">Mhandisi wa Usaidizi wa L2 | Mkoa wa Lusaka, Zambia</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr" selected>Français</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+        <div class="nav-links">
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html?lang=fr" data-lang="fr" class="active">Accueil</a>
+            <a href="index.html?lang=sw" data-lang="sw">Nyumbani</a>
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html?lang=fr" data-lang="fr" class="active">Contact</a>
+            <a href="contact.html?lang=sw" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html?lang=fr" data-lang="fr" class="active">Résumé</a>
+            <a href="summary.html?lang=sw" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html?lang=fr" data-lang="fr" class="active">Expérience</a>
+            <a href="experience.html?lang=sw" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html?lang=fr" data-lang="fr" class="active">Galerie</a>
+            <a href="gallery.html?lang=sw" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html?lang=fr" data-lang="fr" class="active">Éducation</a>
+            <a href="education.html?lang=sw" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html?lang=fr" data-lang="fr" class="active">Compétences</a>
+            <a href="skills.html?lang=sw" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html?lang=fr" data-lang="fr" class="active">Certifications</a>
+            <a href="certifications.html?lang=sw" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html?lang=fr" data-lang="fr" class="active">Publications</a>
+            <a href="publications.html?lang=sw" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html?lang=fr" data-lang="fr" class="active">Réalisations</a>
+            <a href="achievements.html?lang=sw" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html?lang=fr" data-lang="fr" class="active">Témoignages</a>
+            <a href="testimonials.html?lang=sw" data-lang="sw">Ushuhuda</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="blog-post" id="post-20">
+            <!-- French Content -->
+            <div data-lang="fr" class="active">
+                <h2>Le doute est coûteux : une leçon de ma sœur Matanda</h2>
+                <p class="date">23 avril 2025</p>
+                <p>Robert Kiyosaki a dit un jour : « Ce sont le doute et le cynisme qui maintiennent la plupart des gens dans la sécurité et la pauvreté. Les cyniques critiquent et les gagnants analysent. Trouver ce que les autres manquent est la clé de tout succès. » Cette citation résonne profondément avec moi en tant qu'ingénieur de support L2 chez NetOne Zambie, où j'ai appris que l'hésitation peut nous empêcher de progresser. Récemment, un moment avec ma jeune sœur, Matanda, a donné vie à cette leçon. Nommée d'après la mère de mon grand père, l'esprit insouciant de Matanda m'a rappelé la puissance de la croyance sur le doute. Dans ce post, je réfléchis à la manière dont son innocence, capturée dans une simple photographie, se relie à mon parcours pour surmonter le doute dans la vie et la carrière.</p>
+
+                <h3>Un moment de joie avec Matanda</h3>
+                <p>En avril 2025, mon père a pris une photo de Matanda à Chingola. Ma sœur Matanda, nommée d'après la mère de mon grand père, était là, rayonnante de joie dans sa jupe rose et son haut noir. La photo ci dessous la montre debout avec confiance sur la véranda carrelée, avec des chaises, une plante en pot et un panneau « Amour » en arrière plan, une scène de bonheur simple. À ce moment là, Matanda n'était pas alourdie par le doute ou la peur ; elle était simplement elle même, libre et sans excuses. Son innocence m'a frappé comme un contraste puissant avec le cynisme contre lequel Kiyosaki met en garde.</p>
+                <center><img width="494" height="370" src="https://darwinchapuswike.com/matanda_at_home.jpg" alt="Matanda debout sur une véranda à Chingola, Zambie, avril 2025"></center>
+
+                <h3>Le coût du doute dans ma carrière</h3>
+                <p>En tant qu'ingénieur de support L2, j'ai dû surmonter des moments où le doute aurait pu entraver mes progrès. Au début de ma carrière chez NetOne, j'ai hésité à prendre en charge un projet complexe de contrôle d'accès, craignant de ne pas être prêt à diriger. Je me souviens du jour de la remise à IHS Zambia HQ en avril 2025, où j'étais fier de me tenir aux côtés de Mukuka après avoir installé le système, mais ce succès n'est venu qu'après avoir dépassé mes doutes initiaux. Les mots de Kiyosaki, « Les cyniques critiquent et les gagnants analysent », me rappellent comment j'ai dû analyser les exigences du projet, dépanner les problèmes de connectivité et configurer les cartes des employés, plutôt que de laisser la peur de l'échec m'arrêter.</p>
+
+                <h3>Apprendre de l'intrépidité de Matanda</h3>
+                <p>En observant Matanda ce matin là, j'ai réalisé à quel point le doute s'insinue dans nos vies à mesure que nous grandissons. Elle ne s'est pas demandé si elle avait sa place sur cette véranda ou ne s'est pas inquiétée de ce que les autres pourraient penser de sa tenue. Elle existait simplement dans l'instant, incarnant une intrépidité que nous perdons souvent en devenant adultes. Cela rejoint l'idée de Kiyosaki de « trouver ce que les autres manquent ». Dans mon travail, j'ai appris à regarder au delà de l'évident, que ce soit en repérant un problème réseau que d'autres ont ignoré ou en proposant une solution lors d'une crise d'alimentation électrique. L'esprit insouciant de Matanda m'inspire à aborder les défis avec la même ouverture, libre du cynisme qui retient tant de monde.</p>
+
+                <h3>Appliquer la leçon chez NetOne</h3>
+                <p>Chez NetOne, je m'efforce maintenant de remplacer le doute par la curiosité et l'analyse. Lorsqu'il m'arrive de faire face à un problème informatique complexe, comme le problème de compatibilité de thème que j'ai rencontré en mars 2025, j'aurais pu laisser le cynisme me convaincre que c'était trop difficile à résoudre. Au lieu de cela, j'ai analysé la cause profonde, recherché des solutions et mis en œuvre une correction, un peu comme j'ai abordé l'activité « Manger un biscuit » à NIPA en 2021, où de petites victoires ont renforcé ma confiance. L'exemple de Matanda, combiné à la sagesse de Kiyosaki, me pousse à continuer d'apprendre, d'analyser et de ne jamais laisser le doute dicter mes décisions.</p>
+
+                <h3>Réflexions finales</h3>
+                <p>Le doute est en effet coûteux, il nous prive d'opportunités, de croissance et de joie. Ma sœur Matanda, avec son bonheur sans filtre sur cette véranda de Chingola, m'a rappelé la liberté qui vient de croire en nous mêmes. Alors que je continue mon parcours chez NetOne, je porte les conseils de Kiyosaki d'analyser plutôt que de critiquer, et l'esprit intrépide de Matanda comme une inspiration quotidienne. Ne laissons pas le doute nous garder dans la sécurité. Trouvons plutôt ce que les autres manquent et transformons le en notre succès. #LeDouteEstCoûteux #SurmonterLeCynisme #InspirationFamiliale #LeçonsDeCarrière #NetOneZambie</p>
+            </div>
+
+            <!-- English Content (Placeholder) -->
+            <div data-lang="en">
+                <h2>Doubt Is Expensive: A Lesson from My Sister Matanda</h2>
+                <p class="date">April 23, 2025</p>
+                <p>[Content to be translated into English] Robert Kiyosaki once said...</p>
+            </div>
+
+            <!-- Swahili Content (Placeholder) -->
+            <div data-lang="sw">
+                <h2>Shaka ni Ghali: Somo kutoka kwa Dada Yangu Matanda</h2>
+                <p class="date">Aprili 23, 2025</p>
+                <p>[Yaliyomo yatakayotafsiriwa kwa Kiswahili] Robert Kiyosaki alisema mara moja...</p>
+            </div>
+
+            <div class="share-buttons">
+                <a href="#" onclick="shareOnFacebook('post-20', event);" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="shareOnTwitter('post-20', event);" title="Share on X"><i class="fab fa-twitter"></i></a>
+                <a href="#" onclick="shareOnLinkedIn('post-20', event);" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" onclick="shareOnWhatsApp('post-20', event);" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="pagination">
+                <a href="publications.html" data-lang="en">← Back to Publications</a>
+                <a href="publications.html?lang=fr" data-lang="fr" class="active">← Retour aux Publications</a>
+                <a href="publications.html?lang=sw" data-lang="sw">← Rudi kwenye Machapisho</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank" class="active">Contactez-moi sur WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
+    <div class="scroll-down" title="Scroll down to read more"><i class="fas fa-chevron-down"></i></div>
+
+    <footer>
+        <p data-lang="en">© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits réservés.</p>
+        <p data-lang="sw">© 2025 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
+    </footer>
+
+    <script>
+    function changeLanguage() {
+        const selectedLang = document.getElementById('language-select').value;
+        localStorage.setItem('preferredLang', selectedLang);
+
+        if (selectedLang === 'en') {
+            window.location.href = 'post-20.html';
+        } else if (selectedLang === 'fr') {
+            window.location.href = 'post-20-fr.html';
+        } else if (selectedLang === 'sw') {
+            window.location.href = 'post-20-sw.html';
+        }
+    }
+
+    function updateLanguage(lang) {
+        if (!lang) {
+            console.error('Language not specified');
+            return;
+        }
+
+        document.querySelectorAll('[data-lang]').forEach(element => {
+            element.classList.remove('active');
+            if (element.getAttribute('data-lang') === lang) {
+                element.classList.add('active');
+            }
+        });
+
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.value = lang;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferredLang') || 'fr';
+        updateLanguage(savedLang);
+
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.value = savedLang;
+        }
+
+        const posts = document.querySelectorAll('.blog-post');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        posts.forEach(post => observer.observe(post));
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+
+        const scrollDown = document.querySelector('.scroll-down');
+        if (scrollDown) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    scrollDown.classList.add('hidden');
+                } else {
+                    scrollDown.classList.remove('hidden');
+                }
+            });
+            setTimeout(() => {
+                scrollDown.classList.add('hidden');
+            }, 10000);
+            scrollDown.addEventListener('click', () => {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+
+    const baseUrl = "https://darwinchapuswike.com/post-20-fr.html";
+    function shareOnFacebook(postId, event) {
+        event.preventDefault();
+        const url = baseUrl;
+        window.location.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    }
+
+    function shareOnTwitter(postId, event) {
+        event.preventDefault();
+        const lang = localStorage.getItem('preferredLang') || 'fr';
+        const url = baseUrl;
+        const text = document.querySelector(`h2[data-lang="${lang}"]`)?.innerText || document.querySelector(`#${postId} h2`).innerText;
+        const encodedText = encodeURIComponent(text);
+        const encodedUrl = encodeURIComponent(url);
+        const shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
+        window.location.href = shareUrl;
+    }
+
+    function shareOnLinkedIn(postId, event) {
+        event.preventDefault();
+        const url = baseUrl;
+        window.location.href = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
+    }
+
+    function shareOnWhatsApp(postId, event) {
+        event.preventDefault();
+        const lang = localStorage.getItem('preferredLang') || 'fr';
+        const url = baseUrl;
+        const text = document.querySelector(`h2[data-lang="${lang}"]`)?.innerText || document.querySelector(`#${postId} h2`).innerText;
+        const message = `${text} ${url}`;
+        const encodedMessage = encodeURIComponent(message);
+        const shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+        try {
+            window.location.href = shareUrl;
+        } catch (error) {
+            console.error("Error sharing on WhatsApp:", error);
+            alert("Impossible de partager sur WhatsApp. Veuillez vous assurer que WhatsApp est installé sur votre appareil.");
+        }
+    }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'939bcf1bbcc1dd1c',t:'MTc0NjIzMzg5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
