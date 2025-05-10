@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W7RTBTJLRV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W7RTBTJLRV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="brown.png" type="image/png">
+    <title data-lang="fr">Comprendre Scrum : Un Guide de Gestion de Projets Agile - Darwin Chapuswike</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Comprendre Scrum : Un Guide de Gestion de Projets Agile - Darwin Chapuswike" data-lang="fr">
+    <meta property="og:description" content="Une introduction à Scrum, un cadre Agile pour la gestion de projets complexes, couvrant ses rôles, événements et artefacts." data-lang="fr">
+    <meta property="og:url" content="https://darwinchapuswike.com/post-31-fr.html">
+    <meta property="og:image" content="https://darwinchapuswike.com/post-31-image.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Darwin Chapuswike">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comprendre Scrum : Un Guide de Gestion de Projets Agile - Darwin Chapuswike" data-lang="fr">
+    <meta name="twitter:description" content="Une introduction à Scrum, un cadre Agile pour la gestion de projets complexes, couvrant ses rôles, événements et artefacts." data-lang="fr">
+    <meta name="twitter:image" content="https://darwinchapuswike.com/post-31-image.jpg">
+    <meta name="twitter:url" content="https://darwinchapuswike.com/post-31-fr.html">
+    <meta name="twitter:site" content="@DarwinChapuswi5">
+    <!-- Additional SEO Meta Tags -->
+    <meta name="description" content="Une introduction à Scrum, un cadre Agile pour la gestion de projets complexes, couvrant ses rôles, événements et artefacts." data-lang="fr">
+    <meta name="description" content="An introduction to Scrum, an Agile framework for managing complex projects, covering its roles, events, and artifacts." data-lang="en">
+    <meta name="description" content="Utangulizi wa Scrum, mfumo wa Agile wa kusimamia miradi ngumu, unaojumuisha majukumu, matukio, na mabaki." data-lang="sw">
+    <link rel="canonical" href="https://darwinchapuswike.com/post-31-fr.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #e9ecef; color: #333; overflow-x: hidden; }
+        .container { width: 100%; max-width: 720px; margin: auto; padding: 15px; }
+        header { background: linear-gradient(135deg, #0A66C2 0%, #004182 100%); color: white; padding: 30px 10px; text-align: center; border-bottom: 5px solid #dc3545; position: relative; }
+        header img { width: 100px; height: 100px; border-radius: 50%; border: 4px solid white; margin-bottom: 10px; object-fit: cover; transition: transform 0.3s ease; }
+        header img:hover { transform: scale(1.1); }
+        header h1 { font-size: 1.8em; margin-bottom: 5px; word-wrap: break-word; }
+        header p { font-size: 1em; opacity: 0.9; word-wrap: break-word; }
+        nav { background: #004182; padding: 8px 0; text-align: center; position: relative; }
+        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; margin: 0 8px; text-decoration: none; font-weight: bold; transition: color 0.3s ease; font-size: 0.85em; }
+        nav a:hover { color: #dc3545; }
+        .hamburger { display: none; font-size: 1.5em; color: white; background: none; border: none; cursor: pointer; padding: 8px 15px; }
+        .blog-post { background: white; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; overflow-x: hidden; }
+        .blog-post.visible { opacity: 1; transform: translateY(0); }
+        .blog-post h2 { color: #0A66C2; font-size: 1.4em; margin-bottom: 8px; border-left: 4px solid #dc3545; padding-left: 8px; word-wrap: break-word; }
+        .blog-post h3 { color: #333; font-size: 1.2em; margin-top: 15px; margin-bottom: 8px; word-wrap: break-word; }
+        .blog-post .date { color: #666; font-size: 0.85em; margin-bottom: 10px; word-wrap: break-word; }
+        .blog-post p { margin-bottom: 10px; font-size: 0.95em; word-wrap: break-word; overflow-wrap: break-word; }
+        .blog-post ul, .blog-post ol { margin: 10px 0 10px 20px; padding-left: 20px; word-wrap: break-word; overflow-wrap: break-word; width: 100%; box-sizing: border-box; }
+        .blog-post li { margin-bottom: 8px; font-size: 0.95em; line-height: 1.5; word-wrap: break-word; overflow-wrap: break-word; width: 100%; box-sizing: border-box; }
+        .blog-post code { font-family: 'Courier New', Courier, monospace; background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; font-size: 0.9em; color: #333; word-wrap: break-word; overflow-wrap: break-word; display: inline-block; line-height: 1.2; }
+        .blog-post img, .blog-post iframe { max-width: 100%; height: auto; border-radius: 5px; margin: 10px 0; }
+        .share-buttons { margin-top: 10px; display: flex; gap: 10px; }
+        .share-buttons a { font-size: 1.2em; color: #333; text-decoration: none; transition: color 0.3s ease, transform 0.3s ease; padding: 5px; }
+        .share-buttons a:hover { transform: scale(1.2); }
+        .share-buttons .fa-facebook-f:hover { color: #3b5998; }
+        .share-buttons .fa-twitter:hover { color: #1da1f2; }
+        .share-buttons .fa-linkedin-in:hover { color: #0077b5; }
+        .share-buttons .fa-whatsapp:hover { color: #25d366; }
+        .whatsapp-btn { position: fixed; bottom: 10px; right: 10px; background: #25D366; color: white; padding: 8px 12px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); transition: background 0.3s ease, transform 0.3s ease; font-size: 0.8em; z-index: 1000; }
+        .whatsapp-btn:hover { background: #1ebe56; transform: scale(1.1); }
+        .scroll-down { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); font-size: 2em; color: #0A66C2; opacity: 0.7; animation: bounce 2s infinite; z-index: 1000; cursor: pointer; }
+        .scroll-down.hidden { display: none; }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); } 40% { transform: translateX(-50%) translateY(-10px); } 60% { transform: translateX(-50%) translateY(-5px); } }
+        footer { text-align: center; padding: 10px; background: #004182; color: white; font-size: 0.8em; position: relative; bottom: 0; width: 100%; }
+        .pagination { text-align: center; margin: 20px 0; }
+        .pagination a { color: #0A66C2; text-decoration: none; font-size: 1em; padding: 5px 10px; }
+        .pagination a:hover { color: #dc3545; }
+        a { color: #0A66C2; text-decoration: none; transition: color 0.3s ease; }
+        a:hover { color: #dc3545; }
+        /* Language Switcher Styles */
+        .language-switcher { position: absolute; top: 10px; right: 10px; z-index: 1000; }
+        .language-switcher select { padding: 5px; font-size: 0.9em; border-radius: 5px; border: 1px solid #ccc; background: white; color: #333; cursor: pointer; transition: border-color 0.3s ease; }
+        .language-switcher select:hover { border-color: #0A66C2; }
+        .language-switcher select:focus { outline: none; border-color: #0A66C2; }
+        /* Language Content Styles */
+        [data-lang] { display: none; }
+        [data-lang].active { display: block; }
+        @media (max-width: 720px) {
+            .container { padding: 10px; }
+            header { padding: 25px 8px; }
+            header img { width: 90px; height: 90px; }
+            header h1 { font-size: 1.6em; }
+            header p { font-size: 0.95em; }
+            .hamburger { display: block; }
+            .nav-links { display: none; flex-direction: column; background: #004182; position: absolute; top: 100%; left: 0; width: 100%; padding: 10px 0; z-index: 1000; }
+            .nav-links.active { display: flex; }
+            nav a { margin: 10px 0; font-size: 1em; display: block; padding: 5px 0; }
+            .blog-post { padding: 12px; margin: 8px 0; }
+            .blog-post h2 { font-size: 1.3em; }
+            .blog-post h3 { font-size: 1.1em; }
+            .blog-post .date { font-size: 0.8em; }
+            .blog-post p { font-size: 0.9em; }
+            .blog-post ul, .blog-post ol { margin: 8px 0 8px 15px; padding-left: 15px; }
+            .blog-post li { font-size: 0.9em; line-height: 1.4; }
+            .blog-post code { font-size: 0.85em; padding: 1px 3px; }
+            .whatsapp-btn { padding: 6px 10px; font-size: 0.75em; bottom: 8px; right: 8px; }
+            .scroll-down { bottom: 40px; font-size: 1.8em; }
+            footer { padding: 8px; font-size: 0.75em; }
+            .language-switcher { top: 5px; right: 5px; }
+            .language-switcher select { font-size: 0.85em; padding: 4px; }
+        }
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.4em; }
+            header p { font-size: 0.9em; }
+            nav a { font-size: 0.9em; }
+            .blog-post h2 { font-size: 1.2em; }
+            .blog-post h3 { font-size: 1em; }
+            .blog-post .date { font-size: 0.75em; }
+            .blog-post p { font-size: 0.85em; }
+            .blog-post ul, .blog-post ol { margin: 6px 0 6px 10px; padding-left: 10px; }
+            .blog-post li { font-size: 0.85em; line-height: 1.3; }
+            .blog-post code { font-size: 0.8em; padding: 1px 2px; }
+            .scroll-down { bottom: 30px; font-size: 1.5em; }
+            .language-switcher select { font-size: 0.8em; padding: 3px; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <center>
+            <img src="profile_photo.jpg" alt="Darwin Chapuswike en costume" data-lang="fr">
+            </center>
+            <h1 data-lang="en">Darwin Chapuswike</h1>
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <h1 data-lang="sw">Darwin Chapuswike</h1>
+            <p data-lang="en">L2 Support Engineer | Lusaka Province, Zambia</p>
+            <p data-lang="fr">Ingénieur de support L2 | Province de Lusaka, Zambie</p>
+            <p data-lang="sw">Mhandisi wa Usaidizi wa L2 | Mkoa wa Lusaka, Zambia</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr" selected>Français</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+        <div class="nav-links">
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html?lang=fr" data-lang="fr">Accueil</a>
+            <a href="index.html?lang=sw" data-lang="sw">Nyumbani</a>
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html?lang=fr" data-lang="fr">Contact</a>
+            <a href="contact.html?lang=sw" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html?lang=fr" data-lang="fr">Résumé</a>
+            <a href="summary.html?lang=sw" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html?lang=fr" data-lang="fr">Expérience</a>
+            <a href="experience.html?lang=sw" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html?lang=fr" data-lang="fr">Galerie</a>
+            <a href="gallery.html?lang=sw" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html?lang=fr" data-lang="fr">Éducation</a>
+            <a href="education.html?lang=sw" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html?lang=fr" data-lang="fr">Compétences</a>
+            <a href="skills.html?lang=sw" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html?lang=fr" data-lang="fr">Certifications</a>
+            <a href="certifications.html?lang=sw" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html?lang=fr" data-lang="fr">Publications</a>
+            <a href="publications.html?lang=sw" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html?lang=fr" data-lang="fr">Réalisations</a>
+            <a href="achievements.html?lang=sw" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html?lang=fr" data-lang="fr">Témoignages</a>
+            <a href="testimonials.html?lang=sw" data-lang="sw">Ushuhuda</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="blog-post" id="post-31">
+            <div data-lang="fr" class="active">
+                <h2>Comprendre Scrum : Un Guide de Gestion de Projets Agile</h2>
+                <p class="date">10 mai 2025</p>
+                <p>Scrum est un cadre Agile conçu pour gérer des projets complexes en promouvant la collaboration, l’adaptabilité et les progrès itératifs. Largement utilisé dans le développement logiciel et au-delà, il aide les équipes à livrer des produits à haute valeur ajoutée efficacement. Décomposons ses composantes clés.</p>
+
+                <h3>Rôles dans Scrum</h3>
+                <p>Scrum définit trois rôles principaux :</p>
+                <ul>
+                    <li><strong>Product Owner :</strong> Responsable de maximiser la valeur du produit en gérant le Product Backlog.</li>
+                    <li><strong>Scrum Master :</strong> Facilite le processus, supprime les obstacles et veille à ce que l’équipe respecte les pratiques Scrum.</li>
+                    <li><strong>Équipe de Développement :</strong> Un groupe multifonctionnel qui construit l’incrément du produit pendant chaque sprint.</li>
+                </ul>
+
+                <h3>Événements dans Scrum</h3>
+                <p>Scrum organise le travail à travers des événements à durée fixe :</p>
+                <ul>
+                    <li><strong>Sprint :</strong> Une période fixe (généralement 2 à 4 semaines) pour accomplir un ensemble de travail.</li>
+                    <li><strong>Daily Scrum :</strong> Une réunion debout de 15 minutes pour planifier le travail de la journée.</li>
+                    <li><strong>Sprint Review :</strong> Une réunion pour inspecter l’incrément et adapter le backlog.</li>
+                    <li><strong>Sprint Retrospective :</strong> Une session pour réfléchir sur le sprint et améliorer les processus.</li>
+                </ul>
+
+                <h3>Artefacts dans Scrum</h3>
+                <p>Scrum utilise des artefacts pour gérer le travail :</p>
+                <ul>
+                    <li><strong>Product Backlog :</strong> Une liste priorisée de tout le travail souhaité sur le projet.</li>
+                    <li><strong>Sprint Backlog :</strong> L’ensemble des tâches sélectionnées pour le sprint en cours.</li>
+                    <li><strong>Incrément :</strong> La somme de tous les éléments du Product Backlog complétés à la fin d’un sprint.</li>
+                </ul>
+
+                <center><img width="494" height="370" src="https://darwinchapuswike.com/post-31-image.jpg" alt="Darwin Chapuswike lors d’une réunion de travail, symbolisant le travail d’équipe et la planification"></center>
+
+                <p>Dans mon rôle d’ingénieur de support L2, j’ai vu Scrum transformer la manière dont nous gérons les projets, favorisant une culture d’amélioration continue et de travail d’équipe, tout comme l’esprit collaboratif de cette photo.</p>
+            </div>
+
+            <div data-lang="en">
+                <h2>Understanding Scrum: A Guide to Agile Project Management</h2>
+                <p class="date">May 10, 2025</p>
+                <p>Scrum is an Agile framework designed to manage complex projects by promoting collaboration, adaptability, and iterative progress. Widely used in software development and beyond, it helps teams deliver high-value products efficiently. Let’s break down its key components.</p>
+
+                <h3>Roles in Scrum</h3>
+                <p>Scrum defines three core roles:</p>
+                <ul>
+                    <li><strong>Product Owner:</strong> Responsible for maximizing the value of the product by managing the Product Backlog.</li>
+                    <li><strong>Scrum Master:</strong> Facilitates the process, removes impediments, and ensures the team adheres to Scrum practices.</li>
+                    <li><strong>Development Team:</strong> A cross-functional group that builds the product increment during each sprint.</li>
+                </ul>
+
+                <h3>Events in Scrum</h3>
+                <p>Scrum organizes work through time-boxed events:</p>
+                <ul>
+                    <li><strong>Sprint:</strong> A fixed time period (usually 2-4 weeks) to complete a set of work.</li>
+                    <li><strong>Daily Scrum:</strong> A 15-minute stand-up meeting to plan the day’s work.</li>
+                    <li><strong>Sprint Review:</strong> A meeting to inspect the increment and adapt the backlog.</li>
+                    <li><strong>Sprint Retrospective:</strong> A session to reflect on the sprint and improve processes.</li>
+                </ul>
+
+                <h3>Artifacts in Scrum</h3>
+                <p>Scrum uses artifacts to manage work:</p>
+                <ul>
+                    <li><strong>Product Backlog:</strong> A prioritized list of all desired work on the project.</li>
+                    <li><strong>Sprint Backlog:</strong> The set of tasks selected for the current sprint.</li>
+                    <li><strong>Increment:</strong> The sum of all completed product backlog items at the end of a sprint.</li>
+                </ul>
+
+                <center><img width="494" height="370" src="https://darwinchapuswike.com/post-31-image.jpg" alt="Darwin Chapuswike at a work meeting, symbolizing teamwork and planning"></center>
+
+                <p>In my role as an L2 Support Engineer, I’ve seen Scrum transform how we handle projects, fostering a culture of continuous improvement and teamwork—much like the collaborative spirit in this photo.</p>
+            </div>
+
+            <div data-lang="sw">
+                <h2>Kuelewa Scrum: Mwongozo wa Usimamizi wa Miradi ya Agile</h2>
+                <p class="date">10 Mei 2025</p>
+                <p>Scrum ni mfumo wa Agile ulioundwa kusimamia miradi ngumu kwa kukuza ushirikiano, ubadilikaji, na maendeleo ya mara kwa mara. Unatumika sana katika maendeleo ya programu na zaidi ya hapo, husaidia timu kutoa bidhaa za thamani kubwa kwa ufanisi. Wacha tuzihasibu sehemu zake za msingi.</p>
+
+                <h3>Jukumu katika Scrum</h3>
+                <p>Scrum hufafanua majukumu matatu ya msingi:</p>
+                <ul>
+                    <li><strong>Mmiliki wa Bidhaa (Product Owner):</strong> Anayehusika na kuongeza thamani ya bidhaa kwa kusimamia Product Backlog.</li>
+                    <li><strong>Mwalimu wa Scrum (Scrum Master):</strong> Anayehakikisha mchakato, anaondoa vizuizi, na kuhakikisha timu inafuata mazoea ya Scrum.</li>
+                    <li><strong>Timu ya Maendeleo:</strong> Kundi la watu wengi wanaojenga nyongeza ya bidhaa wakati wa kila sprint.</li>
+                </ul>
+
+                <h3>Matukio katika Scrum</h3>
+                <p>Scrum hupanga kazi kupitia matukio ya muda uliowekwa:</p>
+                <ul>
+                    <li><strong>Sprint:</strong> Kipindi cha muda kilichowekwa (kawaida wiki 2-4) cha kumaliza kazi fulani.</li>
+                    <li><strong>Scrum ya Kila Siku (Daily Scrum):</strong> Mkutano wa dakika 15 wa kusimama kuandaa kazi ya siku.</li>
+                    <li><strong>Mapitio ya Sprint (Sprint Review):</strong> Mkutano wa kukagua nyongeza na kubadilisha backlog.</li>
+                    <li><strong>Mapitio ya Sprint (Sprint Retrospective):</strong> Kikao cha kutafakari juu ya sprint na kuboresha michakato.</li>
+                </ul>
+
+                <h3>Mabaki katika Scrum</h3>
+                <p>Scrum hutumia mabaki kusimamia kazi:</p>
+                <ul>
+                    <li><strong>Product Backlog:</strong> Orodha iliyowekwa kipaumbele ya kazi zote zinazohitajika kwenye mradi.</li>
+                    <li><strong>Sprint Backlog:</strong> Seti ya kazi zilizochaguliwa kwa sprint ya sasa.</li>
+                    <li><strong>Nyongeza (Increment):</strong> Jumla ya vitu vyote vya Product Backlog vilivyokamilika mwishoni mwa sprint.</li>
+                </ul>
+
+                <center><img width="494" height="370" src="https://darwinchapuswike.com/post-31-image.jpg" alt="Darwin Chapuswike katika mkutano wa kazi, akiashiria ushirikiano na upangaji"></center>
+
+                <p>Katika jukumu langu kama Mhandisi wa Usaidizi wa L2, nimeona Scrum akibadilisha jinsi tunavyoshughulikia miradi, kukuza utamaduni wa uboreshaji endelevu na ushirikiano—sawa na roho ya pamoja katika picha hii.</p>
+            </div>
+
+            <div class="share-buttons">
+                <a href="#" onclick="shareOnFacebook('post-31', event);" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" onclick="shareOnTwitter('post-31', event);" title="Share on X"><i class="fab fa-twitter"></i></a>
+                <a href="#" onclick="shareOnLinkedIn('post-31', event);" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" onclick="shareOnWhatsApp('post-31', event);" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="pagination">
+                <a href="publications.html" data-lang="en">← Back to Publications</a>
+                <a href="publications.html?lang=fr" data-lang="fr">← Retour aux Publications</a>
+                <a href="publications.html?lang=sw" data-lang="sw">← Rudi kwenye Machapisho</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
+    <div class="scroll-down" title="Scroll down to read more"><i class="fas fa-chevron-down"></i></div>
+
+    <footer>
+        <p data-lang="en">© 2025 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="fr">© 2025 Darwin Chapuswike. Tous droits réservés.</p>
+        <p data-lang="sw">© 2025 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
+    </footer>
+
+    <script>
+    function changeLanguage() {
+        const selectedLang = document.getElementById('language-select').value;
+        localStorage.setItem('preferredLang', selectedLang);
+        if (selectedLang === 'en') {
+            window.location.href = 'post-31.html';
+        } else if (selectedLang === 'fr') {
+            window.location.href = 'post-31-fr.html';
+        } else if (selectedLang === 'sw') {
+            window.location.href = 'post-31-sw.html';
+        }
+    }
+
+    function updateLanguage(lang) {
+        if (!lang) {
+            console.error('Language not specified');
+            return;
+        }
+        document.querySelectorAll('[data-lang]').forEach(element => {
+            element.classList.remove('active');
+            if (element.getAttribute('data-lang') === lang) {
+                element.classList.add('active');
+            }
+        });
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.value = lang;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferredLang') || 'fr';
+        updateLanguage(savedLang);
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.value = savedLang;
+        }
+        const posts = document.querySelectorAll('.blog-post');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        posts.forEach(post => observer.observe(post));
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+        const scrollDown = document.querySelector('.scroll-down');
+        if (scrollDown) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    scrollDown.classList.add('hidden');
+                } else {
+                    scrollDown.classList.remove('hidden');
+                }
+            });
+            setTimeout(() => {
+                scrollDown.classList.add('hidden');
+            }, 10000);
+            scrollDown.addEventListener('click', () => {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+
+    const baseUrl = "https://darwinchapuswike.com/post-31-fr.html";
+    function shareOnFacebook(postId, event) {
+        event.preventDefault();
+        const url = baseUrl;
+        window.location.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+    }
+
+    function shareOnTwitter(postId, event) {
+        event.preventDefault();
+        const lang = localStorage.getItem('preferredLang') || 'fr';
+        const url = baseUrl;
+        const text = document.querySelector(`h2[data-lang="${lang}"]`)?.innerText || document.querySelector(`#${postId} h2`).innerText;
+        const encodedText = encodeURIComponent(text);
+        const encodedUrl = encodeURIComponent(url);
+        const shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`;
+        window.location.href = shareUrl;
+    }
+
+    function shareOnLinkedIn(postId, event) {
+        event.preventDefault();
+        const url = baseUrl;
+        window.location.href = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
+    }
+
+    function shareOnWhatsApp(postId, event) {
+        event.preventDefault();
+        const lang = localStorage.getItem('preferredLang') || 'fr';
+        const url = baseUrl;
+        const text = document.querySelector(`h2[data-lang="${lang}"]`)?.innerText || document.querySelector(`#${postId} h2`).innerText;
+        const message = `${text} ${url}`;
+        const encodedMessage = encodeURIComponent(message);
+        const shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
+        try {
+            window.location.href = shareUrl;
+        } catch (error) {
+            console.error("Error sharing on WhatsApp:", error);
+            if (lang === 'en') {
+                alert("Could not share on WhatsApp. Please ensure WhatsApp is installed on your device.");
+            } else if (lang === 'fr') {
+                alert("Impossible de partager sur WhatsApp. Veuillez vous assurer que WhatsApp est installé sur votre appareil.");
+            } else if (lang === 'sw') {
+                alert("Imeshindwa kushiriki kwenye WhatsApp. Tafadhali hakikisha WhatsApp imesakinishwa kwenye kifaa chako.");
+            }
+        }
+    }
+    </script>
+    <script>
+    (function(){
+        function c() {
+            var b = a.contentDocument || a.contentWindow.document;
+            if (b) {
+                var d = b.createElement('script');
+                d.innerHTML = "window.__CF$cv$params={r:'93cee2099dfab099',t:'MTc0Njc2OTQ0NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                b.getElementsByTagName('head')[0].appendChild(d);
+            }
+        }
+        if (document.body) {
+            var a = document.createElement('iframe');
+            a.height = 1;
+            a.width = 1;
+            a.style.position = 'absolute';
+            a.style.top = 0;
+            a.style.left = 0;
+            a.style.border = 'none';
+            a.style.visibility = 'hidden';
+            document.body.appendChild(a);
+            if ('loading' !== document.readyState) c();
+            else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+            else {
+                var e = document.onreadystatechange || function(){};
+                document.onreadystatechange = function(b) {
+                    e(b);
+                    'loading' !== document.readyState && (document.onreadystatechange = e, c());
+                }
+            }
+        }
+    })();
+    </script>
+</body>
+</html>
