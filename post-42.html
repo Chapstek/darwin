@@ -381,27 +381,19 @@
         window.location.href = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}`;
     }
 
-    function shareOnWhatsApp(postId, event) {
-        event.preventDefault();
-        const lang = localStorage.getItem('preferredLang') || 'fr';
-        const url = baseUrl;
-        const text = document.querySelector(`h2[data-lang="${lang}"]`)?.innerText || document.querySelector(`#${postId} h2`).innerText;
-        const message = `${text} ${url}`;
-        const encodedMessage = encodeURIComponent(message);
-        const shareUrl = `https://api.whatsapp.com/send?text=${encodedMessage}`;
-        try {
-            window.location.href = shareUrl;
-        } catch (error) {
-            console.error("Error sharing on WhatsApp:", error);
-            if (lang === 'en') {
-                alert("Could not share on WhatsApp. Please ensure WhatsApp is installed on your device.");
-            } else if (lang === 'fr') {
-                alert("Impossible de partager sur WhatsApp. Veuillez vous assurer que WhatsApp est installé sur votre appareil.");
-            } else if (lang === 'sw') {
-                alert("Imeshindwa kushiriki kwenye WhatsApp. Tafadhali hakikisha WhatsApp imesakinishwa kwenye kifaa chako.");
-            }
-        }
+    function shareOnWhatsApp() {
+    const text = "A New Year, A Bright Future: Optimism and Innovation in 2026"; // your post title
+    const url = window.location.href;
+    const message = `${text}\n${url}`;
+    
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+        // Mobile → try native intent
+        window.location.href = `whatsapp://send?text=${encodeURIComponent(message)}`;
+    } else {
+        // Desktop → open wa.me (more reliable than api.whatsapp.com nowadays)
+        window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
     }
+}
     </script>
     <script>
     (function(){
@@ -438,5 +430,6 @@
 </body>
 
 </html>
+
 
 
