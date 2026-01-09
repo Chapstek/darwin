@@ -383,7 +383,7 @@
 
     function shareOnWhatsApp(postId, event) {
         event.preventDefault();
-        const lang = localStorage.getItem('preferredLang') || 'en';
+        const lang = localStorage.getItem('preferredLang') || 'fr';
         const url = baseUrl;
         const text = document.querySelector(`h2[data-lang="${lang}"]`)?.innerText || document.querySelector(`#${postId} h2`).innerText;
         const message = `${text} ${url}`;
@@ -438,4 +438,5 @@
 </body>
 
 </html>
+
 
