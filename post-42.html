@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="brown.png" type="image/png">
-    <title>Réflexions depuis la Piste : Mon Temps en Tant qu'Officier ICT chez Zambia Airports Corporation Ltd - Darwin Chapuswike</title>
+    <title>Reflections on entering 2026 with optimism, inspired by the relentless drive for innovation and a belief in a brighter future ahead.</title>
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Open Graph Meta Tags -->
@@ -30,7 +30,7 @@
     <meta name="twitter:url" content="https://darwinchapuswike.com/post-42-fr.html">
     <meta name="twitter:site" content="@DarwinChapuswi5">
     <!-- Additional SEO Meta Tags -->
-    <meta name="description" content="A personal reflection on my experience as an ICT Officer at Kenneth Kaunda International Airport, highlighting ambition, service, and career growth." data-lang="en">
+    <meta name="description" content="Reflections on entering 2026 with optimism, inspired by the relentless drive for innovation and a belief in a brighter future ahead." data-lang="en">
     <meta name="description" content="Réflexions sur l'entrée en 2026 avec optimisme, inspirées par la poursuite incessante de l'innovation et par la conviction d'un avenir plus radieux qui nous attend." data-lang="fr">
     <meta name="description" content="Tafakari juu ya kuingia mwaka 2026 kwa matumaini, zikiwa zimechochewa na msukumo usiokoma wa ubunifu na imani ya mustakabali ulio mkali zaidi mbele yetu." data-lang="sw">
     <link rel="canonical" href="https://darwinchapuswike.com/post-42-fr.html">
@@ -357,7 +357,7 @@
         }
     });
 
-    const baseUrl = "https://darwinchapuswike.com/post-42-fr.html";
+    const baseUrl = "https://darwinchapuswike.com/post-42.html";
     function shareOnFacebook(postId, event) {
         event.preventDefault();
         const url = baseUrl;
@@ -383,7 +383,7 @@
 
     function shareOnWhatsApp(postId, event) {
         event.preventDefault();
-        const lang = localStorage.getItem('preferredLang') || 'fr';
+        const lang = localStorage.getItem('preferredLang') || 'en';
         const url = baseUrl;
         const text = document.querySelector(`h2[data-lang="${lang}"]`)?.innerText || document.querySelector(`#${postId} h2`).innerText;
         const message = `${text} ${url}`;
@@ -438,3 +438,4 @@
 </body>
 
 </html>
+
