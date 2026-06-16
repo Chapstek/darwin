@@ -127,43 +127,10 @@
             font-size: 0.95em;
             word-wrap: break-word;
         }
-
-        /* Game Section */
-        #games-section {
+        /* Pong Game Styles */
+        #pong-section {
             text-align: center;
         }
-        .game-selector {
-            margin-bottom: 15px;
-        }
-        .game-btn {
-            padding: 10px 20px;
-            margin: 0 8px;
-            font-size: 1em;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .game-btn.active {
-            background: #0A66C2;
-            color: white;
-        }
-        .game-btn:not(.active) {
-            background: #e9ecef;
-            color: #333;
-        }
-        .game-container {
-            display: none;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
-        .game-container.active {
-            display: flex;
-        }
-
-        /* Pong Styles */
         #pong-canvas {
             border: 2px solid #004182;
             border-radius: 8px;
@@ -173,66 +140,13 @@
             width: 100%;
             max-width: 600px;
             height: 400px;
-            touch-action: none;
+            touch-action: none; /* Prevent default touch behaviors like scrolling */
         }
         #pong-instructions {
             font-size: 0.9em;
             color: #555;
             margin-top: 10px;
         }
-
-        /* Tetris Styles */
-        #tetris-canvas {
-            border: 2px solid #004182;
-            border-radius: 8px;
-            background: #1a1a1a;
-            display: block;
-            margin: 0 auto;
-            image-rendering: pixelated;
-        }
-        #tetris-score {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #0A66C2;
-            margin: 10px 0;
-        }
-        #tetris-instructions {
-            font-size: 0.85em;
-            color: #555;
-            margin-top: 8px;
-            max-width: 500px;
-        }
-
-        /* Tetris Mobile Controls */
-        .tetris-controls {
-            display: none;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 10px;
-            margin: 15px auto;
-            max-width: 340px;
-        }
-        .tetris-controls button {
-            padding: 14px 10px;
-            font-size: 1.1em;
-            font-weight: bold;
-            background: #004182;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .tetris-controls button:active {
-            background: #dc3545;
-            transform: scale(0.95);
-        }
-        .tetris-controls .rotate-btn {
-            grid-column: span 3;
-        }
-        .tetris-controls .hard-drop {
-            grid-column: span 3;
-        }
-
         .score-display {
             font-size: 1.2em;
             font-weight: bold;
@@ -276,6 +190,7 @@
         a:hover {
             color: #dc3545;
         }
+        /* Language Switcher Styles */
         .language-switcher {
             position: absolute;
             top: 10px;
@@ -290,20 +205,42 @@
             background: white;
             color: #333;
             cursor: pointer;
+            transition: border-color 0.3s ease;
         }
+        .language-switcher select:hover {
+            border-color: #0A66C2;
+        }
+        .language-switcher select:focus {
+            outline: none;
+            border-color: #0A66C2;
+        }
+        /* Language Content Styles */
         [data-lang] {
             display: none;
         }
         [data-lang].active {
             display: block;
         }
-
         @media (max-width: 720px) {
-            .container { padding: 10px; }
-            header { padding: 25px 8px; }
-            header img { width: 90px; height: 90px; }
-            header h1 { font-size: 1.6em; }
-            .hamburger { display: block; }
+            .container {
+                padding: 10px;
+            }
+            header {
+                padding: 25px 8px;
+            }
+            header img {
+                width: 90px;
+                height: 90px;
+            }
+            header h1 {
+                font-size: 1.6em;
+            }
+            header p {
+                font-size: 0.95em;
+            }
+            .hamburger {
+                display: block;
+            }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -315,18 +252,82 @@
                 padding: 10px 0;
                 z-index: 1000;
             }
-            .nav-links.active { display: flex; }
-            #pong-canvas, #tetris-canvas {
+            .nav-links.active {
+                display: flex;
+            }
+            nav a {
+                margin: 10px 0;
+                font-size: 1em;
+                display: block;
+                padding: 5px 0;
+            }
+            section {
+                padding: 12px;
+                margin: 8px 0;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            #pong-canvas {
                 width: 100%;
-                max-width: 100%;
                 height: 300px;
             }
-            .tetris-controls {
-                display: grid;
+            #pong-instructions {
+                font-size: 0.85em;
             }
-            .game-btn {
-                padding: 8px 16px;
-                margin: 5px;
+            .score-display {
+                font-size: 1.1em;
+            }
+            .whatsapp-btn {
+                padding: 6px 10px;
+                font-size: 0.75em;
+                bottom: 8px;
+                right: 8px;
+            }
+            footer {
+                padding: 8px;
+                font-size: 0.75em;
+            }
+            .language-switcher {
+                top: 5px;
+                right: 5px;
+            }
+            .language-switcher select {
+                font-size: 0.85em;
+                padding: 4px;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.4em;
+            }
+            header p {
+                font-size: 0.9em;
+            }
+            nav a {
+                font-size: 0.9em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            p {
+                font-size: 0.85em;
+            }
+            #pong-canvas {
+                height: 250px;
+            }
+            #pong-instructions {
+                font-size: 0.8em;
+            }
+            .score-display {
+                font-size: 1em;
+            }
+            .language-switcher select {
+                font-size: 0.8em;
+                padding: 3px;
             }
         }
     </style>
@@ -358,7 +359,6 @@
             <a href="index.html" data-lang="en">Home</a>
             <a href="index.html" data-lang="fr">Accueil</a>
             <a href="index.html" data-lang="sw">Nyumbani</a>
-            <!-- Other nav links remain the same -->
             <a href="contact.html" data-lang="en">Contact</a>
             <a href="contact.html" data-lang="fr">Contact</a>
             <a href="contact.html" data-lang="sw">Mawasiliano</a>
@@ -394,63 +394,37 @@
 
     <div class="container">
         <section id="welcome-section">
-            <!-- Welcome content same as before -->
+            <!-- English -->
             <div data-lang="en">
                 <h2>Welcome</h2>
-                <p>Hello! I'm Darwin Chapuswike, an experienced ICT Professional with over 6 years of experience in hardware, software, networking, and troubleshooting.</p>
+                <p>Hello! I'm Darwin Chapuswike, an experienced ICT Professional with over 6 years of experience in hardware, software, networking, and troubleshooting. Explore my portfolio to learn more about my work, skills, and interests.</p>
             </div>
+            <!-- French -->
             <div data-lang="fr">
                 <h2>Bienvenue</h2>
-                <p>Bonjour ! Je suis Darwin Chapuswike, un professionnel des TIC expérimenté avec plus de 6 ans d’expérience...</p>
+                <p>Bonjour ! Je suis Darwin Chapuswike, un professionnel des TIC expérimenté avec plus de 6 ans d’expérience en matériel, logiciel, réseaux et dépannage. Explorez mon portefeuille pour en savoir plus sur mon travail, mes compétences et mes centres d’intérêt.</p>
             </div>
+            <!-- Swahili -->
             <div data-lang="sw">
                 <h2>Karibu</h2>
-                <p>Habari! Mimi ni Darwin Chapuswike, mtaalamu wa TIC mwenye uzoefu wa zaidi ya miaka 6...</p>
+                <p>Habari! Mimi ni Darwin Chapuswike, mtaalamu wa TIC mwenye uzoefu wa zaidi ya miaka 6 katika vifaa, programu, mitandao, na utatuzi wa matatizo. Chunguza portifolio yangu ili ujifunze zaidi kuhusu kazi yangu, ujuzi wangu, na mambo ninayopenda.</p>
             </div>
         </section>
 
-        <section id="games-section">
-            <h2 data-lang="en">Play Games!</h2>
-            <h2 data-lang="fr">Jouez aux jeux !</h2>
-            <h2 data-lang="sw">Cheza Michezo!</h2>
+        <section id="pong-section">
+            <h2 data-lang="en">Play Pong!</h2>
+            <h2 data-lang="fr">Jouez à Pong !</h2>
+            <h2 data-lang="sw">Cheza Pong!</h2>
 
-            <div class="game-selector">
-                <button class="game-btn active" data-game="pong" onclick="switchGame('pong')">Pong</button>
-                <button class="game-btn" data-game="tetris" onclick="switchGame('tetris')">Tetris</button>
-            </div>
+            <div class="score-display" data-lang="en">Player: 0 | AI: 0</div>
+            <div class="score-display" data-lang="fr">Joueur : 0 | IA : 0</div>
+            <div class="score-display" data-lang="sw">Mchezaji: 0 | AI: 0</div>
 
-            <!-- Pong -->
-            <div id="pong-container" class="game-container active">
-                <div class="score-display" data-lang="en">Player: 0 | AI: 0</div>
-                <div class="score-display" data-lang="fr">Joueur : 0 | IA : 0</div>
-                <div class="score-display" data-lang="sw">Mchezaji: 0 | AI: 0</div>
-                <canvas id="pong-canvas"></canvas>
-                <p data-lang="en" class="pong-instructions">Use ↑ ↓ keys or swipe on left side. First to 5 wins.</p>
-                <p data-lang="fr" class="pong-instructions">Utilisez ↑ ↓ ou glissez à gauche. Premier à 5 gagne.</p>
-                <p data-lang="sw" class="pong-instructions">Tumia ↑ ↓ au gusa upande wa kushoto. Wa kwanza kufikia 5 anashinda.</p>
-            </div>
+            <canvas id="pong-canvas"></canvas>
 
-            <!-- Tetris -->
-            <div id="tetris-container" class="game-container">
-                <div id="tetris-score" data-lang="en">Score: 0  Lines: 0</div>
-                <div id="tetris-score" data-lang="fr">Score : 0  Lignes : 0</div>
-                <div id="tetris-score" data-lang="sw">Alama: 0  Mistari: 0</div>
-                
-                <canvas id="tetris-canvas" width="240" height="480"></canvas>
-                
-                <div class="tetris-controls" id="tetris-mobile-controls">
-                    <button onclick="tetrisMove(-1)">← Left</button>
-                    <button onclick="tetrisSoftDrop()">↓ Drop</button>
-                    <button onclick="tetrisMove(1)">Right →</button>
-                    <button class="rotate-btn" onclick="tetrisRotate()">↻ Rotate</button>
-                    <button class="hard-drop" onclick="tetrisHardDrop()">Hard Drop</button>
-                    <button onclick="toggleTetrisPause()">⏸ Pause / Resume</button>
-                </div>
-
-                <p data-lang="en" id="tetris-instructions">Desktop: ← → ↓ ↑ Space | P<br>Mobile: Use buttons below</p>
-                <p data-lang="fr" id="tetris-instructions">Clavier: ← → ↓ ↑ Espace | P<br>Mobile: Utilisez les boutons ci-dessous</p>
-                <p data-lang="sw" id="tetris-instructions">Kibodi: ← → ↓ ↑ Space | P<br>Simu: Tumia vitufe hapa chini</p>
-            </div>
+            <p data-lang="en" class="pong-instructions">Use ↑ ↓ keys or drag to play. First to 5 wins.</p>
+            <p data-lang="fr" class="pong-instructions">Utilisez les flèches ↑ ↓ ou faites glisser. Premier à 5 gagne.</p>
+            <p data-lang="sw" class="pong-instructions">Tumia ↑ ↓ au gusa na buruta. Wa kwanza kufikia 5 anashinda.</p>
         </section>
     </div>
 
@@ -465,7 +439,58 @@
     </footer>
 
     <script>
-        // Language Switcher
+        // Game objects
+        const canvas = document.getElementById('pong-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set initial canvas size
+        canvas.width = 600;
+        canvas.height = 400;
+
+        const paddleWidth = 10;
+        const paddleHeight = 60;
+        const ballSize = 10;
+        let baseBallSpeed = 4; // Base speed for ball, adjusted on resize
+
+        let playerPaddle = {
+            x: 10,
+            y: canvas.height / 2 - paddleHeight / 2,
+            width: paddleWidth,
+            height: paddleHeight,
+            speed: 5,
+            score: 0
+        };
+
+        let aiPaddle = {
+            x: canvas.width - paddleWidth - 10,
+            y: canvas.height / 2 - paddleHeight / 2,
+            width: paddleWidth,
+            height: paddleHeight,
+            speed: 3,
+            score: 0
+        };
+
+        let ball = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            size: ballSize,
+            speedX: baseBallSpeed,
+            speedY: baseBallSpeed
+        };
+
+        // Game state
+        let keys = { ArrowUp: false, ArrowDown: false };
+        let gameRunning = true;
+        let touchActive = false;
+        let touchY = 0;
+
+        // Helper function to get the current score display element
+        function getScoreDisplay() {
+            const lang = localStorage.getItem('preferredLang') || 'en';
+            return document.querySelector(`.score-display[data-lang="${lang}"]`);
+        }
+
+        // Language Switcher Functionality
         function changeLanguage() {
             const selectedLang = document.getElementById('language-select').value;
             localStorage.setItem('preferredLang', selectedLang);
@@ -473,307 +498,74 @@
         }
 
         function updateLanguage(lang) {
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                el.classList.remove('active');
-                if (el.getAttribute('data-lang') === lang) el.classList.add('active');
+            // Update visibility of elements with data-lang
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                element.classList.remove('active');
+                if (element.getAttribute('data-lang') === lang) {
+                    element.classList.add('active');
+                }
             });
+
+            // Update page title
             document.title = document.querySelector(`title[data-lang="${lang}"]`).textContent;
-            if (currentGame === 'pong') updatePongScoreDisplay();
-            else updateTetrisScoreDisplay();
+
+            // Update meta tags dynamically
+            const descriptions = {
+                en: "Darwin Chapuswike’s portfolio: skills, certifications, and experience. Explore my work and achievements!",
+                fr: "Portefeuille de Darwin Chapuswike : compétences, certifications et expérience. Découvrez mon travail et mes réalisations !",
+                sw: "Portifolio ya Darwin Chapuswike: ujuzi, vyeti, na uzoefu. Chunguza kazi yangu na mafanikio yangu!"
+            };
+            const keywords = {
+                en: "Best IT Engineer in Zambia, Best Software Developer in Zambia, Experienced IT Professional in Zambia, Best IT Engineer in Livingstone, Best Software Developer in Livingstone, Experienced IT Professional in Livingstone",
+                fr: "Meilleur ingénieur IT en Zambie, Meilleur développeur logiciel en Zambie, Professionnel IT expérimenté en Zambie, Meilleur ingénieur IT à Livingstone, Meilleur développeur logiciel à Livingstone, Professionnel IT expérimenté à Livingstone",
+                sw: "Mhandisi Bora wa IT nchini Zambia, Mwandishi Bora wa Programu nchini Zambia, Mtaalamu wa IT mwenye Uzoefu nchini Zambia, Mhandisi Bora wa IT mjini Livingstone, Mwandishi Bora wa Programu mjini Livingstone, Mtaalamu wa IT mwenye Uzoefu mjini Livingstone"
+            };
+            document.querySelector('meta[name="description"]').setAttribute('content', descriptions[lang]);
+            document.querySelector('meta[name="keywords"]').setAttribute('content', keywords[lang]);
+
+            // Update score display
+            updateScoreDisplay();
         }
 
-        // Game Switcher
-        let currentGame = 'pong';
-        function switchGame(game) {
-            currentGame = game;
-            document.querySelectorAll('.game-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.game === game);
-            });
-            document.getElementById('pong-container').classList.toggle('active', game === 'pong');
-            document.getElementById('tetris-container').classList.toggle('active', game === 'tetris');
-
-            if (game === 'tetris' && !tetrisInitialized) initTetris();
-            if (game === 'pong' && !pongInitialized) initPong();
-        }
-
-        // ==================== PONG ====================
-        let pongInitialized = false;
-        let pongCanvas, pongCtx, playerPaddle, aiPaddle, ball, pongKeys, pongGameRunning, pongTouchActive, pongTouchY;
-
-        function initPong() {
-            pongCanvas = document.getElementById('pong-canvas');
-            pongCtx = pongCanvas.getContext('2d');
-            pongCanvas.width = 600; pongCanvas.height = 400;
-
-            playerPaddle = {x:10, y:170, width:10, height:60, speed:6, score:0};
-            aiPaddle = {x:580, y:170, width:10, height:60, speed:3.5, score:0};
-            ball = {x:300, y:200, size:10, speedX:5, speedY:3};
-
-            pongKeys = {ArrowUp:false, ArrowDown:false};
-            pongGameRunning = true;
-            pongTouchActive = false;
-
-            document.addEventListener('keydown', e => { if(e.key==='ArrowUp') pongKeys.ArrowUp=true; if(e.key==='ArrowDown') pongKeys.ArrowDown=true; });
-            document.addEventListener('keyup', e => { if(e.key==='ArrowUp') pongKeys.ArrowUp=false; if(e.key==='ArrowDown') pongKeys.ArrowDown=false; });
-
-            pongCanvas.addEventListener('touchstart', pongTouchStart);
-            pongCanvas.addEventListener('touchmove', pongTouchMove);
-            pongCanvas.addEventListener('touchend', () => pongTouchActive = false);
-
-            pongInitialized = true;
-            requestAnimationFrame(pongGameLoop);
-        }
-
-        function pongTouchStart(e) {
-            if (currentGame !== 'pong') return;
-            e.preventDefault();
-            const touch = e.touches[0];
-            const rect = pongCanvas.getBoundingClientRect();
-            if (touch.clientX - rect.left < pongCanvas.width/2) pongTouchActive = true;
-        }
-        function pongTouchMove(e) {
-            if (!pongTouchActive || currentGame !== 'pong') return;
-            e.preventDefault();
-            const touch = e.touches[0];
-            const rect = pongCanvas.getBoundingClientRect();
-            playerPaddle.y = touch.clientY - rect.top - playerPaddle.height/2;
-            if (playerPaddle.y < 0) playerPaddle.y = 0;
-            if (playerPaddle.y > pongCanvas.height - playerPaddle.height) playerPaddle.y = pongCanvas.height - playerPaddle.height;
-        }
-
-        function updatePongScoreDisplay() {
+        // Function to update the score display
+        function updateScoreDisplay() {
             const lang = localStorage.getItem('preferredLang') || 'en';
-            const el = document.querySelector(`#pong-container .score-display[data-lang="${lang}"]`);
-            if (el) el.textContent = lang === 'en' ? `Player: ${playerPaddle.score} | AI: ${aiPaddle.score}` : 
-                                   lang === 'fr' ? `Joueur : ${playerPaddle.score} | IA : ${aiPaddle.score}` : 
-                                   `Mchezaji: ${playerPaddle.score} | AI: ${aiPaddle.score}`;
+            const scoreText = lang === 'en' ? `Player: ${playerPaddle.score} | AI: ${aiPaddle.score}` :
+                             lang === 'fr' ? `Joueur : ${playerPaddle.score} | IA : ${aiPaddle.score}` :
+                             `Mchezaji: ${playerPaddle.score} | AI: ${aiPaddle.score}`;
+            getScoreDisplay().textContent = scoreText;
         }
 
-        function pongUpdate() {
-            if (!pongGameRunning) return;
-            if (!pongTouchActive) {
-                if (pongKeys.ArrowUp && playerPaddle.y > 0) playerPaddle.y -= playerPaddle.speed;
-                if (pongKeys.ArrowDown && playerPaddle.y < pongCanvas.height - playerPaddle.height) playerPaddle.y += playerPaddle.speed;
-            }
-            // AI logic, ball logic, collision, scoring... (same as previous version)
-            if (aiPaddle.y + aiPaddle.height/2 < ball.y) aiPaddle.y += aiPaddle.speed;
-            else if (aiPaddle.y + aiPaddle.height/2 > ball.y) aiPaddle.y -= aiPaddle.speed;
-
-            ball.x += ball.speedX;
-            ball.y += ball.speedY;
-
-            if (ball.y <= 0 || ball.y >= pongCanvas.height - ball.size) ball.speedY *= -1;
-
-            if ((ball.x <= playerPaddle.x + playerPaddle.width && ball.y + ball.size >= playerPaddle.y && ball.y <= playerPaddle.y + playerPaddle.height) ||
-                (ball.x + ball.size >= aiPaddle.x && ball.y + ball.size >= aiPaddle.y && ball.y <= aiPaddle.y + aiPaddle.height)) {
-                ball.speedX *= -1.02;
-            }
-
-            if (ball.x <= 0) { aiPaddle.score++; resetPongBall(); updatePongScoreDisplay(); }
-            if (ball.x >= pongCanvas.width - ball.size) { playerPaddle.score++; resetPongBall(); updatePongScoreDisplay(); }
-        }
-
-        function resetPongBall() {
-            ball.x = pongCanvas.width/2;
-            ball.y = pongCanvas.height/2;
-            ball.speedX *= -1;
-            ball.speedY = (Math.random()-0.5)*6;
-        }
-
-        function pongDraw() {
-            pongCtx.fillStyle = '#f8f9fa';
-            pongCtx.fillRect(0,0,pongCanvas.width,pongCanvas.height);
-            pongCtx.fillStyle = '#004182';
-            pongCtx.fillRect(playerPaddle.x, playerPaddle.y, playerPaddle.width, playerPaddle.height);
-            pongCtx.fillRect(aiPaddle.x, aiPaddle.y, aiPaddle.width, aiPaddle.height);
-            pongCtx.fillStyle = '#dc3545';
-            pongCtx.fillRect(ball.x, ball.y, ball.size, ball.size);
-        }
-
-        function pongGameLoop() {
-            if (currentGame === 'pong') {
-                pongUpdate();
-                pongDraw();
-            }
-            requestAnimationFrame(pongGameLoop);
-        }
-
-        // ==================== TETRIS ====================
-        let tetrisInitialized = false;
-        let tetrisCanvas, tetrisCtx, tetrisBoard, currentPiece, tetrisScore = 0, linesCleared = 0;
-        let dropInterval = 800, lastDropTime = Date.now(), tetrisPaused = false, tetrisGameOver = false;
-
-        const TETRIS_COLS = 10, TETRIS_ROWS = 20, BLOCK_SIZE = 24;
-        const TETRIS_PIECES = [
-            {shape:[[1,1,1,1]], color:'#00f0f0'}, {shape:[[1,1],[1,1]], color:'#f0f000'},
-            {shape:[[0,1,0],[1,1,1]], color:'#a000f0'}, {shape:[[0,1,1],[1,1,0]], color:'#00f000'},
-            {shape:[[1,1,0],[0,1,1]], color:'#f00000'}, {shape:[[1,0,0],[1,1,1]], color:'#f0a000'},
-            {shape:[[0,0,1],[1,1,1]], color:'#0000f0'}
-        ];
-
-        function initTetris() {
-            tetrisCanvas = document.getElementById('tetris-canvas');
-            tetrisCtx = tetrisCanvas.getContext('2d');
-            tetrisBoard = Array.from({length: TETRIS_ROWS}, () => Array(TETRIS_COLS).fill(0));
-            tetrisScore = 0; linesCleared = 0; dropInterval = 800; lastDropTime = Date.now();
-            tetrisPaused = false; tetrisGameOver = false;
-            spawnPiece();
-            tetrisInitialized = true;
-            document.addEventListener('keydown', handleTetrisKey);
-            requestAnimationFrame(tetrisGameLoop);
-        }
-
-        function spawnPiece() {
-            const p = TETRIS_PIECES[Math.floor(Math.random()*TETRIS_PIECES.length)];
-            currentPiece = {shape: p.shape, color: p.color, x: Math.floor(TETRIS_COLS/2)-1, y: 0};
-            if (collision()) tetrisGameOver = true;
-        }
-
-        function collision() {
-            for (let y = 0; y < currentPiece.shape.length; y++) {
-                for (let x = 0; x < currentPiece.shape[y].length; x++) {
-                    if (currentPiece.shape[y][x] && 
-                        (currentPiece.x + x < 0 || currentPiece.x + x >= TETRIS_COLS || 
-                         currentPiece.y + y >= TETRIS_ROWS || 
-                         (currentPiece.y + y >= 0 && tetrisBoard[currentPiece.y + y][currentPiece.x + x] !== 0))) {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        function mergePiece() {
-            for (let y = 0; y < currentPiece.shape.length; y++) {
-                for (let x = 0; x < currentPiece.shape[y].length; x++) {
-                    if (currentPiece.shape[y][x]) {
-                        tetrisBoard[currentPiece.y + y][currentPiece.x + x] = currentPiece.color;
-                    }
-                }
+        // Check for game over
+        function checkGameOver() {
+            if (playerPaddle.score >= 5 || aiPaddle.score >= 5) {
+                gameRunning = false;
+                const lang = localStorage.getItem('preferredLang') || 'en';
+                const message = lang === 'en' ?
+                    (playerPaddle.score >= 5 ? 'You Win! Refresh to play again.' : 'AI Wins! Refresh to play again.') :
+                    lang === 'fr' ?
+                    (playerPaddle.score >= 5 ? 'Vous avez gagné ! Rafraîchissez pour rejouer.' : 'L’IA a gagné ! Rafraîchissez pour rejouer.') :
+                    (playerPaddle.score >= 5 ? 'Umepata Ushindi! Ongeza upya kucheza tena.' : 'AI Imeshinda! Ongeza upya kucheza tena.');
+                getScoreDisplay().textContent = message;
             }
         }
 
-        function clearLines() {
-            let lines = 0;
-            for (let y = TETRIS_ROWS-1; y >= 0; y--) {
-                if (tetrisBoard[y].every(cell => cell !== 0)) {
-                    tetrisBoard.splice(y,1);
-                    tetrisBoard.unshift(Array(TETRIS_COLS).fill(0));
-                    lines++;
-                    y++;
-                }
-            }
-            if (lines) {
-                linesCleared += lines;
-                tetrisScore += [0,100,300,500,800][lines] * (Math.floor(linesCleared/10)+1);
-                updateTetrisScoreDisplay();
-            }
-        }
-
-        function rotatePiece() {
-            const rotated = currentPiece.shape[0].map((_, i) => currentPiece.shape.map(row => row[i]).reverse());
-            const prev = currentPiece.shape;
-            currentPiece.shape = rotated;
-            if (collision()) currentPiece.shape = prev;
-        }
-
-        function hardDrop() {
-            while (!collision()) currentPiece.y++;
-            currentPiece.y--;
-            lockPiece();
-        }
-
-        function lockPiece() {
-            mergePiece();
-            clearLines();
-            spawnPiece();
-        }
-
-        function handleTetrisKey(e) {
-            if (currentGame !== 'tetris' || tetrisGameOver || tetrisPaused) return;
-            if (e.key === 'ArrowLeft') { currentPiece.x--; if(collision()) currentPiece.x++; }
-            if (e.key === 'ArrowRight') { currentPiece.x++; if(collision()) currentPiece.x--; }
-            if (e.key === 'ArrowDown') { currentPiece.y++; if(collision()) { currentPiece.y--; lockPiece(); } }
-            if (e.key === 'ArrowUp') rotatePiece();
-            if (e.key === ' ') hardDrop();
-            if (e.key.toLowerCase() === 'p') tetrisPaused = !tetrisPaused;
-        }
-
-        // Mobile Controls
-        window.tetrisMove = (dir) => {
-            if (currentPiece && !tetrisGameOver && !tetrisPaused) {
-                currentPiece.x += dir;
-                if (collision()) currentPiece.x -= dir;
-            }
-        };
-        window.tetrisSoftDrop = () => {
-            if (currentPiece && !tetrisGameOver && !tetrisPaused) {
-                currentPiece.y++;
-                if (collision()) { currentPiece.y--; lockPiece(); }
-                lastDropTime = Date.now();
-            }
-        };
-        window.tetrisRotate = () => {
-            if (currentPiece && !tetrisGameOver && !tetrisPaused) rotatePiece();
-        };
-        window.tetrisHardDrop = () => {
-            if (currentPiece && !tetrisGameOver && !tetrisPaused) hardDrop();
-        };
-        window.toggleTetrisPause = () => {
-            if (!tetrisGameOver) tetrisPaused = !tetrisPaused;
-        };
-
-        function updateTetrisScoreDisplay() {
-            const lang = localStorage.getItem('preferredLang') || 'en';
-            const el = document.querySelector(`#tetris-score[data-lang="${lang}"]`);
-            if (el) el.textContent = lang === 'en' ? `Score: ${tetrisScore}  Lines: ${linesCleared}` :
-                                    lang === 'fr' ? `Score : ${tetrisScore}  Lignes : ${linesCleared}` :
-                                    `Alama: ${tetrisScore}  Mistari: ${linesCleared}`;
-        }
-
-        function drawTetris() {
-            tetrisCtx.fillStyle = '#1a1a1a';
-            tetrisCtx.fillRect(0, 0, tetrisCanvas.width, tetrisCanvas.height);
-
-            // Board
-            for (let y = 0; y < TETRIS_ROWS; y++) {
-                for (let x = 0; x < TETRIS_COLS; x++) {
-                    if (tetrisBoard[y][x]) {
-                        tetrisCtx.fillStyle = tetrisBoard[y][x];
-                        tetrisCtx.fillRect(x*BLOCK_SIZE, y*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-                    }
-                }
-            }
-            // Current piece
-            if (currentPiece) {
-                tetrisCtx.fillStyle = currentPiece.color;
-                for (let y = 0; y < currentPiece.shape.length; y++) {
-                    for (let x = 0; x < currentPiece.shape[y].length; x++) {
-                        if (currentPiece.shape[y][x]) {
-                            tetrisCtx.fillRect((currentPiece.x+x)*BLOCK_SIZE, (currentPiece.y+y)*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
-                        }
-                    }
-                }
-            }
-        }
-
-        function tetrisGameLoop() {
-            if (currentGame === 'tetris' && !tetrisGameOver && !tetrisPaused) {
-                if (Date.now() - lastDropTime > dropInterval) {
-                    currentPiece.y++;
-                    if (collision()) {
-                        currentPiece.y--;
-                        lockPiece();
-                    }
-                    lastDropTime = Date.now();
-                }
-            }
-            drawTetris();
-            requestAnimationFrame(tetrisGameLoop);
-        }
-
-        // Init
+        // Fade-in effect for sections on scroll
         document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Hamburger menu toggle
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             hamburger.addEventListener('click', () => {
@@ -781,12 +573,184 @@
                 hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
             });
 
-            initPong();
+            // Event listeners for keyboard input (desktop)
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowUp') keys.ArrowUp = true;
+                if (e.key === 'ArrowDown') keys.ArrowDown = true;
+            });
 
-            const savedLang = localStorage.getItem('preferredLang') || 'en';
-            document.getElementById('language-select').value = savedLang;
-            updateLanguage(savedLang);
+            document.addEventListener('keyup', (e) => {
+                if (e.key === 'ArrowUp') keys.ArrowUp = false;
+                if (e.key === 'ArrowDown') keys.ArrowDown = false;
+            });
+
+            // Event listeners for touch input (mobile)
+            canvas.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                const touch = e.touches[0];
+                const rect = canvas.getBoundingClientRect();
+                const touchX = touch.clientX - rect.left;
+                touchY = touch.clientY - rect.top;
+
+                // Only allow touch on the left half of the canvas (player's side)
+                if (touchX < canvas.width / 2) {
+                    touchActive = true;
+                }
+            });
+
+            canvas.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                if (touchActive) {
+                    const touch = e.touches[0];
+                    const rect = canvas.getBoundingClientRect();
+                    touchY = touch.clientY - rect.top;
+
+                    // Update player paddle position based on touch with boundary checks
+                    playerPaddle.y = touchY - playerPaddle.height / 2;
+                    if (playerPaddle.y < 0) playerPaddle.y = 0;
+                    if (playerPaddle.y > canvas.height - playerPaddle.height) {
+                        playerPaddle.y = canvas.height - playerPaddle.height;
+                    }
+                }
+            });
+
+            canvas.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                touchActive = false;
+            });
+
+            // Start the game
+            gameLoop();
         });
+
+        // Update game state
+        function update() {
+            if (!gameRunning) return;
+
+            // Player paddle movement (keyboard)
+            if (!touchActive) { // Only use keyboard if touch is not active
+                if (keys.ArrowUp && playerPaddle.y > 0) {
+                    playerPaddle.y -= playerPaddle.speed;
+                }
+                if (keys.ArrowDown && playerPaddle.y < canvas.height - playerPaddle.height) {
+                    playerPaddle.y += playerPaddle.speed;
+                }
+            }
+
+            // AI paddle movement (basic AI)
+            if (aiPaddle.y + aiPaddle.height / 2 < ball.y && aiPaddle.y < canvas.height - aiPaddle.height) {
+                aiPaddle.y += aiPaddle.speed;
+            }
+            if (aiPaddle.y + aiPaddle.height / 2 > ball.y && aiPaddle.y > 0) {
+                aiPaddle.y -= aiPaddle.speed;
+            }
+
+            // Ball movement
+            ball.x += ball.speedX;
+            ball.y += ball.speedY;
+
+            // Ball collision with top and bottom
+            if (ball.y <= 0 || ball.y >= canvas.height - ball.size) {
+                ball.speedY = -ball.speedY;
+            }
+
+            // Ball collision with paddles
+            if (
+                (ball.x <= playerPaddle.x + playerPaddle.width &&
+                ball.y + ball.size >= playerPaddle.y &&
+                ball.y <= playerPaddle.y + playerPaddle.height) ||
+                (ball.x + ball.size >= aiPaddle.x &&
+                ball.y + ball.size >= aiPaddle.y &&
+                ball.y <= aiPaddle.y + aiPaddle.height)
+            ) {
+                ball.speedX = -ball.speedX;
+            }
+
+            // Ball out of bounds (scoring)
+            if (ball.x <= 0) {
+                aiPaddle.score++;
+                resetBall();
+                updateScoreDisplay();
+                checkGameOver();
+            }
+            if (ball.x >= canvas.width - ball.size) {
+                playerPaddle.score++;
+                resetBall();
+                updateScoreDisplay();
+                checkGameOver();
+            }
+        }
+
+        // Reset ball position
+        function resetBall() {
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+            ball.speedX = -ball.speedX;
+            ball.speedY = Math.random() * 8 - 4; // Random vertical speed
+        }
+
+        // Draw game elements
+        function draw() {
+            // Clear canvas
+            ctx.fillStyle = '#f8f9fa';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Draw paddles
+            ctx.fillStyle = '#004182';
+            ctx.fillRect(playerPaddle.x, playerPaddle.y, playerPaddle.width, playerPaddle.height);
+            ctx.fillRect(aiPaddle.x, aiPaddle.y, aiPaddle.width, aiPaddle.height);
+
+            // Draw ball
+            ctx.fillStyle = '#dc3545';
+            ctx.fillRect(ball.x, ball.y, ball.size, ball.size);
+
+            // Draw center line
+            ctx.setLineDash([5, 15]);
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, 0);
+            ctx.lineTo(canvas.width / 2, canvas.height);
+            ctx.strokeStyle = '#666';
+            ctx.stroke();
+            ctx.setLineDash([]);
+        }
+
+        // Game loop
+        function gameLoop() {
+            update();
+            draw();
+            if (gameRunning) {
+                requestAnimationFrame(gameLoop);
+            }
+        }
+
+        // Adjust canvas size for mobile
+        function resizeCanvas() {
+            const previousWidth = canvas.width;
+            if (window.innerWidth <= 720) {
+                canvas.width = window.innerWidth - 40; // Adjust for padding
+                canvas.height = 300;
+            } else {
+                canvas.width = 600;
+                canvas.height = 400;
+            }
+
+            // Scale game objects proportionally
+            const scale = canvas.width / previousWidth;
+            playerPaddle.x = 10;
+            aiPaddle.x = canvas.width - paddleWidth - 10;
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+            ball.speedX = baseBallSpeed * scale;
+            ball.speedY = baseBallSpeed * (canvas.height / 400); // Scale vertical speed based on height
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Set initial language
+        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        document.getElementById('language-select').value = savedLang;
+        updateLanguage(savedLang);
     </script>
 </body>
+
 </html>
