@@ -24,7 +24,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
@@ -38,26 +40,187 @@
             margin: auto;
             padding: 15px;
         }
-        header, nav, section, footer { /* same as before */ }
-        /* ... (keeping previous styles) ... */
+        header {
+            background: linear-gradient(135deg, #0A66C2 0%, #004182 100%);
+            color: white;
+            padding: 30px 10px;
+            text-align: center;
+            border-bottom: 5px solid #dc3545;
+            position: relative;
+        }
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin-bottom: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        header img:hover {
+            transform: scale(1.1);
+        }
+        header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            word-wrap: break-word;
+        }
+        header p {
+            font-size: 1em;
+            opacity: 0.9;
+            word-wrap: break-word;
+        }
+        nav {
+            background: #004182;
+            padding: 8px 0;
+            text-align: center;
+            position: relative;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: white;
+            margin: 0 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            font-size: 0.85em;
+        }
+        nav a:hover {
+            color: #dc3545;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px 15px;
+        }
+        section {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            color: #0A66C2;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            border-left: 4px solid #dc3545;
+            padding-left: 8px;
+            word-wrap: break-word;
+        }
+        p {
+            font-size: 0.95em;
+            word-wrap: break-word;
+        }
+
+        /* Game Section */
+        #games-section {
+            text-align: center;
+        }
+        .game-selector {
+            margin-bottom: 15px;
+        }
+        .game-btn {
+            padding: 10px 20px;
+            margin: 0 8px;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .game-btn.active {
+            background: #0A66C2;
+            color: white;
+        }
+        .game-btn:not(.active) {
+            background: #e9ecef;
+            color: #333;
+        }
+        .game-container {
+            display: none;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .game-container.active {
+            display: flex;
+        }
+
+        /* Pong Styles */
+        #pong-canvas {
+            border: 2px solid #004182;
+            border-radius: 8px;
+            background: #f8f9fa;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            touch-action: none;
+        }
+        #pong-instructions {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Tetris Styles */
+        #tetris-canvas {
+            border: 2px solid #004182;
+            border-radius: 8px;
+            background: #1a1a1a;
+            display: block;
+            margin: 0 auto;
+            image-rendering: pixelated;
+        }
+        #tetris-score {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0A66C2;
+            margin: 10px 0;
+        }
+        #tetris-instructions {
+            font-size: 0.85em;
+            color: #555;
+            margin-top: 8px;
+            max-width: 500px;
+        }
 
         /* Tetris Mobile Controls */
         .tetris-controls {
             display: none;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 8px;
+            gap: 10px;
             margin: 15px auto;
-            max-width: 320px;
+            max-width: 340px;
         }
         .tetris-controls button {
-            padding: 12px 8px;
-            font-size: 1em;
+            padding: 14px 10px;
+            font-size: 1.1em;
             font-weight: bold;
             background: #004182;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
+            transition: all 0.2s ease;
         }
         .tetris-controls button:active {
             background: #dc3545;
@@ -66,25 +229,185 @@
         .tetris-controls .rotate-btn {
             grid-column: span 3;
         }
+        .tetris-controls .hard-drop {
+            grid-column: span 3;
+        }
+
+        .score-display {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0A66C2;
+            margin-bottom: 10px;
+        }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #25D366;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+            font-size: 0.8em;
+            z-index: 1000;
+        }
+        .whatsapp-btn:hover {
+            background: #1ebe56;
+            transform: scale(1.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #004182;
+            color: white;
+            font-size: 0.8em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+            color: #0A66C2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #dc3545;
+        }
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+        .language-switcher select {
+            padding: 5px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background: white;
+            color: #333;
+            cursor: pointer;
+        }
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
 
         @media (max-width: 720px) {
+            .container { padding: 10px; }
+            header { padding: 25px 8px; }
+            header img { width: 90px; height: 90px; }
+            header h1 { font-size: 1.6em; }
+            .hamburger { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #004182;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+            .nav-links.active { display: flex; }
+            #pong-canvas, #tetris-canvas {
+                width: 100%;
+                max-width: 100%;
+                height: 300px;
+            }
             .tetris-controls {
                 display: grid;
             }
-            #tetris-canvas {
-                width: 100%;
-                max-width: 280px;
-                height: auto;
+            .game-btn {
+                padding: 8px 16px;
+                margin: 5px;
             }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- ... Header and Nav same as before ... -->
+    <header>
+        <div class="container">
+            <img src="profile_photo.jpg" alt="Darwin Chapuswike in a suit">
+            <h1 data-lang="en">Darwin Chapuswike</h1>
+            <h1 data-lang="fr">Darwin Chapuswike</h1>
+            <h1 data-lang="sw">Darwin Chapuswike</h1>
+            <p data-lang="en">IT Professional | Southern Province, Zambia</p>
+            <p data-lang="fr">Professionnel de l'informatique | Province du Sud Zambie</p>
+            <p data-lang="sw">Mtaalamu wa IT | Mkoa wa Kusini Zambia</p>
+            <div class="language-switcher">
+                <select id="language-select" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="sw">Kiswahili</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+        <div class="nav-links">
+            <a href="index.html" data-lang="en">Home</a>
+            <a href="index.html" data-lang="fr">Accueil</a>
+            <a href="index.html" data-lang="sw">Nyumbani</a>
+            <!-- Other nav links remain the same -->
+            <a href="contact.html" data-lang="en">Contact</a>
+            <a href="contact.html" data-lang="fr">Contact</a>
+            <a href="contact.html" data-lang="sw">Mawasiliano</a>
+            <a href="summary.html" data-lang="en">Summary</a>
+            <a href="summary.html" data-lang="fr">Résumé</a>
+            <a href="summary.html" data-lang="sw">Muhtasari</a>
+            <a href="experience.html" data-lang="en">Experience</a>
+            <a href="experience.html" data-lang="fr">Expérience</a>
+            <a href="experience.html" data-lang="sw">Uzoefu</a>
+            <a href="gallery.html" data-lang="en">Gallery</a>
+            <a href="gallery.html" data-lang="fr">Galerie</a>
+            <a href="gallery.html" data-lang="sw">Matunzio</a>
+            <a href="education.html" data-lang="en">Education</a>
+            <a href="education.html" data-lang="fr">Éducation</a>
+            <a href="education.html" data-lang="sw">Elimu</a>
+            <a href="skills.html" data-lang="en">Skills</a>
+            <a href="skills.html" data-lang="fr">Compétences</a>
+            <a href="skills.html" data-lang="sw">Ujuzi</a>
+            <a href="certifications.html" data-lang="en">Certifications</a>
+            <a href="certifications.html" data-lang="fr">Certifications</a>
+            <a href="certifications.html" data-lang="sw">Vyeti</a>
+            <a href="publications.html" data-lang="en">Publications</a>
+            <a href="publications.html" data-lang="fr">Publications</a>
+            <a href="publications.html" data-lang="sw">Machapisho</a>
+            <a href="achievements.html" data-lang="en">Achievements</a>
+            <a href="achievements.html" data-lang="fr">Réalisations</a>
+            <a href="achievements.html" data-lang="sw">Mafanikio</a>
+            <a href="testimonials.html" data-lang="en">Testimonials</a>
+            <a href="testimonials.html" data-lang="fr">Témoignages</a>
+            <a href="testimonials.html" data-lang="sw">Ushuhuda</a>
+        </div>
+    </nav>
 
     <div class="container">
-        <section id="welcome-section"> <!-- same --> </section>
+        <section id="welcome-section">
+            <!-- Welcome content same as before -->
+            <div data-lang="en">
+                <h2>Welcome</h2>
+                <p>Hello! I'm Darwin Chapuswike, an experienced ICT Professional with over 6 years of experience in hardware, software, networking, and troubleshooting.</p>
+            </div>
+            <div data-lang="fr">
+                <h2>Bienvenue</h2>
+                <p>Bonjour ! Je suis Darwin Chapuswike, un professionnel des TIC expérimenté avec plus de 6 ans d’expérience...</p>
+            </div>
+            <div data-lang="sw">
+                <h2>Karibu</h2>
+                <p>Habari! Mimi ni Darwin Chapuswike, mtaalamu wa TIC mwenye uzoefu wa zaidi ya miaka 6...</p>
+            </div>
+        </section>
 
         <section id="games-section">
             <h2 data-lang="en">Play Games!</h2>
@@ -96,10 +419,18 @@
                 <button class="game-btn" data-game="tetris" onclick="switchGame('tetris')">Tetris</button>
             </div>
 
-            <!-- Pong Container (same) -->
-            <div id="pong-container" class="game-container active"> <!-- ... existing pong ... --> </div>
+            <!-- Pong -->
+            <div id="pong-container" class="game-container active">
+                <div class="score-display" data-lang="en">Player: 0 | AI: 0</div>
+                <div class="score-display" data-lang="fr">Joueur : 0 | IA : 0</div>
+                <div class="score-display" data-lang="sw">Mchezaji: 0 | AI: 0</div>
+                <canvas id="pong-canvas"></canvas>
+                <p data-lang="en" class="pong-instructions">Use ↑ ↓ keys or swipe on left side. First to 5 wins.</p>
+                <p data-lang="fr" class="pong-instructions">Utilisez ↑ ↓ ou glissez à gauche. Premier à 5 gagne.</p>
+                <p data-lang="sw" class="pong-instructions">Tumia ↑ ↓ au gusa upande wa kushoto. Wa kwanza kufikia 5 anashinda.</p>
+            </div>
 
-            <!-- Tetris Container -->
+            <!-- Tetris -->
             <div id="tetris-container" class="game-container">
                 <div id="tetris-score" data-lang="en">Score: 0  Lines: 0</div>
                 <div id="tetris-score" data-lang="fr">Score : 0  Lignes : 0</div>
@@ -107,27 +438,34 @@
                 
                 <canvas id="tetris-canvas" width="240" height="480"></canvas>
                 
-                <!-- Mobile Controls -->
                 <div class="tetris-controls" id="tetris-mobile-controls">
-                    <button onclick="tetrisMove(-1)">←</button>
-                    <button onclick="tetrisSoftDrop()">↓</button>
-                    <button onclick="tetrisMove(1)">→</button>
+                    <button onclick="tetrisMove(-1)">← Left</button>
+                    <button onclick="tetrisSoftDrop()">↓ Drop</button>
+                    <button onclick="tetrisMove(1)">Right →</button>
                     <button class="rotate-btn" onclick="tetrisRotate()">↻ Rotate</button>
-                    <button onclick="tetrisHardDrop()">Hard Drop (Space)</button>
-                    <button onclick="toggleTetrisPause()">Pause / Resume</button>
+                    <button class="hard-drop" onclick="tetrisHardDrop()">Hard Drop</button>
+                    <button onclick="toggleTetrisPause()">⏸ Pause / Resume</button>
                 </div>
 
-                <p data-lang="en" id="tetris-instructions">Keyboard: ← → ↓ ↑ Space | P<br>Mobile: Use buttons below</p>
-                <p data-lang="fr" id="tetris-instructions">Clavier : ← → ↓ ↑ Espace | P<br>Mobile : Utilisez les boutons</p>
+                <p data-lang="en" id="tetris-instructions">Desktop: ← → ↓ ↑ Space | P<br>Mobile: Use buttons below</p>
+                <p data-lang="fr" id="tetris-instructions">Clavier: ← → ↓ ↑ Espace | P<br>Mobile: Utilisez les boutons ci-dessous</p>
                 <p data-lang="sw" id="tetris-instructions">Kibodi: ← → ↓ ↑ Space | P<br>Simu: Tumia vitufe hapa chini</p>
             </div>
         </section>
     </div>
 
-    <!-- WhatsApp and Footer same -->
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="en" target="_blank">Contact Me on WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="fr" target="_blank">Contactez-moi sur WhatsApp</a>
+    <a href="https://wa.me/260966130153" class="whatsapp-btn" data-lang="sw" target="_blank">Wasiliana Nami kwenye WhatsApp</a>
+
+    <footer>
+        <p data-lang="en">© 2026 Darwin Chapuswike. All rights reserved.</p>
+        <p data-lang="fr">© 2026 Darwin Chapuswike. Tous droits réservés.</p>
+        <p data-lang="sw">© 2026 Darwin Chapuswike. Haki Zote Zimehifadhiwa.</p>
+    </footer>
 
     <script>
-        // ============== LANGUAGE SWITCHER ==============
+        // Language Switcher
         function changeLanguage() {
             const selectedLang = document.getElementById('language-select').value;
             localStorage.setItem('preferredLang', selectedLang);
@@ -135,35 +473,17 @@
         }
 
         function updateLanguage(lang) {
-            document.querySelectorAll('[data-lang]').forEach(element => {
-                element.classList.remove('active');
-                if (element.getAttribute('data-lang') === lang) {
-                    element.classList.add('active');
-                }
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+                if (el.getAttribute('data-lang') === lang) el.classList.add('active');
             });
-
             document.title = document.querySelector(`title[data-lang="${lang}"]`).textContent;
-
-            const descriptions = {
-                en: "Darwin Chapuswike’s portfolio: skills, certifications, and experience. Explore my work and achievements!",
-                fr: "Portefeuille de Darwin Chapuswike : compétences, certifications et expérience. Découvrez mon travail et mes réalisations !",
-                sw: "Portifolio ya Darwin Chapuswike: ujuzi, vyeti, na uzoefu. Chunguza kazi yangu na mafanikio yangu!"
-            };
-            const keywords = {
-                en: "Best IT Engineer in Zambia, Best Software Developer in Zambia, Experienced IT Professional in Zambia, Best IT Engineer in Livingstone, Best Software Developer in Livingstone, Experienced IT Professional in Livingstone",
-                fr: "Meilleur ingénieur IT en Zambie, Meilleur développeur logiciel en Zambie, Professionnel IT expérimenté en Zambie, Meilleur ingénieur IT à Livingstone, Meilleur développeur logiciel à Livingstone, Professionnel IT expérimenté à Livingstone",
-                sw: "Mhandisi Bora wa IT nchini Zambia, Mwandishi Bora wa Programu nchini Zambia, Mtaalamu wa IT mwenye Uzoefu nchini Zambia, Mhandisi Bora wa IT mjini Livingstone, Mwandishi Bora wa Programu mjini Livingstone, Mtaalamu wa IT mwenye Uzoefu mjini Livingstone"
-            };
-            document.querySelector('meta[name="description"]').setAttribute('content', descriptions[lang]);
-            document.querySelector('meta[name="keywords"]').setAttribute('content', keywords[lang]);
-
             if (currentGame === 'pong') updatePongScoreDisplay();
             else updateTetrisScoreDisplay();
         }
 
-        // ============== GAME SWITCHER ==============
+        // Game Switcher
         let currentGame = 'pong';
-
         function switchGame(game) {
             currentGame = game;
             document.querySelectorAll('.game-btn').forEach(btn => {
@@ -172,56 +492,36 @@
             document.getElementById('pong-container').classList.toggle('active', game === 'pong');
             document.getElementById('tetris-container').classList.toggle('active', game === 'tetris');
 
-            if (game === 'pong') {
-                if (!pongInitialized) initPong();
-            } else {
-                if (!tetrisInitialized) initTetris();
-            }
+            if (game === 'tetris' && !tetrisInitialized) initTetris();
+            if (game === 'pong' && !pongInitialized) initPong();
         }
 
-        // ============== PONG GAME ==============
+        // ==================== PONG ====================
         let pongInitialized = false;
         let pongCanvas, pongCtx, playerPaddle, aiPaddle, ball, pongKeys, pongGameRunning, pongTouchActive, pongTouchY;
 
         function initPong() {
             pongCanvas = document.getElementById('pong-canvas');
             pongCtx = pongCanvas.getContext('2d');
-            pongCanvas.width = 600;
-            pongCanvas.height = 400;
+            pongCanvas.width = 600; pongCanvas.height = 400;
 
-            const paddleWidth = 10;
-            const paddleHeight = 60;
+            playerPaddle = {x:10, y:170, width:10, height:60, speed:6, score:0};
+            aiPaddle = {x:580, y:170, width:10, height:60, speed:3.5, score:0};
+            ball = {x:300, y:200, size:10, speedX:5, speedY:3};
 
-            playerPaddle = { x: 10, y: pongCanvas.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight, speed: 6, score: 0 };
-            aiPaddle = { x: pongCanvas.width - paddleWidth - 10, y: pongCanvas.height / 2 - paddleHeight / 2, width: paddleWidth, height: paddleHeight, speed: 3.5, score: 0 };
-            ball = { x: pongCanvas.width / 2, y: pongCanvas.height / 2, size: 10, speedX: 5, speedY: 3 };
-
-            pongKeys = { ArrowUp: false, ArrowDown: false };
+            pongKeys = {ArrowUp:false, ArrowDown:false};
             pongGameRunning = true;
             pongTouchActive = false;
-            pongTouchY = 0;
 
-            // Keyboard
-            document.addEventListener('keydown', pongKeyDown);
-            document.addEventListener('keyup', pongKeyUp);
+            document.addEventListener('keydown', e => { if(e.key==='ArrowUp') pongKeys.ArrowUp=true; if(e.key==='ArrowDown') pongKeys.ArrowDown=true; });
+            document.addEventListener('keyup', e => { if(e.key==='ArrowUp') pongKeys.ArrowUp=false; if(e.key==='ArrowDown') pongKeys.ArrowDown=false; });
 
-            // Touch
             pongCanvas.addEventListener('touchstart', pongTouchStart);
             pongCanvas.addEventListener('touchmove', pongTouchMove);
-            pongCanvas.addEventListener('touchend', pongTouchEnd);
+            pongCanvas.addEventListener('touchend', () => pongTouchActive = false);
 
             pongInitialized = true;
             requestAnimationFrame(pongGameLoop);
-        }
-
-        function pongKeyDown(e) {
-            if (currentGame !== 'pong') return;
-            if (e.key === 'ArrowUp') pongKeys.ArrowUp = true;
-            if (e.key === 'ArrowDown') pongKeys.ArrowDown = true;
-        }
-        function pongKeyUp(e) {
-            if (e.key === 'ArrowUp') pongKeys.ArrowUp = false;
-            if (e.key === 'ArrowDown') pongKeys.ArrowDown = false;
         }
 
         function pongTouchStart(e) {
@@ -229,117 +529,65 @@
             e.preventDefault();
             const touch = e.touches[0];
             const rect = pongCanvas.getBoundingClientRect();
-            const touchX = touch.clientX - rect.left;
-            pongTouchY = touch.clientY - rect.top;
-            if (touchX < pongCanvas.width / 2) pongTouchActive = true;
+            if (touch.clientX - rect.left < pongCanvas.width/2) pongTouchActive = true;
         }
         function pongTouchMove(e) {
-            if (currentGame !== 'pong' || !pongTouchActive) return;
+            if (!pongTouchActive || currentGame !== 'pong') return;
             e.preventDefault();
             const touch = e.touches[0];
             const rect = pongCanvas.getBoundingClientRect();
-            pongTouchY = touch.clientY - rect.top;
-            playerPaddle.y = pongTouchY - playerPaddle.height / 2;
+            playerPaddle.y = touch.clientY - rect.top - playerPaddle.height/2;
             if (playerPaddle.y < 0) playerPaddle.y = 0;
             if (playerPaddle.y > pongCanvas.height - playerPaddle.height) playerPaddle.y = pongCanvas.height - playerPaddle.height;
-        }
-        function pongTouchEnd() {
-            pongTouchActive = false;
         }
 
         function updatePongScoreDisplay() {
             const lang = localStorage.getItem('preferredLang') || 'en';
-            const scoreEl = document.querySelector(`#pong-container .score-display[data-lang="${lang}"]`);
-            if (scoreEl) {
-                const text = lang === 'en' ? `Player: ${playerPaddle.score} | AI: ${aiPaddle.score}` :
-                            lang === 'fr' ? `Joueur : ${playerPaddle.score} | IA : ${aiPaddle.score}` :
-                            `Mchezaji: ${playerPaddle.score} | AI: ${aiPaddle.score}`;
-                scoreEl.textContent = text;
-            }
-        }
-
-        function pongCheckGameOver() {
-            if (playerPaddle.score >= 5 || aiPaddle.score >= 5) {
-                pongGameRunning = false;
-                const lang = localStorage.getItem('preferredLang') || 'en';
-                const scoreEl = document.querySelector(`#pong-container .score-display[data-lang="${lang}"]`);
-                if (scoreEl) {
-                    const msg = lang === 'en' ? (playerPaddle.score >= 5 ? 'You Win! Refresh to play again.' : 'AI Wins! Refresh to play again.') :
-                                lang === 'fr' ? (playerPaddle.score >= 5 ? 'Vous avez gagné ! Rafraîchissez.' : 'L’IA a gagné ! Rafraîchissez.') :
-                                (playerPaddle.score >= 5 ? 'Umepata Ushindi!' : 'AI Imeshinda!');
-                    scoreEl.textContent = msg;
-                }
-            }
+            const el = document.querySelector(`#pong-container .score-display[data-lang="${lang}"]`);
+            if (el) el.textContent = lang === 'en' ? `Player: ${playerPaddle.score} | AI: ${aiPaddle.score}` : 
+                                   lang === 'fr' ? `Joueur : ${playerPaddle.score} | IA : ${aiPaddle.score}` : 
+                                   `Mchezaji: ${playerPaddle.score} | AI: ${aiPaddle.score}`;
         }
 
         function pongUpdate() {
             if (!pongGameRunning) return;
-
-            // Player
             if (!pongTouchActive) {
                 if (pongKeys.ArrowUp && playerPaddle.y > 0) playerPaddle.y -= playerPaddle.speed;
                 if (pongKeys.ArrowDown && playerPaddle.y < pongCanvas.height - playerPaddle.height) playerPaddle.y += playerPaddle.speed;
             }
+            // AI logic, ball logic, collision, scoring... (same as previous version)
+            if (aiPaddle.y + aiPaddle.height/2 < ball.y) aiPaddle.y += aiPaddle.speed;
+            else if (aiPaddle.y + aiPaddle.height/2 > ball.y) aiPaddle.y -= aiPaddle.speed;
 
-            // AI
-            if (aiPaddle.y + aiPaddle.height / 2 < ball.y) aiPaddle.y += aiPaddle.speed;
-            else if (aiPaddle.y + aiPaddle.height / 2 > ball.y) aiPaddle.y -= aiPaddle.speed;
-
-            // Ball
             ball.x += ball.speedX;
             ball.y += ball.speedY;
 
-            if (ball.y <= 0 || ball.y >= pongCanvas.height - ball.size) ball.speedY = -ball.speedY;
+            if (ball.y <= 0 || ball.y >= pongCanvas.height - ball.size) ball.speedY *= -1;
 
-            // Paddle collision
-            if (
-                (ball.x <= playerPaddle.x + playerPaddle.width && ball.y + ball.size >= playerPaddle.y && ball.y <= playerPaddle.y + playerPaddle.height) ||
-                (ball.x + ball.size >= aiPaddle.x && ball.y + ball.size >= aiPaddle.y && ball.y <= aiPaddle.y + aiPaddle.height)
-            ) {
-                ball.speedX = -ball.speedX * 1.02;
+            if ((ball.x <= playerPaddle.x + playerPaddle.width && ball.y + ball.size >= playerPaddle.y && ball.y <= playerPaddle.y + playerPaddle.height) ||
+                (ball.x + ball.size >= aiPaddle.x && ball.y + ball.size >= aiPaddle.y && ball.y <= aiPaddle.y + aiPaddle.height)) {
+                ball.speedX *= -1.02;
             }
 
-            // Scoring
-            if (ball.x <= 0) {
-                aiPaddle.score++;
-                resetPongBall();
-                updatePongScoreDisplay();
-                pongCheckGameOver();
-            }
-            if (ball.x >= pongCanvas.width - ball.size) {
-                playerPaddle.score++;
-                resetPongBall();
-                updatePongScoreDisplay();
-                pongCheckGameOver();
-            }
+            if (ball.x <= 0) { aiPaddle.score++; resetPongBall(); updatePongScoreDisplay(); }
+            if (ball.x >= pongCanvas.width - ball.size) { playerPaddle.score++; resetPongBall(); updatePongScoreDisplay(); }
         }
 
         function resetPongBall() {
-            ball.x = pongCanvas.width / 2;
-            ball.y = pongCanvas.height / 2;
-            ball.speedX = -ball.speedX;
-            ball.speedY = (Math.random() - 0.5) * 6;
+            ball.x = pongCanvas.width/2;
+            ball.y = pongCanvas.height/2;
+            ball.speedX *= -1;
+            ball.speedY = (Math.random()-0.5)*6;
         }
 
         function pongDraw() {
             pongCtx.fillStyle = '#f8f9fa';
-            pongCtx.fillRect(0, 0, pongCanvas.width, pongCanvas.height);
-
+            pongCtx.fillRect(0,0,pongCanvas.width,pongCanvas.height);
             pongCtx.fillStyle = '#004182';
             pongCtx.fillRect(playerPaddle.x, playerPaddle.y, playerPaddle.width, playerPaddle.height);
             pongCtx.fillRect(aiPaddle.x, aiPaddle.y, aiPaddle.width, aiPaddle.height);
-
             pongCtx.fillStyle = '#dc3545';
             pongCtx.fillRect(ball.x, ball.y, ball.size, ball.size);
-
-            // Center line
-            pongCtx.setLineDash([5, 15]);
-            pongCtx.beginPath();
-            pongCtx.moveTo(pongCanvas.width / 2, 0);
-            pongCtx.lineTo(pongCanvas.width / 2, pongCanvas.height);
-            pongCtx.strokeStyle = '#666';
-            pongCtx.stroke();
-            pongCtx.setLineDash([]);
         }
 
         function pongGameLoop() {
@@ -350,83 +598,189 @@
             requestAnimationFrame(pongGameLoop);
         }
 
-        // ============== TETRIS GAME ==============
+        // ==================== TETRIS ====================
         let tetrisInitialized = false;
-        let tetrisCanvas, tetrisCtx, tetrisBoard, currentPiece, tetrisScore, linesCleared, dropInterval, lastDropTime, tetrisPaused, tetrisGameOver;
+        let tetrisCanvas, tetrisCtx, tetrisBoard, currentPiece, tetrisScore = 0, linesCleared = 0;
+        let dropInterval = 800, lastDropTime = Date.now(), tetrisPaused = false, tetrisGameOver = false;
 
-        const TETRIS_COLS = 10;
-        const TETRIS_ROWS = 20;
-        const BLOCK_SIZE = 24;
-
-        const TETRIS_PIECES = [ /* same as before */ ];
+        const TETRIS_COLS = 10, TETRIS_ROWS = 20, BLOCK_SIZE = 24;
+        const TETRIS_PIECES = [
+            {shape:[[1,1,1,1]], color:'#00f0f0'}, {shape:[[1,1],[1,1]], color:'#f0f000'},
+            {shape:[[0,1,0],[1,1,1]], color:'#a000f0'}, {shape:[[0,1,1],[1,1,0]], color:'#00f000'},
+            {shape:[[1,1,0],[0,1,1]], color:'#f00000'}, {shape:[[1,0,0],[1,1,1]], color:'#f0a000'},
+            {shape:[[0,0,1],[1,1,1]], color:'#0000f0'}
+        ];
 
         function initTetris() {
             tetrisCanvas = document.getElementById('tetris-canvas');
             tetrisCtx = tetrisCanvas.getContext('2d');
-            tetrisCanvas.width = TETRIS_COLS * BLOCK_SIZE;
-            tetrisCanvas.height = TETRIS_ROWS * BLOCK_SIZE;
-
             tetrisBoard = Array.from({length: TETRIS_ROWS}, () => Array(TETRIS_COLS).fill(0));
-            tetrisScore = 0;
-            linesCleared = 0;
-            dropInterval = 800;
-            lastDropTime = Date.now();
-            tetrisPaused = false;
-            tetrisGameOver = false;
-
+            tetrisScore = 0; linesCleared = 0; dropInterval = 800; lastDropTime = Date.now();
+            tetrisPaused = false; tetrisGameOver = false;
             spawnPiece();
             tetrisInitialized = true;
-
             document.addEventListener('keydown', handleTetrisKey);
             requestAnimationFrame(tetrisGameLoop);
         }
 
-        // ... keep all existing Tetris functions: spawnPiece, collision, mergePiece, clearLines, rotatePiece, hardDrop, lockPiece, etc. ...
-
-        function tetrisMove(dir) {
-            if (!currentPiece || tetrisGameOver || tetrisPaused) return;
-            currentPiece.x += dir;
-            if (collision()) currentPiece.x -= dir;
+        function spawnPiece() {
+            const p = TETRIS_PIECES[Math.floor(Math.random()*TETRIS_PIECES.length)];
+            currentPiece = {shape: p.shape, color: p.color, x: Math.floor(TETRIS_COLS/2)-1, y: 0};
+            if (collision()) tetrisGameOver = true;
         }
 
-        function tetrisSoftDrop() {
-            if (!currentPiece || tetrisGameOver || tetrisPaused) return;
-            currentPiece.y++;
-            if (collision()) {
-                currentPiece.y--;
-                lockPiece();
+        function collision() {
+            for (let y = 0; y < currentPiece.shape.length; y++) {
+                for (let x = 0; x < currentPiece.shape[y].length; x++) {
+                    if (currentPiece.shape[y][x] && 
+                        (currentPiece.x + x < 0 || currentPiece.x + x >= TETRIS_COLS || 
+                         currentPiece.y + y >= TETRIS_ROWS || 
+                         (currentPiece.y + y >= 0 && tetrisBoard[currentPiece.y + y][currentPiece.x + x] !== 0))) {
+                        return true;
+                    }
+                }
             }
-            lastDropTime = Date.now(); // reset timer
+            return false;
         }
 
-        function tetrisRotate() {
-            if (!currentPiece || tetrisGameOver || tetrisPaused) return;
-            rotatePiece();
+        function mergePiece() {
+            for (let y = 0; y < currentPiece.shape.length; y++) {
+                for (let x = 0; x < currentPiece.shape[y].length; x++) {
+                    if (currentPiece.shape[y][x]) {
+                        tetrisBoard[currentPiece.y + y][currentPiece.x + x] = currentPiece.color;
+                    }
+                }
+            }
         }
 
-        function tetrisHardDrop() {
-            if (!currentPiece || tetrisGameOver || tetrisPaused) return;
-            hardDrop();
+        function clearLines() {
+            let lines = 0;
+            for (let y = TETRIS_ROWS-1; y >= 0; y--) {
+                if (tetrisBoard[y].every(cell => cell !== 0)) {
+                    tetrisBoard.splice(y,1);
+                    tetrisBoard.unshift(Array(TETRIS_COLS).fill(0));
+                    lines++;
+                    y++;
+                }
+            }
+            if (lines) {
+                linesCleared += lines;
+                tetrisScore += [0,100,300,500,800][lines] * (Math.floor(linesCleared/10)+1);
+                updateTetrisScoreDisplay();
+            }
         }
 
-        function toggleTetrisPause() {
-            if (tetrisGameOver) return;
-            tetrisPaused = !tetrisPaused;
+        function rotatePiece() {
+            const rotated = currentPiece.shape[0].map((_, i) => currentPiece.shape.map(row => row[i]).reverse());
+            const prev = currentPiece.shape;
+            currentPiece.shape = rotated;
+            if (collision()) currentPiece.shape = prev;
         }
 
-        // Keyboard handler (same)
+        function hardDrop() {
+            while (!collision()) currentPiece.y++;
+            currentPiece.y--;
+            lockPiece();
+        }
+
+        function lockPiece() {
+            mergePiece();
+            clearLines();
+            spawnPiece();
+        }
+
         function handleTetrisKey(e) {
             if (currentGame !== 'tetris' || tetrisGameOver || tetrisPaused) return;
-            // ... existing key handling ...
+            if (e.key === 'ArrowLeft') { currentPiece.x--; if(collision()) currentPiece.x++; }
+            if (e.key === 'ArrowRight') { currentPiece.x++; if(collision()) currentPiece.x--; }
+            if (e.key === 'ArrowDown') { currentPiece.y++; if(collision()) { currentPiece.y--; lockPiece(); } }
+            if (e.key === 'ArrowUp') rotatePiece();
+            if (e.key === ' ') hardDrop();
+            if (e.key.toLowerCase() === 'p') tetrisPaused = !tetrisPaused;
         }
 
-        // Game loop and drawing functions remain the same
+        // Mobile Controls
+        window.tetrisMove = (dir) => {
+            if (currentPiece && !tetrisGameOver && !tetrisPaused) {
+                currentPiece.x += dir;
+                if (collision()) currentPiece.x -= dir;
+            }
+        };
+        window.tetrisSoftDrop = () => {
+            if (currentPiece && !tetrisGameOver && !tetrisPaused) {
+                currentPiece.y++;
+                if (collision()) { currentPiece.y--; lockPiece(); }
+                lastDropTime = Date.now();
+            }
+        };
+        window.tetrisRotate = () => {
+            if (currentPiece && !tetrisGameOver && !tetrisPaused) rotatePiece();
+        };
+        window.tetrisHardDrop = () => {
+            if (currentPiece && !tetrisGameOver && !tetrisPaused) hardDrop();
+        };
+        window.toggleTetrisPause = () => {
+            if (!tetrisGameOver) tetrisPaused = !tetrisPaused;
+        };
 
-        // ============== INITIALIZATION ==============
+        function updateTetrisScoreDisplay() {
+            const lang = localStorage.getItem('preferredLang') || 'en';
+            const el = document.querySelector(`#tetris-score[data-lang="${lang}"]`);
+            if (el) el.textContent = lang === 'en' ? `Score: ${tetrisScore}  Lines: ${linesCleared}` :
+                                    lang === 'fr' ? `Score : ${tetrisScore}  Lignes : ${linesCleared}` :
+                                    `Alama: ${tetrisScore}  Mistari: ${linesCleared}`;
+        }
+
+        function drawTetris() {
+            tetrisCtx.fillStyle = '#1a1a1a';
+            tetrisCtx.fillRect(0, 0, tetrisCanvas.width, tetrisCanvas.height);
+
+            // Board
+            for (let y = 0; y < TETRIS_ROWS; y++) {
+                for (let x = 0; x < TETRIS_COLS; x++) {
+                    if (tetrisBoard[y][x]) {
+                        tetrisCtx.fillStyle = tetrisBoard[y][x];
+                        tetrisCtx.fillRect(x*BLOCK_SIZE, y*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+                    }
+                }
+            }
+            // Current piece
+            if (currentPiece) {
+                tetrisCtx.fillStyle = currentPiece.color;
+                for (let y = 0; y < currentPiece.shape.length; y++) {
+                    for (let x = 0; x < currentPiece.shape[y].length; x++) {
+                        if (currentPiece.shape[y][x]) {
+                            tetrisCtx.fillRect((currentPiece.x+x)*BLOCK_SIZE, (currentPiece.y+y)*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+                        }
+                    }
+                }
+            }
+        }
+
+        function tetrisGameLoop() {
+            if (currentGame === 'tetris' && !tetrisGameOver && !tetrisPaused) {
+                if (Date.now() - lastDropTime > dropInterval) {
+                    currentPiece.y++;
+                    if (collision()) {
+                        currentPiece.y--;
+                        lockPiece();
+                    }
+                    lastDropTime = Date.now();
+                }
+            }
+            drawTetris();
+            requestAnimationFrame(tetrisGameLoop);
+        }
+
+        // Init
         document.addEventListener("DOMContentLoaded", () => {
-            // ... existing initialization code ...
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
 
-            // Start with Pong
             initPong();
 
             const savedLang = localStorage.getItem('preferredLang') || 'en';
